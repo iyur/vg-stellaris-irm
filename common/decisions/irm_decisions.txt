@@ -1,0 +1,40 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Special decisions
+
+# Sector management screen
+decision_sector = {
+	sound = event_ship_bridge
+	icon = decision_binary_stars
+
+	owned_planets_only = no
+
+	resources = {
+		category = decisions
+	}
+	
+	potential = {
+		is_star = yes
+		exists = space_owner
+		space_owner = { is_same_value = from }
+		exists = sector
+	}
+	
+	allow = {
+		# prevent ui duplicating
+		custom_tooltip = {
+			fail_text = "decision_sector_req"
+			from = {
+				not = { any_system_within_border = { has_star_flag = "irm_ui_sector_window" } }
+			}
+		}	
+	}
+
+	effect = {
+		custom_tooltip = "decision_sector_effect"
+		# hidden_effect = { solar_system = { system_event = { id = irm_sector.1  } } }
+		log = "screen opened"
+	}
+	
+	ai_weight = { weight = 0 }	
+}

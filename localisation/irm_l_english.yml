@@ -1,0 +1,13 @@
+﻿# IRM: Imperial Routine Mod
+# Author: Iyur
+# Mod english localisation
+
+l_english:
+
+# DECISIONS # -------------------------------------------------------------------------------------
+
+  # sector management screen
+  decision_sector: "Manage Sector"
+  decision_sector_desc: "Sector management screen"
+  decision_sector_effect: "Opens separate screen allowing to manage §H[Root.Sector.GetName]§! sector."
+  decision_sector_req: "§RAnother sector window is already opened.§!"
