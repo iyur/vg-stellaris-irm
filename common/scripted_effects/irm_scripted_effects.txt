@@ -1,0 +1,7 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Mod custom scripted effects & routines
+
+irm_test = {
+	log = "irm debug test"
+}
