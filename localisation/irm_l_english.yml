@@ -11,3 +11,14 @@ l_english:
   decision_sector_desc: "Sector management screen"
   decision_sector_effect: "Opens separate screen allowing to manage §H[Root.Sector.GetName]§! sector."
   decision_sector_req: "§RAnother sector window is already opened.§!"
+
+
+# UI # --------------------------------------------------------------------------------------------
+
+# Base
+
+  irm.0: ""
+
+# Sector
+
+  irm.ui.sector.title: "[Root.Sector.GetName] Sector"

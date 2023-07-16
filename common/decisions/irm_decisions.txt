@@ -32,8 +32,7 @@ decision_sector = {
 
 	effect = {
 		custom_tooltip = "decision_sector_effect"
-		# hidden_effect = { solar_system = { system_event = { id = irm_sector.1  } } }
-		log = "screen opened"
+		hidden_effect = { solar_system = { system_event = { id = irm_sector.1  } } }
 	}
 	
 	ai_weight = { weight = 0 }	

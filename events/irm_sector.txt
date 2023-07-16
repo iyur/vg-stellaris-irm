@@ -1,0 +1,41 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Sector gateway events
+
+namespace = irm_sector
+
+# This = System
+# Opens sector management screen
+system_event = {
+	id = irm_sector.1
+	title = "irm.ui.sector.title"
+	desc = "irm.0"
+	location = root
+
+	force_open = yes
+	auto_select = yes
+	auto_opens = yes
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	custom_gui = "irm_ui_sector"
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = root.sector.leader
+		room = "crisis_room"
+	}
+
+	immediate = {
+
+	}
+
+
+#	OPTIONS
+
+	# close button
+	option = {
+		name = "irm.0"
+#		custom_gui = "irm_system_opt_close"
+	}
+
+}

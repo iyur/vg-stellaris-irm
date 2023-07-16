@@ -1,0 +1,159 @@
+guiTypes = {
+
+### WINDOW ### --------------------------------------------------------------------------------------
+
+  	@scr_W 	= 850
+  	@scr_Wd = 900
+  	@scr_H 	= 670
+  	@scr_O 	= 75
+
+	@xListPadding = 10
+
+	containerWindowType = {
+		name = "irm_ui_sector"
+		orientation = upper_left
+		size = { width = @scr_W height = @scr_H }
+		position = { x = @scr_O y = @scr_O }
+		moveable = yes
+		clipping = no
+		click_to_front = yes
+
+		if_resolution = {
+			max_height = 680		
+			size = { width = 850 height = 680 }
+		
+			show_position = { x = 35 y = 40 }
+			hide_position = { x = -800 y = 40 }
+			animation_time = 200
+			animation_type = decelerated
+			show_sound = "select_click"
+			moveable = no
+		}
+
+		background = { name = "background" quadTextureSprite ="GFX_tile_outliner_bg" }
+		iconType = { name = "hex_bg" spriteType = "GFX_hex_bg" position = { x = -10 y = -14 } alwaysTransparent = yes }
+		iconType = { name = "empire_header_line" quadTextureSprite = "GFX_line_long" position = { x = 6 y = 22 } alwaysTransparent = yes }
+		
+		buttonType = {
+			name = "focus_button"
+			position = { x = -80 y = 12 }
+			orientation = "UPPER_RIGHT"
+			spriteType = "GFX_fleetview_focus"
+			buttonFont = "cg_16b"
+			shortcut = "q"
+		}
+
+		buttonType = {
+			name = "tts_button"
+			position = { x = 466 y = 639 }
+			spriteType = "GFX_button_tts_start"
+			buttonFont = "cg_16b"
+			shortCut = "t"
+		}
+
+		# SYSTEM
+
+		@xLeaderBlock = 10
+		@pViewScale = 0.55
+
+		# leader info
+		containerWindowType = {
+			name = "portrait"
+			size = { width = 660 height = 200 }
+			position = { x = 10 y = 53 }
+			clipping = yes
+
+			# leader portrait
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_gamesetup_mask"
+				position = { x = 7 y = 2 }
+				alwaysTransparent = yes
+				scale = @pViewScale
+			}
+
+			# leader portrait frames		
+			iconType = {
+				name = "black_frame"
+				spriteType = "GFX_diplomacy_portrait_shadow_frame"
+				position = { x = 2 y = 0 }
+				scale = @pViewScale
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "stripes_1"
+				spriteType = "GFX_diplomacy_stripes_2"
+				position = { x = 2 y = 0 }
+				scale = @pViewScale
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "city_frame"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = 2 y = 0 }
+				scale = @pViewScale
+				alwaysTransparent = yes
+			}
+		}
+
+		### HIDE ###
+
+		containerWindowType = {
+			name = "portrait_background"
+			position = { x = -1000 y = -1000 }
+			clipping = yes
+			iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" position = { x = -1000 y = -1000 } }
+			iconType = { name = "portrait" position = { x = -1000 y = -1000 } spriteType = "GFX_portrait_character" }
+		}
+		instantTextBoxType = { name = "heading" font = "cg_16b" position = { x = -1000 y = -1000 } }
+		buttonType = { name = "alien_message_background" position = { x = -1000 y = -1000 } spriteType = "GFX_tiles_dark_area_cut_8" }
+		buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x= -1000 y = -1000  } font = "cg_16b" }		
+		instantTextBoxType = { name = "alien_message" position = { x = -1110 y = -1113 } font = "cg_16b" scrollbartype = "standardtext_slider" }
+		iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -1000 y = -1000 } }
+		instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -1000 y = -1000 } }
+		instantTextBoxType={ name = "empire_government_type" font = "cg_16b" position = { x = -1000 y = -1000 } }
+		instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -1000 y = -1000 } }
+		OverlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1000 y = -1000 } }
+		buttonType = { name = "empire_flag" quadTextureSprite = "GFX_empire_flag_128" position = { x = -1000 y = -1000 } }
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = -1000 y = -1000 }
+			containerWindowType = { name = "empire_traits_box" background = { name = "ethics_bg" spriteType = "GFX_tiles_dark_area_cut_8" } }
+			instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" }
+			overlappingElementsBoxType = { name = "leader_traits" }
+			instantTextBoxType = { name = "leader_name" font = "cg_16b" }
+			instantTextBoxType = { name = "leader_species" font = "cg_16b" }
+		}
+		containerWindowType = {
+			# Use this for tooltip area, picture comes from somewhere else
+			name = "opinion_window"
+			position = { x = -1000 y = -1000 }
+			background = { name = "opinion_bg" spriteType = "GFX_tiled_window_transparent" }
+			iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" }
+			instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+		}
+		
+		### EVENT DIPLO ###
+		
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			orientation = upper_left
+			position = { x = 0 y = 0 }
+			moveable = no
+			
+			# title
+			instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = 10 y = 3 } alwaysTransparent = yes }
+			instantTextBoxType = { name = "action_desc"  font = "malgun_goth_24" position = { x = 20 y = 147 } }
+			
+			# action elements
+			listboxType = {
+				name = "option_list"
+				orientation = upper_left
+				size = { x = @scr_W y = @scr_Wd }
+				position = { x = 0 y = 0 }
+				alwaysTransparent = yes
+			}
+		}
+
+	} # window
+}
