@@ -51,9 +51,6 @@ guiTypes = {
 			shortCut = "t"
 		}
 
-		# SYSTEM
-
-		@xLeaderBlock = 10
 		@pViewScale = 0.55
 
 		# leader info

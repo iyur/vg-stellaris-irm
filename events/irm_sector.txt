@@ -21,7 +21,7 @@ system_event = {
 	custom_gui = "irm_ui_sector"
 	show_sound = event_conversation
 	picture_event_data = {
-		portrait = root.sector.leader
+		portrait = root.sector.sector_capital.leader
 		room = "crisis_room"
 	}
 
