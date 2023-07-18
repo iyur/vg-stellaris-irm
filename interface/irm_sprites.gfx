@@ -1,0 +1,23 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Custom graphical content
+
+spriteTypes = {
+
+	# UI # ----------------------------------------------------------------------------------------
+
+	# colored panels
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_turqoise"
+		texturefile = "gfx/interface/tiles/irm_tradition_category_tile_turqoise.dds"
+		borderSize = { x = 140 y = 140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_orange"
+		texturefile = "gfx/interface/tiles/irm_tradition_category_tile_orange.dds"
+		borderSize = { x = 140 y = 140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+}

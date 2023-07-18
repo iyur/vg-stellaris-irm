@@ -1,6 +1,48 @@
 guiTypes = {
 
+###	OPTIONS ### -------------------------------------------------------------------------------------
+
+  	# replaced close button
+	containerWindowType = {
+		name = "irm_ui_opt_close"
+		position = { x = 0 y = 0 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_close"
+			position = { x = 807 y = 12 }
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+			actionShortcut = "cancel"
+		}
+	
+	}
+
+	# dummy
+	containerWindowType = {
+		name = "irm_ui_opt_dummy"
+		position = { x = 0 y = 0 }
+		size = { width = 0 height = 30 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_invisible"
+			orientation = upper_right
+			position = { x = 746 y = 0 }
+			size = { x = 40 y = 30 }
+			text = "OPTION_TEXT"
+			alwaysTransparent = yes
+		}
+	
+	}
+
+
 ### WINDOW ### --------------------------------------------------------------------------------------
+
+	@out = -9999
+	@nobg = "GFX_tiled_window_transparent"
 
   	@scr_W 	= 850
   	@scr_Wd = 900
@@ -15,7 +57,7 @@ guiTypes = {
 		size = { width = @scr_W height = @scr_H }
 		position = { x = @scr_O y = @scr_O }
 		moveable = yes
-		clipping = no
+		clipping = yes
 		click_to_front = yes
 
 		if_resolution = {
@@ -31,8 +73,10 @@ guiTypes = {
 		}
 
 		background = { name = "background" quadTextureSprite ="GFX_tile_outliner_bg" }
-		iconType = { name = "hex_bg" spriteType = "GFX_hex_bg" position = { x = -10 y = -14 } alwaysTransparent = yes }
-		iconType = { name = "empire_header_line" quadTextureSprite = "GFX_line_long" position = { x = 6 y = 22 } alwaysTransparent = yes }
+		iconType = { name = "event_picture" spriteType = "GFX_leader_recruitment_bg_renowned" position = { x = 1 y = 1 } alwaysTransparent = yes }
+
+		iconType = { name = "hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = -50 y = -30 } alwaysTransparent = yes scale = 1.75 }
+		iconType = { name = "empire_header_line" quadTextureSprite = @nobg }
 		
 		buttonType = {
 			name = "focus_button"
@@ -40,7 +84,6 @@ guiTypes = {
 			orientation = "UPPER_RIGHT"
 			spriteType = "GFX_fleetview_focus"
 			buttonFont = "cg_16b"
-			shortcut = "q"
 		}
 
 		buttonType = {
@@ -48,88 +91,434 @@ guiTypes = {
 			position = { x = 466 y = 639 }
 			spriteType = "GFX_button_tts_start"
 			buttonFont = "cg_16b"
-			shortCut = "t"
 		}
-
-		@pViewScale = 0.55
 
 		# leader info
 		containerWindowType = {
 			name = "portrait"
-			size = { width = 660 height = 200 }
-			position = { x = 10 y = 53 }
+			size = { width = 660 height = 400 }
+			position = { x = 10 y = 35 }
 			clipping = yes
 
-			# leader portrait
 			iconType = {
 				name = "portrait"
-				spriteType = "GFX_portrait_gamesetup_mask"
-				position = { x = 7 y = 2 }
+				spriteType = "GFX_portrait_character"
+				position = { x = -50 y = 0 }
 				alwaysTransparent = yes
-				scale = @pViewScale
-			}
+				scale = 0.60
+			}	
 
-			# leader portrait frames		
-			iconType = {
-				name = "black_frame"
-				spriteType = "GFX_diplomacy_portrait_shadow_frame"
-				position = { x = 2 y = 0 }
-				scale = @pViewScale
-				alwaysTransparent = yes
-			}
-			iconType = {
-				name = "stripes_1"
-				spriteType = "GFX_diplomacy_stripes_2"
-				position = { x = 2 y = 0 }
-				scale = @pViewScale
-				alwaysTransparent = yes
-			}
-			iconType = {
-				name = "city_frame"
-				spriteType = "GFX_diplomacy_portrait_frame"
-				position = { x = 2 y = 0 }
-				scale = @pViewScale
-				alwaysTransparent = yes
-			}
+			iconType = { name = "black_frame" spriteType = @nobg }
+			iconType = { name = "stripes_1" spriteType = @nobg }
+			iconType = { name = "city_frame" spriteType = @nobg }
 		}
 
 		### HIDE ###
 
-		containerWindowType = {
-			name = "portrait_background"
-			position = { x = -1000 y = -1000 }
-			clipping = yes
-			iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" position = { x = -1000 y = -1000 } }
-			iconType = { name = "portrait" position = { x = -1000 y = -1000 } spriteType = "GFX_portrait_character" }
-		}
+		containerWindowType = { name = "portrait_background" iconType = { name = "event_picture" spriteType = @nobg } iconType = { name = "portrait" spriteType = @nobg } }
 		instantTextBoxType = { name = "heading" font = "cg_16b" position = { x = -1000 y = -1000 } }
-		buttonType = { name = "alien_message_background" position = { x = -1000 y = -1000 } spriteType = "GFX_tiles_dark_area_cut_8" }
-		buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x= -1000 y = -1000  } font = "cg_16b" }		
-		instantTextBoxType = { name = "alien_message" position = { x = -1110 y = -1113 } font = "cg_16b" scrollbartype = "standardtext_slider" }
-		iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -1000 y = -1000 } }
-		instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -1000 y = -1000 } }
-		instantTextBoxType={ name = "empire_government_type" font = "cg_16b" position = { x = -1000 y = -1000 } }
-		instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -1000 y = -1000 } }
-		OverlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1000 y = -1000 } }
-		buttonType = { name = "empire_flag" quadTextureSprite = "GFX_empire_flag_128" position = { x = -1000 y = -1000 } }
+		buttonType = { name = "alien_message_background" spriteType = @nobg }
+		buttonType = { name = "confirm_button" quadTextureSprite = @nobg font = "cg_16b" }		
+		instantTextBoxType = { name = "alien_message" font = "cg_16b" scrollbartype = "standardtext_slider" }
+		iconType = { name = "empire_info_bg" spriteType =@nobg }
+		instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" }
+		instantTextBoxType={ name = "empire_government_type" font = "cg_16b" }
+		instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" }
+		OverlappingElementsBoxType = { name = "empire_ethics_icons" }
+		buttonType = { name = "empire_flag" quadTextureSprite = @nobg }
 		containerWindowType = {
 			name = "leader_details"
-			position = { x = -1000 y = -1000 }
-			containerWindowType = { name = "empire_traits_box" background = { name = "ethics_bg" spriteType = "GFX_tiles_dark_area_cut_8" } }
+			containerWindowType = { name = "empire_traits_box" background = { name = "ethics_bg" spriteType = @nobg } }
 			instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" }
 			overlappingElementsBoxType = { name = "leader_traits" }
 			instantTextBoxType = { name = "leader_name" font = "cg_16b" }
 			instantTextBoxType = { name = "leader_species" font = "cg_16b" }
 		}
 		containerWindowType = {
-			# Use this for tooltip area, picture comes from somewhere else
 			name = "opinion_window"
-			position = { x = -1000 y = -1000 }
-			background = { name = "opinion_bg" spriteType = "GFX_tiled_window_transparent" }
-			iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" }
+			background = { name = "opinion_bg" spriteType = @nobg }
+			iconType = { name = "their_opinion_icon" spriteType = @nobg }
 			instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
 		}
-		
+
+
+		# DEMOGRAPHY ------------------------------------------------------------------------------
+
+		@xDemoField = 85
+
+		containerWindowType = {
+			name = "system_demography"
+			position = { x = 560 y = 62 }
+			size = { width = 300 height = 170 }
+			
+			iconType = {
+				name = "background"
+				spriteType = "GFX_planetview_topright_frame"
+				position = { x = 0 y = 1 }
+			}
+
+			effectButtonType = {
+				name = "decisions_button"
+				position = { x = 130 y = 0 }
+				spriteType = "GFX_standard_button_116_34"
+				buttonFont = "cg_16b"
+				text = "DECISIONS_TITLE"
+				font = "cg_16b"
+				#orientation = UPPER_RIGHT
+				oversound = mouse_over
+				#shortCut = "N"
+				effect = irm_bt_sector_decision
+			}
+
+
+			containerWindowType = {
+			name = "planet_actions_window"
+			position = { x = 10 y = 11 }
+			size = { width = 125 height = 75 }
+
+				background = {
+					name = "stability_pops_bg"
+					spriteType = "GFX_planetview_topright_bg_small"
+				}
+			}
+
+			# Planet Stability
+			containerWindowType = {
+				name = "planet_stability"
+				size = { width = 120 height = 34 }
+				position = { x = 25 y = 14 }
+				
+				iconType = {
+					name = "planet_stability_icon"
+					spriteType = "GFX_stability"
+					position = { x = 15 y = 2 }
+					scale = 1.15
+				}
+				effectButtonType = {
+					name = "sector_stability"
+					quadTextureSprite = "GFX_invisible"
+					size = { x = @xDemoField y = 28 }
+					position = { x = 25 y = 4 }
+					format = center
+					font = "cg_16b"
+					text = 0
+					effect = irm_bt_sector_stability
+				}
+
+			}
+
+			# Planet Pops
+			containerWindowType = {
+				name = "planet_pops"
+				size = { width = 120 height = 34 }
+				position = { x = 26 y = 48 }
+
+				iconType = {
+					name = "planet_pops_icon"
+					spriteType = "GFX_pop"
+					position = { x = 15 y = 1 }
+					scale = 1.15
+				}
+				effectButtonType = {
+					name = "sector_population"
+					quadTextureSprite = "GFX_invisible"
+					size = { x = @xDemoField y = 28 }
+					position = { x = 25 y = 4 }
+					format = center
+					font = "cg_16b"
+					text = 0
+					effect = irm_bt_sector_pops
+				}
+
+			}
+			### Crime Related Data
+			containerWindowType = {
+				name = "crime_status_window"
+				position = { x = 10 y = 95 }
+				size = { width = 250 height = 74 }
+							
+				background = {
+					position = { x = 0 y = -5 }
+					name = "actions_background"
+					spriteType = "GFX_dark_area_cut"
+				}
+
+				# Planet Crime
+				containerWindowType = {
+					name = "planet_crime"
+					size = { width = 77 height = 34 }
+					position = { x = 10 y = 1 }
+					
+					iconType = {
+						name = "planet_crime_icon"
+						spriteType = "GFX_planet_view_crime"
+						position = { x = 8 y = 2 }
+					}
+					effectButtonType = {
+						name = "sector_crime"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = @xDemoField y = 28 }
+						position = { x = 10 y = 1 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_crime
+					}
+
+				}			
+
+				# Planet Housing
+				containerWindowType = {
+					name = "planet_housing"
+					size = { width = 76 height = 34 }
+					position = { x = 91 y = -1 }
+
+					iconType = {
+						name = "free_housing_icon"
+						spriteType = "GFX_planet_view_planet_housing"
+						position = { x = 5 y = 5 }
+					}
+					effectButtonType = {
+						name = "sector_housing"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = @xDemoField y = 28 }
+						position = { x = 10 y = 1 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_housing
+					}
+
+				}
+
+				# Planet Amenities
+				containerWindowType = {
+					name = "planet_amenities"
+					size = { width = 76 height = 34 }
+					position = { x = 168 y = -2 }
+
+					iconType = {
+						name = "planet_amenities_icon"
+						spriteType = "GFX_planet_view_planet_amenities"
+						position = { x = 6 y = 5 }
+					}
+					effectButtonType = {
+						name = "sector_amenities"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = @xDemoField y = 28 }
+						position = { x = 10 y = 1 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_amenities
+					}
+
+				}		
+				
+				# Planet Jobs
+				containerWindowType = {
+					name = "planet_jobs"
+					size = { width = 76 height = 34 }
+					position = { x = 11 y = 34 }
+
+					iconType = {
+						name = "planet_jobs_icon"
+						spriteType = "GFX_pop_job"
+						position = { x = 7 y = 1 }
+					}
+					effectButtonType = {
+						name = "sector_system_jobs"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = @xDemoField y = 28 }
+						position = { x = 10 y = 1 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_jobs
+					}
+
+				}
+			
+				# Planet Unemployed
+				containerWindowType = {
+					name = "planet_unemployed"
+					size = { width = 155 height = 34 }
+					position = { x = 91 y = 33 }
+
+					iconType = {
+						name = "planet_unemployed_icon"
+						spriteType = "GFX_unemployed"
+						position = { x = 2 y = 2 }
+					}
+					effectButtonType = {
+						name = "sector_unemployed"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = @xDemoField y = 28 }
+						position = { x = 10 y = 1 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_unemployed
+					}
+
+				}
+			
+				# Planet Happiness
+				containerWindowType = {
+					name = "planet_happiness"
+					size = { width = 155 height = 34 }
+					position = { x = 176 y = 38 }
+
+					iconType = {
+						name = "planet_happiness_icon"
+						spriteType = "GFX_text_happiness"
+						position = { x = 2 y = 2 }
+					}
+					effectButtonType = {
+						name = "sector_happiness"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = @xDemoField y = 28 }
+						position = { x = 5 y = -4 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_happiness
+					}
+
+				}
+			}
+
+		} # end of demography
+
+		# SYSTEM INFO ------------------------------------------------------------------------------
+
+		@col1_W = 540
+		@col2_W = 270
+		@cell_W = 250
+		@cell_Y = 32
+
+		@yPosBlock1 = 260
+		@hPosBlock1 = 400
+
+		containerWindowType = {
+			name = "irm_ui_stats"
+			position = { x = 10 y = @yPosBlock1 }
+			size = { width = @col1_W height = @hPosBlock1 }
+			background = { name = "background" spriteType = "GFX_tradition_category_tile_turqoise" }
+
+		  	@xPosBC1 = 0
+		  	@yPosBC1 = -5
+		  	@xPosBC2 = 265
+		  	@yPosBC2 = 34
+
+#			buttonType = {
+#				name = "header_button"
+#				quadTextureSprite = "GFX_fleet_view_main_transport_bg"
+#				position = { x = 0 y = 0 }
+#				oversound = no_sound
+#				clicksound = click
+#			}
+
+			# OVERVIEW / production
+
+			containerWindowType = {
+				name = "overview"
+				position = { x = 0 y = 0 }
+				iconType = {
+					name = "hex_bg"
+					spriteType = "GFX_tradition_hex_bg_turqoise"
+					position = { x = 0 y = -15 }
+					alwaysTransparent = yes
+				}
+				iconType = {
+					name = "planets_sectors"
+					quadTextureSprite = "GFX_topbar_empire_button"
+					position = { x = 6 y = 7 }
+					scale = 0.92
+				}
+				instantTextBoxType = {
+					name = "overview_title"
+					font = "malgun_goth_24"
+					orientation = upper_left
+					position = { x = 55 y = 7 }
+					format = left
+					text = "irm.ui.system.overview"
+					alwaysTransparent = yes
+				}
+
+				containerWindowType = {
+					name = "overview_stats"
+					position = { x = 10 y = 55 }
+
+					# trade			
+					containerWindowType = {
+						name = "system_economy_trade"
+						position = { x = 7 y = @yPosBC1 }
+						size = { width = 80 height = 50 }
+						background = { name = "background" quadTextureSprite ="GFX_tiles_dark_area_cut_8" }
+						effectButtonType = {
+							name = "system_trade_icon"
+							quadTextureSprite = "GFX_invisible"
+							position = { x = 4 y = 4 }
+							size = { x = 40 y = 40 }
+							format = center
+							font = "malgun_goth_24"
+							text = "[irm_ui_system.irm_GetRouteIco]"
+							effect = irm_bt_system_trade
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "system_trade"
+							quadTextureSprite = "GFX_invisible"
+							size = { x = 75 y = 40 }
+							position = { x = 5 y = 6 }
+							borderSize = { x = 15 y = 0 }
+							format = right
+							font = "malgun_goth_24"
+							text = "irm.ui.system.resource.trade"
+							effect = irm_bt_system_trade
+						}
+					}
+
+				} # overview
+
+			}
+
+
+		} # end of sector info
+
+		# SYSTEM
+
+		containerWindowType = {
+			name = "sector"
+			position = { x = 560 y = @yPosBlock1 }
+			size = { width = 280 height = @hPosBlock1 }
+			background = { name = "background" spriteType = "GFX_tradition_category_tile_orange" }			
+
+			iconType = {
+				name = "hex_bg"
+				spriteType = "GFX_tradition_hex_bg_orange"
+				position = { x = -50 y = -20 }
+				alwaysTransparent = yes
+			}
+			iconType = {
+				name = "sector_icon"
+				quadTextureSprite = "GFX_text_systems"
+				position = { x = 18 y = 13 }
+			}
+			instantTextBoxType = {
+				name = "overview_title"
+				font = "malgun_goth_24"
+				orientation = upper_left
+				position = { x = 55 y = 7 }
+				format = left
+				text = "Sector"
+				alwaysTransparent = yes
+			}
+
+		}
+
+
 		### EVENT DIPLO ###
 		
 		containerWindowType = {
@@ -139,7 +528,7 @@ guiTypes = {
 			moveable = no
 			
 			# title
-			instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = 10 y = 3 } alwaysTransparent = yes }
+			instantTextBoxType = { name = "action_title" font = "large_title_font_28" position = { x = 25 y = 20 } alwaysTransparent = yes maxWidth = 500}
 			instantTextBoxType = { name = "action_desc"  font = "malgun_goth_24" position = { x = 20 y = 147 } }
 			
 			# action elements

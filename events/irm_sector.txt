@@ -35,7 +35,14 @@ system_event = {
 	# close button
 	option = {
 		name = "irm.0"
-#		custom_gui = "irm_system_opt_close"
+		custom_gui = "irm_ui_opt_close"
 	}
+
+	# to prevent disappearing of all options
+	option = {
+	name = "irm.0"
+		custom_gui = "irm_ui_opt_dummy"
+	}
+
 
 }
