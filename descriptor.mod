@@ -1,6 +1,6 @@
 version="0"
 tags={
-	"Gameplay"
+	"Sector"
 	"Graphics"
 }
 name="Imperial Routine"
