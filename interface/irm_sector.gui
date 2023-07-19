@@ -75,7 +75,8 @@ guiTypes = {
 		background = { name = "background" quadTextureSprite ="GFX_tile_outliner_bg" }
 		iconType = { name = "event_picture" spriteType = "GFX_leader_recruitment_bg_renowned" position = { x = 1 y = 1 } alwaysTransparent = yes }
 
-		iconType = { name = "hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = -50 y = -30 } alwaysTransparent = yes scale = 1.75 }
+		iconType = { name = "hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = -57 y = -35 } alwaysTransparent = yes scale = 2 }
+		iconType = { name = "hex_bg2" spriteType = "GFX_tradition_hex_bg_blue" position = { x = 552 y = -35 } alwaysTransparent = yes scale = 2 mirror = yes }
 		iconType = { name = "empire_header_line" quadTextureSprite = @nobg }
 		
 		buttonType = {
@@ -97,7 +98,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "portrait"
 			size = { width = 660 height = 400 }
-			position = { x = 10 y = 35 }
+			position = { x = 20 y = 35 }
 			clipping = yes
 
 			iconType = {
@@ -142,63 +143,90 @@ guiTypes = {
 		}
 
 
+		# TYPE ------------------------------------------------------------------------------------
+
+		containerWindowType = {
+			name = "sector_type"
+			position = { x = 560 y = 60 }
+			size = { width = 300 height = 45 }
+
+			containerWindowType = {
+				name = "bg_top"
+				position = { x = -3 y = 0 }
+				size = { width = 280 height = 45 }
+				#background = { name = "stability_pops_bg" spriteType = "GFX_dark_area_cut" }
+			}
+
+			iconType = {
+				name = "planet_stability_icon"
+				spriteType = "GFX_sector_capital"
+				position = { x = 7 y = 5 }
+				scale = 1
+			}
+			#effectButtonType = {
+			#	name = "sector_stability"
+			#	quadTextureSprite = "GFX_invisible"
+			#	size = { x = 250 y = 30 }
+			#	position = { x = 55 y = 7 }
+			#	format = left
+			#	font = "cg_16b"
+			#	text = "Core Sector"
+			#	text_color_code = "E"
+			#	effect = irm_bt_sector_stability
+			#}
+
+			instantTextBoxType = {
+				name = "xxx"
+				font = "cg_16b"
+				position = { x = 55 y = 15 }
+				format = left
+				text = "Core Sector"
+				text_color_code = "W"
+			}
+
+		}
+
+
 		# DEMOGRAPHY ------------------------------------------------------------------------------
 
 		@xDemoField = 85
 
 		containerWindowType = {
-			name = "system_demography"
-			position = { x = 560 y = 62 }
+			name = "sector_demography"
+			position = { x = 560 y = 75 }
 			size = { width = 300 height = 170 }
-			
-			iconType = {
-				name = "background"
-				spriteType = "GFX_planetview_topright_frame"
-				position = { x = 0 y = 1 }
-			}
-
-			effectButtonType = {
-				name = "decisions_button"
-				position = { x = 130 y = 0 }
-				spriteType = "GFX_standard_button_116_34"
-				buttonFont = "cg_16b"
-				text = "DECISIONS_TITLE"
-				font = "cg_16b"
-				#orientation = UPPER_RIGHT
-				oversound = mouse_over
-				#shortCut = "N"
-				effect = irm_bt_sector_decision
-			}
-
 
 			containerWindowType = {
-			name = "planet_actions_window"
-			position = { x = 10 y = 11 }
-			size = { width = 125 height = 75 }
+				name = "bg_top"
+				position = { x = -3 y = 40 }
+				size = { width = 280 height = 45 }
+				background = { name = "stability_pops_bg" spriteType = "GFX_dark_area_cut" }
+			}
 
-				background = {
-					name = "stability_pops_bg"
-					spriteType = "GFX_planetview_topright_bg_small"
-				}
+			containerWindowType = {
+				name = "bg_bottom"
+				position = { x = -3 y = 92 }
+				size = { width = 280 height = 75 }
+				background = { name = "stability_pops_bg" spriteType = "GFX_dark_area_cut" }
 			}
 
 			# Planet Stability
 			containerWindowType = {
 				name = "planet_stability"
 				size = { width = 120 height = 34 }
-				position = { x = 25 y = 14 }
+				position = { x = -5 y = 45 }
 				
 				iconType = {
 					name = "planet_stability_icon"
 					spriteType = "GFX_stability"
 					position = { x = 15 y = 2 }
-					scale = 1.15
+					scale = 1
 				}
 				effectButtonType = {
 					name = "sector_stability"
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
-					position = { x = 25 y = 4 }
+					position = { x = 20 y = 4 }
 					format = center
 					font = "cg_16b"
 					text = 0
@@ -211,19 +239,19 @@ guiTypes = {
 			containerWindowType = {
 				name = "planet_pops"
 				size = { width = 120 height = 34 }
-				position = { x = 26 y = 48 }
+				position = { x = 84 y = 45 }
 
 				iconType = {
 					name = "planet_pops_icon"
 					spriteType = "GFX_pop"
 					position = { x = 15 y = 1 }
-					scale = 1.15
+					scale = 1
 				}
 				effectButtonType = {
 					name = "sector_population"
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
-					position = { x = 25 y = 4 }
+					position = { x = 21 y = 4 }
 					format = center
 					font = "cg_16b"
 					text = 0
@@ -231,23 +259,17 @@ guiTypes = {
 				}
 
 			}
-			### Crime Related Data
+			# Bottom panel
 			containerWindowType = {
-				name = "crime_status_window"
-				position = { x = 10 y = 95 }
+				name = "bottom_bar"
+				position = { x = 0 y = 97 }
 				size = { width = 250 height = 74 }
-							
-				background = {
-					position = { x = 0 y = -5 }
-					name = "actions_background"
-					spriteType = "GFX_dark_area_cut"
-				}
 
 				# Planet Crime
 				containerWindowType = {
 					name = "planet_crime"
 					size = { width = 77 height = 34 }
-					position = { x = 10 y = 1 }
+					position = { x = 5 y = 1 }
 					
 					iconType = {
 						name = "planet_crime_icon"
@@ -271,7 +293,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "planet_housing"
 					size = { width = 76 height = 34 }
-					position = { x = 91 y = -1 }
+					position = { x = 95 y = -1 }
 
 					iconType = {
 						name = "free_housing_icon"
@@ -295,7 +317,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "planet_amenities"
 					size = { width = 76 height = 34 }
-					position = { x = 168 y = -2 }
+					position = { x = 185 y = -2 }
 
 					iconType = {
 						name = "planet_amenities_icon"
@@ -319,7 +341,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "planet_jobs"
 					size = { width = 76 height = 34 }
-					position = { x = 11 y = 34 }
+					position = { x = 5 y = 34 }
 
 					iconType = {
 						name = "planet_jobs_icon"
@@ -343,7 +365,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "planet_unemployed"
 					size = { width = 155 height = 34 }
-					position = { x = 91 y = 33 }
+					position = { x = 95 y = 33 }
 
 					iconType = {
 						name = "planet_unemployed_icon"
@@ -367,7 +389,7 @@ guiTypes = {
 				containerWindowType = {
 					name = "planet_happiness"
 					size = { width = 155 height = 34 }
-					position = { x = 176 y = 38 }
+					position = { x = 190 y = 38 }
 
 					iconType = {
 						name = "planet_happiness_icon"
@@ -528,7 +550,7 @@ guiTypes = {
 			moveable = no
 			
 			# title
-			instantTextBoxType = { name = "action_title" font = "large_title_font_28" position = { x = 25 y = 20 } alwaysTransparent = yes maxWidth = 500}
+			instantTextBoxType = { name = "action_title" font = "large_title_font_28" position = { x = 30 y = 25 } alwaysTransparent = yes maxWidth = 500}
 			instantTextBoxType = { name = "action_desc"  font = "malgun_goth_24" position = { x = 20 y = 147 } }
 			
 			# action elements
