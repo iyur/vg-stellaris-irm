@@ -43,6 +43,7 @@ guiTypes = {
 
 	@out = -9999
 	@nobg = "GFX_tiled_window_transparent"
+	@dark = "GFX_tiles_dark_area_cut_8"
 
   	@scr_W 	= 850
   	@scr_Wd = 900
@@ -412,7 +413,7 @@ guiTypes = {
 
 		} # end of demography
 
-		# SYSTEM INFO ------------------------------------------------------------------------------
+		# SECTOR INFO -----------------------------------------------------------------------------
 
 		@col1_W = 540
 		@col2_W = 270
@@ -433,14 +434,6 @@ guiTypes = {
 		  	@xPosBC2 = 265
 		  	@yPosBC2 = 34
 
-#			buttonType = {
-#				name = "header_button"
-#				quadTextureSprite = "GFX_fleet_view_main_transport_bg"
-#				position = { x = 0 y = 0 }
-#				oversound = no_sound
-#				clicksound = click
-#			}
-
 			# OVERVIEW / production
 
 			containerWindowType = {
@@ -449,7 +442,7 @@ guiTypes = {
 				iconType = {
 					name = "hex_bg"
 					spriteType = "GFX_tradition_hex_bg_turqoise"
-					position = { x = 0 y = -15 }
+					position = { x = -20 y = -15 }
 					alwaysTransparent = yes
 				}
 				iconType = {
@@ -474,37 +467,646 @@ guiTypes = {
 
 					# trade			
 					containerWindowType = {
-						name = "system_economy_trade"
+						name = "sector_economy_trade"
 						position = { x = 7 y = @yPosBC1 }
 						size = { width = 80 height = 50 }
 						background = { name = "background" quadTextureSprite ="GFX_tiles_dark_area_cut_8" }
 						effectButtonType = {
-							name = "system_trade_icon"
+							name = "sector_trade_icon"
 							quadTextureSprite = "GFX_invisible"
-							position = { x = 4 y = 4 }
+							position = { x = -2 y = 4 }
 							size = { x = 40 y = 40 }
 							format = center
 							font = "malgun_goth_24"
-							text = "[irm_ui_system.irm_GetRouteIco]"
-							effect = irm_bt_system_trade
+							text = "X"
+							effect = irm_bt_sector_trade
 							alwaysTransparent = yes
 						}
 						effectButtonType = {
-							name = "system_trade"
+							name = "sector_trade"
 							quadTextureSprite = "GFX_invisible"
-							size = { x = 75 y = 40 }
+							size = { x = 100 y = 40 }
 							position = { x = 5 y = 6 }
-							borderSize = { x = 15 y = 0 }
-							format = right
+							borderSize = { x = 0 y = 0 }
+							format = center
 							font = "malgun_goth_24"
-							text = "irm.ui.system.resource.trade"
-							effect = irm_bt_system_trade
+							text = "0"
+							effect = irm_bt_sector_trade
 						}
 					}
 
-				} # overview
+					# resources			
+					containerWindowType = {
+						name = "system_economy_resources"
+						position = { x = 120 y = @yPosBC1 }
+						@wRes = 40
+						@hRes = 50
+						@sResBackground = "GFX_tiles_dark_area_cut_8"
 
-			}
+						# energy
+						containerWindowType = {
+							name = "energy"
+							position = { x = 0 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }			
+							iconType = {
+								name = "sector_energy_icon"
+								quadTextureSprite = "GFX_resource_energy"
+								position = { x = 11 y = 10 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_energy"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_energy
+							}
+						}
+						# minerals
+						containerWindowType = {
+							name = "minerals"
+							position = { x = 45 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }				
+							iconType = {
+								name = "sector_minerals_icon"
+								quadTextureSprite = "GFX_resource_minerals"
+								position = { x = 11 y = 10 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_minerals"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_minerals
+							}
+						}
+						# food
+						containerWindowType = {
+							name = "food"
+							position = { x = 90 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }				
+							iconType = {
+								name = "sector_food_icon"
+								quadTextureSprite = "GFX_resource_food"
+								position = { x = 11 y = 10 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_food"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_food
+							}
+						}
+						# goods
+						containerWindowType = {
+							name = "goods"
+							position = { x = 135 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }				
+							iconType = {
+								name = "sector_goods_icon"
+								quadTextureSprite = "GFX_resource_consumer_goods"
+								position = { x = 11 y = 10 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_goods"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_goods
+							}
+						}
+						# alloys
+						containerWindowType = {
+							name = "alloys"
+							position = { x = 180 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }				
+							iconType = {
+								name = "sector_alloys_icon"
+								quadTextureSprite = "GFX_resource_alloys"
+								position = { x = 11 y = 10 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_alloys"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_alloys
+							}
+						}
+						# unity
+						containerWindowType = {
+							name = "unity"
+							position = { x = 225 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }			
+							iconType = {
+								name = "sector_unity_icon"
+								quadTextureSprite = "GFX_resource_unity"
+								position = { x = 11 y = 10 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_unity"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_unity
+							}
+						}
+						# research
+						containerWindowType = {
+							name = "research"
+							position = { x = 270 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }		
+							iconType = {
+								name = "sector_research_icon"
+								quadTextureSprite = "GFX_research_icon"
+								position = { x = 11 y = 7 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_research"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_research
+							}
+						}
+						# strategic
+						containerWindowType = {
+							name = "strategic"
+							position = { x = 315 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }	
+							iconType = {
+								name = "sector_strategic_icon"
+								quadTextureSprite = "GFX_resource_strategic_top_bar"
+								position = { x = 11 y = 8 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_strategic"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_strategic
+							}
+						}
+						# influence
+						containerWindowType = {
+							name = "influence"
+							position = { x = 360 y = 0 }
+							size = { width = @wRes height = @hRes }
+							background = { name = "background" quadTextureSprite = @dark }			
+							iconType = {
+								name = "sector_influence_icon"
+								quadTextureSprite = "GFX_resource_influence"
+								position = { x = 11 y = 8 }
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_influence"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = @wRes y = @hRes }
+								position = { x = 0 y = 13 }
+								format = center
+								font = "cg_16b"
+								text = "0"
+								effect = irm_bt_sector_influence
+							}
+						}
+
+					}
+
+				}
+
+			} # overview
+
+			# DEVELOPMENT
+
+			containerWindowType = {
+				name = "development"
+				position = { x = 15 y = 125 }
+
+				iconType = {
+					name = "hex_bg"
+					spriteType = "GFX_hex_bg"
+					position = { x = -30 y = -15 }
+					alwaysTransparent = yes
+				}
+				iconType = {
+					name = "planets_sectors"
+					quadTextureSprite = "GFX_empire_economy"
+					position = { x = 2 y = 9 }
+					scale = 0.90
+				}
+				instantTextBoxType = {
+					name = "title"
+					font = "cg_16b"
+					orientation = upper_left
+					position = { x = 35 y = 10 }
+					format = left
+					text = "Development"
+					alwaysTransparent = yes
+				}
+
+				# deposits			
+				containerWindowType = {
+					name = "deposits"
+					position = { x = 190 y = 5 }
+					size = { width = 60 height = 30 }
+					background = { name = "background" quadTextureSprite = @dark }	
+					iconType = {
+						name = "sector_deposits_icon"
+						quadTextureSprite = "GFX_text_irm_valuable_res"
+						position = { x = 8 y = 6 }
+						alwaysTransparent = yes
+						scale = 0.60
+					}
+					effectButtonType = {
+						name = "sector_deposits"
+						quadTextureSprite = "GFX_invisible"
+						size = { x = 45 y = 30 }
+						position = { x = 16 y = 0 }
+						format = center
+						font = "cg_16b"
+						text = 0
+						effect = irm_bt_sector_deposits
+					}
+				}
+
+				containerWindowType = {
+					name = "dev_stats"
+					position = { x = 0 y = 50 }
+
+					@dBtSize = 50
+
+					# focus			
+					containerWindowType = {
+						name = "sector_focus"
+						position = { x = @xPosBC1 y = @yPosBC1 }
+						size = { width = 250 height = 70 }
+
+						background = {
+							name = "bg"
+							spriteType = "GFX_tiles_dark_area_cut_8"
+						}
+
+						effectButtonType = {
+							name = "sector_focus_bg"
+							quadTextureSprite = "GFX_empty_green_frame"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 10 }
+							font = "cg_16b"
+							effect = irm_bg_sector_focus
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "sector_focus_ico"
+							quadTextureSprite = "GFX_invisible"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 9 }
+							format = center
+							font = "cg_16b"
+							text = X
+							effect = irm_bt_sector_focus
+						}
+						effectButtonType = {
+							name = "sector_focus_name"
+							quadTextureSprite = "GFX_invisible"
+							size = { x = 150 y = 80 }
+							position = { x = 65 y = -12 }
+							format = left
+							font = "cg_16b"
+							text = "Focus"
+							effect = irm_bt_sector_focus
+						}
+						instantTextBoxType = {
+							name = "sector_focus_desc"
+							font = "cg_16b"
+							orientation = upper_left
+							position = { x = 65 y = 37 }
+							format = left
+							text = "Focus desc"
+							alwaysTransparent = yes
+						}
+					}
+
+					# infrastructure			
+					containerWindowType = {
+						name = "infrastructure"
+						position = { x = @xPosBC1 y = 73 }
+
+						iconType = {
+							name = "sector_districts_icon"
+							quadTextureSprite = "GFX_district_small"
+							position = { x = 7 y = 2 }
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "sector_districts"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_districts
+						}
+						iconType = {
+							name = "sector_buildings_icon"
+							quadTextureSprite = "GFX_text_building"
+							position = { x = 141 y = 7 }
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "sector_buildings"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 130 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_buildings
+						}
+
+					}
+
+				}
+
+			} # development
+
+			# SOCIAL
+
+			containerWindowType = {
+				name = "social"
+				position = { x = 280 y = 125 }
+
+				iconType = {
+					name = "hex_bg"
+					spriteType = "GFX_hex_bg"
+					position = { x = -25 y = -15 }
+					alwaysTransparent = yes
+				}
+				iconType = {
+					name = "ico"
+					quadTextureSprite = "GFX_topbar_traditions_button"
+					position = { x = -2 y = 9 }
+					scale = 0.70
+				}
+				instantTextBoxType = {
+					name = "title"
+					font = "cg_16b"
+					orientation = upper_left
+					position = { x = 43 y = 10 }
+					format = left
+					text = "Social"
+					alwaysTransparent = yes
+				}
+
+				containerWindowType = {
+					name = "social_stats"
+					position = { x = 0 y = 50 }
+
+					# migration			
+					containerWindowType = {
+						name = "migration"
+						position = { x = @xPosBC1 y = @yPosBC1 }
+						iconType = {
+							name = "sector_migration_icon"
+							quadTextureSprite = "GFX_topbar_species_button"
+							position = { x = 0 y = 5 }
+							scale = 0.75
+							frame = 1
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "sector_migration"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = @cell_W y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = left
+							borderSize = { x = 43 y = 0 }
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_migration
+						}
+					}
+					# factions			
+					containerWindowType = {
+						name = "factions"
+						position = { x = @xPosBC1 y = @yPosBC2 }
+						iconType = {
+							name = "sector_factions_icon"
+							quadTextureSprite = "GFX_species_right_colonization_controls"
+							position = { x = 7 y = 6 }
+							scale = 0.75
+							frame = 1
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "sector_factions"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = @cell_W y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = left
+							borderSize = { x = 43 y = 0 }
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_factions
+						}
+
+					}
+
+					# regionalism			
+					containerWindowType = {
+						name = "regionalism"
+						position = { x = @xPosBC1 y = 73 }
+						iconType = {
+							name = "sector_regionalism_icon"
+							quadTextureSprite = "GFX_text_irm_faction"
+							position = { x = 8 y = 5 }
+							scale = 0.80
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "sector_regionalism"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = @cell_W y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = left
+							borderSize = { x = 43 y = 0 }
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector.regionalism
+						}
+					}
+
+				}
+
+			} # social
+
+			# MILITARY
+
+			containerWindowType = {
+				name = "military"
+				position = { x = 10 y = 300 }
+
+				iconType = {
+					name = "hex_bg"
+					spriteType = "GFX_hex_bg"
+					position = { x = -20 y = -12 }
+					alwaysTransparent = yes
+				}
+				iconType = {
+					name = "mil"
+					quadTextureSprite = "GFX_irm_military"
+					position = { x = 7 y = 11 }
+					scale = 0.75
+				}
+				instantTextBoxType = {
+					name = "military"
+					font = "cg_16b"
+					orientation = upper_left
+					position = { x = 37 y = 11 }
+					format = left
+					text = "Military"
+					alwaysTransparent = yes
+				}
+
+				containerWindowType = {
+					name = "military_stats"
+					position = { x = 5 y = 50 }
+
+					# claims			
+					containerWindowType = {
+						name = "claims"
+						position = { x = @xPosBC1 y = @yPosBC1 }
+						effectButtonType = {
+							name = "sector_claims"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_claims
+						}
+						iconType = {
+							name = "sector_claims_icon"
+							quadTextureSprite = "GFX_diplomacy_status_casus_belli_holder"
+							position = { x = 8 y = 4 }
+							scale = 0.70
+							alwaysTransparent = yes
+						}
+					}
+
+					# piracy			
+					containerWindowType = {
+						name = "piracy"
+						position = { x = 130 y = @yPosBC1 }
+						effectButtonType = {
+							name = "sector_piracy"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_piracy
+						}
+						iconType = {
+							name = "sector_piracy_icon"
+							quadTextureSprite = "GFX_trade_piracy_icon"
+							position = { x = 10 y = 6 }
+							alwaysTransparent = yes
+						}
+					}
+
+					# armies			
+					containerWindowType = {
+						name = "armies"
+						position = { x = @xPosBC2 y = @yPosBC1 }
+						effectButtonType = {
+							name = "sector_armies"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_armies
+						}
+						iconType = {
+							name = "sector_armies_icon"
+							quadTextureSprite = "GFX_irm_armies"
+							position = { x = 6 y = 4 }
+							scale = 0.90
+							alwaysTransparent = yes
+						}
+					}
+
+					# defense			
+					containerWindowType = {
+						name = "platforms"
+						position = { x = 395 y = @yPosBC1 }
+						effectButtonType = {
+							name = "sector_platforms"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_platforms
+						}
+						iconType = {
+							name = "sector_platforms_icon"
+							quadTextureSprite = "GFX_irm_defense"
+							position = { x = 5 y = 7 }
+							scale = 0.94
+							alwaysTransparent = yes
+						}
+					}
+
+				}
+
+			} # military
 
 
 		} # end of sector info

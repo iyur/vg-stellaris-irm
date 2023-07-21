@@ -20,4 +20,42 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
 
+	# ICONS # -------------------------------------------------------------------------------------
+
+	# key categories
+	spriteType = {
+		name = "GFX_irm_military"
+		textureFile = "gfx/interface/icons/irm_military.dds"
+	}
+	spriteType = {
+		name = "GFX_irm_armies"
+		textureFile = "gfx/interface/icons/irm_armies.dds"
+	}
+	spriteType = {
+		name = "GFX_irm_defense"
+		textureFile = "gfx/interface/icons/irm_defense.dds"
+	}
+	spriteType = {
+		name = "GFX_irm_security"
+		textureFile = "gfx/interface/icons/jobs/job_evaluator.dds"
+	}
+
+	spriteType = {
+		name = "GFX_text_irm_faction"
+		textureFile = "gfx/interface/icons/irm_faction.dds"
+	}
+	spriteType = {
+		name = "GFX_text_irm_valuable_res"
+		textureFile = "gfx/interface/icons/jobs/job_fe_hedonist.dds"
+	}
+	spriteType = {
+		name = "GFX_text_irm_trade_value"
+		textureFile = "gfx/interface/planetview/trade_value.dds"
+	}
+	spriteType = {
+		name = "GFX_text_irm_trade_value_gold"
+		textureFile = "gfx/interface/icons/resources/luxury_goods_large.dds"
+	}
+
+
 }
