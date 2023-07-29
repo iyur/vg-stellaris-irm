@@ -24,9 +24,7 @@ decision_sector = {
 		# prevent ui duplicating
 		custom_tooltip = {
 			fail_text = "decision_sector_req"
-			from = {
-				not = { any_system_within_border = { has_star_flag = "irm_ui_sector_window" } }
-			}
+			not = { exists = event_target:irm_ui_sector }
 		}	
 	}
 

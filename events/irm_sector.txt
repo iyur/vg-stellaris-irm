@@ -9,7 +9,7 @@ namespace = irm_sector
 system_event = {
 	id = irm_sector.1
 	title = "irm.ui.sector.title"
-	desc = "irm.0"
+	desc = "irm.ui.0"
 	location = root
 
 	force_open = yes
@@ -27,22 +27,33 @@ system_event = {
 
 	immediate = {
 
+		# sector dummy (for ui purposes)
+		sector = { save_global_event_target_as = irm_ui_sector }
+
 	}
 
 
-#	OPTIONS
+	# OPTIONS
 
 	# close button
 	option = {
-		name = "irm.0"
+		name = "irm.ui.0"
 		custom_gui = "irm_ui_opt_close"
 	}
 
 	# to prevent disappearing of all options
 	option = {
-	name = "irm.0"
+	name = "irm.ui.0"
 		custom_gui = "irm_ui_opt_dummy"
 	}
 
+
+	# CLEAN UP
+
+	after = {
+		hidden_effect = {
+			clear_global_event_target = irm_ui_sector
+		}
+	}
 
 }

@@ -17,8 +17,34 @@ l_english:
 
 # Base
 
-  irm.0: ""
+  irm.ui.0: ""
+  irm.ui.1: "\n§L--------------\n"
 
 # Sector
 
   irm.ui.sector.title: "[Root.Sector.GetName] Sector"
+
+  # type & icons
+  irm.ui.sector.type: "[irm_ui_sector.irm_GetSectorType]"
+  irm.ui.sector.icon: "[irm_ui_sector.irm_GetSectorTypeIcon]"
+
+  irm.ui.sector.type.core: "$core_sector$"
+  irm.ui.sector.type.core.icon: "£irm_ui_sector_type_core£"
+  irm.ui.sector.type.core.tt: "§H$irm.ui.sector.type.core$§!$irm.ui.1$§LThe inner space where your empire once emerged and made the very first steps to the stars. For now this is the mostly explored, developed and stable region."
+  irm.ui.sector.type.normal: "Base Sector"
+  irm.ui.sector.type.normal.icon: "£irm_ui_sector_type_normal£"
+  irm.ui.sector.type.normal.tt: "§H$irm.ui.sector.type.normal$§!$irm.ui.1$§LThe newly explored region once had been colonized and now organized as administrative unit of your empire. Farther from the heavy foot of central bureaucracy, now it's looking for a new opportunities and prosperiry."
+  irm.ui.sector.type.none: "No Sector"
+
+  # side left overview
+  irm.ui.sector.left: "Overview"
+  irm.ui.sector.left.development: "Development"
+  irm.ui.sector.left.society: "Society"
+  irm.ui.sector.left.military: "Military"
+
+  # side right sector
+  irm.ui.sector.right: "Sector"
+  irm.ui.sector.right.auto: "Automation"
+  irm.ui.sector.right.auto.fleets: "Fleet Operations"
+  irm.ui.sector.right.auto.expanse: "Border Expansion"
+  irm.ui.sector.right.auto.colony: "Colonization"

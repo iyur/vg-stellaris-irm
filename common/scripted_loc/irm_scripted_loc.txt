@@ -1,0 +1,60 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Scripted custom localization
+
+# Sector type texts & isons
+defined_text = {
+	name = irm_GetSectorType
+ 	random = no
+ 	default = irm.ui.sector.type.none
+ 	text = {
+ 		localization_key = irm.ui.sector.type.core
+ 		trigger = {
+ 			or = {
+ 				and = {
+ 					exists = event_target:irm_ui_sector
+ 					event_target:irm_ui_sector = { has_sector_type = core_sector }
+ 				}
+ 			}
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = irm.ui.sector.type.normal
+ 		trigger = {
+ 			or = {
+ 				and = {
+ 					exists = event_target:irm_ui_sector
+ 					event_target:irm_ui_sector = { has_sector_type = normal_sector }
+ 				}
+ 			}
+ 		}
+ 	}
+}
+defined_text = {
+	name = irm_GetSectorTypeIcon
+ 	random = no
+ 	default = irm.ui.sector.type.none.icon
+ 	text = {
+ 		localization_key = irm.ui.sector.type.core.icon
+ 		trigger = {
+ 			or = {
+ 				and = {
+ 					exists = event_target:irm_ui_sector
+ 					event_target:irm_ui_sector = { has_sector_type = core_sector }
+ 				}
+ 			}
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = irm.ui.sector.type.normal.icon
+ 		trigger = {
+ 			or = {
+ 				and = {
+ 					exists = event_target:irm_ui_sector
+ 					event_target:irm_ui_sector = { has_sector_type = normal_sector }
+ 				}
+ 			}
+ 		}
+ 	}
+}
+

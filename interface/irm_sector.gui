@@ -76,8 +76,8 @@ guiTypes = {
 		background = { name = "background" quadTextureSprite ="GFX_tile_outliner_bg" }
 		iconType = { name = "event_picture" spriteType = "GFX_leader_recruitment_bg_renowned" position = { x = 1 y = 1 } alwaysTransparent = yes }
 
-		iconType = { name = "hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = -57 y = -35 } alwaysTransparent = yes scale = 2 }
-		iconType = { name = "hex_bg2" spriteType = "GFX_tradition_hex_bg_blue" position = { x = 552 y = -35 } alwaysTransparent = yes scale = 2 mirror = yes }
+		iconType = { name = "hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = -50 y = -31 } alwaysTransparent = yes scale = 1.75 }
+		iconType = { name = "hex_bg2" spriteType = "GFX_tradition_hex_bg_blue" position = { x = 483 y = -35 } alwaysTransparent = yes scale = 1.75 mirror = yes }
 		iconType = { name = "empire_header_line" quadTextureSprite = @nobg }
 		
 		buttonType = {
@@ -150,41 +150,26 @@ guiTypes = {
 			name = "sector_type"
 			position = { x = 560 y = 60 }
 			size = { width = 300 height = 45 }
-
-			containerWindowType = {
-				name = "bg_top"
-				position = { x = -3 y = 0 }
-				size = { width = 280 height = 45 }
-				#background = { name = "stability_pops_bg" spriteType = "GFX_dark_area_cut" }
-			}
-
-			iconType = {
-				name = "planet_stability_icon"
-				spriteType = "GFX_sector_capital"
-				position = { x = 7 y = 5 }
-				scale = 1
-			}
-			#effectButtonType = {
-			#	name = "sector_stability"
-			#	quadTextureSprite = "GFX_invisible"
-			#	size = { x = 250 y = 30 }
-			#	position = { x = 55 y = 7 }
-			#	format = left
-			#	font = "cg_16b"
-			#	text = "Core Sector"
-			#	text_color_code = "E"
-			#	effect = irm_bt_sector_stability
-			#}
-
-			instantTextBoxType = {
-				name = "xxx"
-				font = "cg_16b"
-				position = { x = 55 y = 15 }
+			effectButtonType = {
+				name = "icon"
+				quadTextureSprite = @nobg
+				size = { x = 35 y = 35 }
+				position = { x = 6 y = 7 }
 				format = left
-				text = "Core Sector"
-				text_color_code = "W"
+				font = "cg_16b"
+				text = "irm.ui.sector.icon"
+				effect = irm_bt_sector_type
 			}
-
+			effectButtonType = {
+				name = "type"
+				quadTextureSprite = @nobg
+				size = { x = 250 y = 30 }
+				position = { x = 50 y = 7 }
+				format = left
+				font = "cg_16b"
+				text = "irm.ui.sector.type"
+				effect = irm_bt_sector_type
+			}
 		}
 
 
@@ -227,10 +212,10 @@ guiTypes = {
 					name = "sector_stability"
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
-					position = { x = 20 y = 4 }
-					format = center
+					position = { x = 55 y = 4 }
+					format = left
 					font = "cg_16b"
-					text = 0
+					text = "10%"
 					effect = irm_bt_sector_stability
 				}
 
@@ -252,10 +237,10 @@ guiTypes = {
 					name = "sector_population"
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
-					position = { x = 21 y = 4 }
-					format = center
+					position = { x = 56 y = 4 }
+					format = left
 					font = "cg_16b"
-					text = 0
+					text = "10"
 					effect = irm_bt_sector_pops
 				}
 
@@ -281,10 +266,10 @@ guiTypes = {
 						name = "sector_crime"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 10 y = 1 }
-						format = center
+						position = { x = 45 y = 1 }
+						format = left
 						font = "cg_16b"
-						text = 0
+						text = "10"
 						effect = irm_bt_sector_crime
 					}
 
@@ -305,10 +290,10 @@ guiTypes = {
 						name = "sector_housing"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 10 y = 1 }
-						format = center
+						position = { x = 45 y = 1 }
+						format = left
 						font = "cg_16b"
-						text = 0
+						text = "10"
 						effect = irm_bt_sector_housing
 					}
 
@@ -329,10 +314,10 @@ guiTypes = {
 						name = "sector_amenities"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 10 y = 1 }
-						format = center
+						position = { x = 45 y = 1 }
+						format = left
 						font = "cg_16b"
-						text = 0
+						text = "10"
 						effect = irm_bt_sector_amenities
 					}
 
@@ -353,10 +338,10 @@ guiTypes = {
 						name = "sector_system_jobs"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 10 y = 1 }
-						format = center
+						position = { x = 45 y = 1 }
+						format = left
 						font = "cg_16b"
-						text = 0
+						text = "10"
 						effect = irm_bt_sector_jobs
 					}
 
@@ -377,10 +362,10 @@ guiTypes = {
 						name = "sector_unemployed"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 10 y = 1 }
-						format = center
+						position = { x = 45 y = 1 }
+						format = left
 						font = "cg_16b"
-						text = 0
+						text = "10"
 						effect = irm_bt_sector_unemployed
 					}
 
@@ -401,10 +386,10 @@ guiTypes = {
 						name = "sector_happiness"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 5 y = -4 }
-						format = center
+						position = { x = 40 y = -4 }
+						format = left
 						font = "cg_16b"
-						text = 0
+						text = "10%"
 						effect = irm_bt_sector_happiness
 					}
 
@@ -437,27 +422,27 @@ guiTypes = {
 			# OVERVIEW / production
 
 			containerWindowType = {
-				name = "overview"
+				name = "side_left"
 				position = { x = 0 y = 0 }
 				iconType = {
 					name = "hex_bg"
 					spriteType = "GFX_tradition_hex_bg_turqoise"
-					position = { x = -20 y = -15 }
+					position = { x = -25 y = -15 }
 					alwaysTransparent = yes
 				}
 				iconType = {
 					name = "planets_sectors"
-					quadTextureSprite = "GFX_topbar_empire_button"
-					position = { x = 6 y = 7 }
-					scale = 0.92
+					quadTextureSprite = "GFX_galactic_focus_galactic_market"
+					position = { x = 18 y = 9 }
+					scale = 0.71
 				}
 				instantTextBoxType = {
 					name = "overview_title"
 					font = "malgun_goth_24"
 					orientation = upper_left
-					position = { x = 55 y = 7 }
+					position = { x = 60 y = 8 }
 					format = left
-					text = "irm.ui.system.overview"
+					text = "irm.ui.sector.left"
 					alwaysTransparent = yes
 				}
 
@@ -470,28 +455,23 @@ guiTypes = {
 						name = "sector_economy_trade"
 						position = { x = 7 y = @yPosBC1 }
 						size = { width = 80 height = 50 }
-						background = { name = "background" quadTextureSprite ="GFX_tiles_dark_area_cut_8" }
-						effectButtonType = {
+						background = { name = "background" quadTextureSprite = @dark }
+						iconType = {
 							name = "sector_trade_icon"
-							quadTextureSprite = "GFX_invisible"
-							position = { x = -2 y = 4 }
-							size = { x = 40 y = 40 }
-							format = center
-							font = "malgun_goth_24"
-							text = "X"
-							effect = irm_bt_sector_trade
+							quadTextureSprite = "GFX_text_irm_trade_value"
+							position = { x = 3 y = 8 }
 							alwaysTransparent = yes
 						}
 						effectButtonType = {
 							name = "sector_trade"
 							quadTextureSprite = "GFX_invisible"
-							size = { x = 100 y = 40 }
-							position = { x = 5 y = 6 }
-							borderSize = { x = 0 y = 0 }
+							position = { x = 35 y = 5 }
+							size = { x = 40 y = 40 }
 							format = center
 							font = "malgun_goth_24"
 							text = "0"
 							effect = irm_bt_sector_trade
+							alwaysTransparent = yes
 						}
 					}
 
@@ -741,7 +721,7 @@ guiTypes = {
 					orientation = upper_left
 					position = { x = 35 y = 10 }
 					format = left
-					text = "Development"
+					text = "irm.ui.sector.left.development"
 					alwaysTransparent = yes
 				}
 
@@ -874,7 +854,7 @@ guiTypes = {
 			# SOCIAL
 
 			containerWindowType = {
-				name = "social"
+				name = "society"
 				position = { x = 280 y = 125 }
 
 				iconType = {
@@ -895,12 +875,12 @@ guiTypes = {
 					orientation = upper_left
 					position = { x = 43 y = 10 }
 					format = left
-					text = "Social"
+					text = "irm.ui.sector.left.society"
 					alwaysTransparent = yes
 				}
 
 				containerWindowType = {
-					name = "social_stats"
+					name = "society_stats"
 					position = { x = 0 y = 50 }
 
 					# migration			
@@ -1005,7 +985,7 @@ guiTypes = {
 					orientation = upper_left
 					position = { x = 37 y = 11 }
 					format = left
-					text = "Military"
+					text = "irm.ui.sector.left.military"
 					alwaysTransparent = yes
 				}
 
@@ -1083,23 +1063,24 @@ guiTypes = {
 
 					# defense			
 					containerWindowType = {
-						name = "platforms"
+						name = "fleets"
 						position = { x = 395 y = @yPosBC1 }
 						effectButtonType = {
-							name = "sector_platforms"
+							name = "sector_fleets"
 							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
 							size = { x = 120 y = @cell_Y }
 							position = { x = 0 y = 0 }
 							format = center
 							font = "cg_16b"
 							text = "0"
-							effect = irm_bt_sector_platforms
+							effect = irm_bt_sector_fleets
 						}
 						iconType = {
-							name = "sector_platforms_icon"
-							quadTextureSprite = "GFX_irm_defense"
-							position = { x = 5 y = 7 }
-							scale = 0.94
+							name = "sector_fleets_icon"
+							quadTextureSprite = "GFX_topbar_fleet_manager_button"
+							position = { x = 2 y = 4 }
+							frame = 1
+							scale = 0.80
 							alwaysTransparent = yes
 						}
 					}
@@ -1111,10 +1092,10 @@ guiTypes = {
 
 		} # end of sector info
 
-		# SYSTEM
+		# SECTOR
 
 		containerWindowType = {
-			name = "sector"
+			name = "side_right"
 			position = { x = 560 y = @yPosBlock1 }
 			size = { width = 280 height = @hPosBlock1 }
 			background = { name = "background" spriteType = "GFX_tradition_category_tile_orange" }			
@@ -1127,18 +1108,245 @@ guiTypes = {
 			}
 			iconType = {
 				name = "sector_icon"
-				quadTextureSprite = "GFX_text_systems"
-				position = { x = 18 y = 13 }
+				quadTextureSprite = "GFX_council_agenda_icon_agenda_pioneer_politics"
+				position = { x = -5 y = -12 }
+				rotation = 0.2
+				scale = 0.55
 			}
 			instantTextBoxType = {
 				name = "overview_title"
 				font = "malgun_goth_24"
 				orientation = upper_left
-				position = { x = 55 y = 7 }
+				position = { x = 55 y = 8 }
 				format = left
-				text = "Sector"
+				text = "irm.ui.sector.right"
 				alwaysTransparent = yes
 			}
+
+			containerWindowType = {
+				name = "info"
+				position = { x = 10 y = 50 }
+
+					# sprawl
+					containerWindowType = {
+						name = "sprawl"
+						position = { x = 0 y = 0 }
+						size = { width = @wRes height = @hRes }
+						effectButtonType = {
+							name = "sector_sprawl"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = @wRes y = @hRes }
+							position = { x = 0 y = 0 }
+							borderSize = { x = 0 y = 4 }
+							vertical_alignment = bottom
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_sprawl
+						}
+						iconType = {
+							name = "sector_sprawl_icon"
+							quadTextureSprite = "GFX_empire_sprawl_icon"
+							position = { x = 10 y = 7 }
+							scale = 0.75
+							alwaysTransparent = yes
+						}
+					}
+
+					# colonies
+					containerWindowType = {
+						name = "colonies"
+						position = { x = 0 y = 0 }
+						size = { width = @wRes height = @hRes }
+						effectButtonType = {
+							name = "sector_planets"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = @wRes y = @hRes }
+							position = { x = 45 y = 0 }
+							borderSize = { x = 0 y = 4 }
+							vertical_alignment = bottom
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_planets
+						}
+						iconType = {
+							name = "sector_planets_icon"
+							quadTextureSprite = "GFX_system_cap_icon"
+							position = { x = 56 y = 7 }
+							alwaysTransparent = yes
+						}
+					}
+
+					# area
+					containerWindowType = {
+						name = "area"
+						position = { x = 0 y = 0 }
+						size = { width = @wRes height = @hRes }
+						effectButtonType = {
+							name = "sector_area"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = @wRes y = @hRes }
+							position = { x = 90 y = 0 }
+							borderSize = { x = 0 y = 4 }
+							vertical_alignment = bottom
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_bt_sector_area
+						}
+						iconType = {
+							name = "sector_area_icon"
+							quadTextureSprite = "GFX_text_systems"
+							position = { x = 100 y = 8 }
+							#scale = 0.72
+							alwaysTransparent = yes
+						}
+					}
+
+					# range control
+					containerWindowType = {
+						name = "range"
+						position = { x = 0 y = 0 }
+						size = { width = @wRes height = @hRes }
+						effectButtonType = {
+							name = "range_tt"
+							quadTextureSprite = @sResBackground
+							position = { x = 187 y = 0 }
+							size = { x = 73 y = @hRes }
+							effect = irm_cb_sector_range
+						}
+						effectButtonType = {
+							name = "range_val"
+							quadTextureSprite = "GFX_invisible"
+							position = { x = 192 y = 22 }
+							size = { x = 35 y = 32 }
+							format = center
+							font = "cg_16b"
+							text = "0"
+							effect = irm_cb_sector_range
+						}
+						iconType = {
+							name = "range_ico"
+							spriteType = "GFX_sector_cap_icon"
+							position = { x = 196 y = 5 }
+							alwaysTransparent = yes
+						}
+						# controls
+						#effectButtonType = {
+						#	name = "range_plus"
+						#	quadTextureSprite = "GFX_topbar_date_plus"
+						#	position = { x = 227 y = 5 }
+						#	effect = irm_cb_sector_range_plus
+						#}
+						#effectButtonType = {
+						#	name = "range_minus"
+						#	quadTextureSprite = "GFX_topbar_date_minus"
+						#	position = { x = 227 y = 27 }
+						#	effect = irm_cb_sector_range_minus
+						#}
+					}
+
+				# automation
+				containerWindowType = {
+					name = "automation"
+					position = { x = 0 y = 75 }
+
+					iconType = {
+						name = "hex_bg"
+						spriteType = "GFX_hex_bg"
+						position = { x = -25 y = -15 }
+						alwaysTransparent = yes
+					}
+					iconType = {
+						name = "sector_name_ico"
+						quadTextureSprite = "GFX_outliner_options_button"
+						position = { x = 6 y = 8 }
+					}
+					instantTextBoxType = {
+						name = "automation_title"
+						font = "cg_16b"
+						position = { x = 44 y = 9 }
+						format = left
+						text = "irm.ui.sector.right.auto"
+					}
+
+					# auto fleet	
+					containerWindowType = {
+						name = "auto_fleet"
+						position = { x = @xPosBC1 y = 44 }	
+						effectButtonType = {
+							name = "auto_fleet_name"
+							quadTextureSprite = "GFX_invisible"
+							position = { x = 4 y = 1 }
+							size = { x = 300 y = 32 }
+							borderSize = { x = 40 y = 0 }
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.right.auto.fleets"
+							effect = irm_cb_sector_auto_fleet
+						}
+						effectButtonType = {
+							name = "auto_fleet_on"
+							quadTextureSprite = "GFX_checkbox_20_20_01"
+							position = { x = 4 y = 6 }
+							scale = 0.75
+							frame = 1
+							effect = irm_cb_sector_auto_fleet_on
+						}
+					}
+
+					containerWindowType = {
+						name = "auto_expansion"
+						position = { x = @xPosBC1 y = 83 }	
+						effectButtonType = {
+							name = "auto_expansion_name"
+							quadTextureSprite = "GFX_invisible"
+							position = { x = 4 y = 1 }
+							size = { x = 300 y = 32 }
+							borderSize = { x = 40 y = 0 }
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.right.auto.expanse"
+							effect = irm_cb_sector_auto_expansion
+						}
+						effectButtonType = {
+							name = "auto_expansion_on"
+							quadTextureSprite = "GFX_checkbox_20_20_01"
+							position = { x = 4 y = 6 }
+							scale = 0.75
+							frame = 1
+							effect = irm_cb_sector_auto_expansion
+						}
+					}
+
+					containerWindowType = {
+						name = "auto_colonisation"
+						position = { x = @xPosBC1 y = 122 }	
+						effectButtonType = {
+							name = "auto_colonisation_name"
+							quadTextureSprite = "GFX_invisible"
+							position = { x = 4 y = 1 }
+							size = { x = 300 y = 32 }
+							borderSize = { x = 40 y = 0 }
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.right.auto.colony"
+							effect = irm_cb_sector_auto_expansion
+						}
+						effectButtonType = {
+							name = "auto_colonisation_on"
+							quadTextureSprite = "GFX_checkbox_20_20_01"
+							position = { x = 4 y = 6 }
+							scale = 0.75
+							frame = 1
+							effect = irm_cb_sector_auto_expansion
+						}
+					}
+
+				}
+
+			} #
 
 		}
 
@@ -1152,7 +1360,7 @@ guiTypes = {
 			moveable = no
 			
 			# title
-			instantTextBoxType = { name = "action_title" font = "large_title_font_28" position = { x = 30 y = 25 } alwaysTransparent = yes maxWidth = 500}
+			instantTextBoxType = { name = "action_title" font = "large_title_font_28" position = { x = 30 y = 20 } alwaysTransparent = yes maxWidth = 500}
 			instantTextBoxType = { name = "action_desc"  font = "malgun_goth_24" position = { x = 20 y = 147 } }
 			
 			# action elements

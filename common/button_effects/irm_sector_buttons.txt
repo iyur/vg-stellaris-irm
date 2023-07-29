@@ -1,0 +1,24 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Custom sector ui effect buttons
+
+# Sector type
+irm_bt_sector_type = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				if = {
+					limit = { has_sector_type = core_sector }
+						custom_tooltip = "irm.ui.sector.type.core.tt"
+				}
+				else_if = {
+					limit = { has_sector_type = normal_sector }
+						custom_tooltip = "irm.ui.sector.type.normal.tt"
+				}
+				# todo: star sector
+			}
+		}
+	}
+}
+

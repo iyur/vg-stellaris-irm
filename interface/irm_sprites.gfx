@@ -20,6 +20,7 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
 
+
 	# ICONS # -------------------------------------------------------------------------------------
 
 	# key categories
@@ -40,6 +41,9 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/jobs/job_evaluator.dds"
 	}
 
+
+	# TEXT ICONS # --------------------------------------------------------------------------------
+
 	spriteType = {
 		name = "GFX_text_irm_faction"
 		textureFile = "gfx/interface/icons/irm_faction.dds"
@@ -55,6 +59,16 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_text_irm_trade_value_gold"
 		textureFile = "gfx/interface/icons/resources/luxury_goods_large.dds"
+	}
+
+	# sector types
+	spriteType = {
+		name = "GFX_text_irm_ui_sector_type_core"
+		texturefile = "gfx/interface/icons/empire_capital.dds"
+	}
+	spriteType = {
+		name = "GFX_text_irm_ui_sector_type_normal"
+		texturefile = "gfx/interface/icons/sector_capital.dds"
 	}
 
 
