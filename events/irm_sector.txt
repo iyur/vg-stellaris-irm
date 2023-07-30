@@ -27,8 +27,10 @@ system_event = {
 
 	immediate = {
 
-		# sector dummy (for ui purposes)
-		sector = { save_global_event_target_as = irm_ui_sector }
+		sector = {
+			# sector dummy (for ui purposes)
+			save_global_event_target_as = irm_ui_sector
+		}
 
 	}
 

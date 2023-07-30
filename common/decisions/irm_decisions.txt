@@ -6,6 +6,7 @@
 decision_sector = {
 	sound = event_ship_bridge
 	icon = decision_binary_stars
+	enactment_time = 0
 
 	owned_planets_only = no
 
