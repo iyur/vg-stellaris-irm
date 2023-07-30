@@ -1,0 +1,13 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Mod helper & aux effects
+
+
+# This = Any
+# Clears existed target scope
+irm_clear_target = {
+	if = {
+		limit = { exists = event_target:$target$ }
+			clear_global_event_target = $target$
+	}
+}

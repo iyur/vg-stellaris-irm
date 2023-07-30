@@ -32,7 +32,6 @@ system_event = {
 
 	}
 
-
 	# OPTIONS
 
 	# close button
@@ -47,12 +46,14 @@ system_event = {
 		custom_gui = "irm_ui_opt_dummy"
 	}
 
-
 	# CLEAN UP
 
 	after = {
 		hidden_effect = {
-			clear_global_event_target = irm_ui_sector
+			
+			# scopes
+			irm_clear_target = { target = irm_ui_sector }
+
 		}
 	}
 
