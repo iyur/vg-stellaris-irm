@@ -201,7 +201,7 @@ guiTypes = {
 				name = "planet_stability"
 				size = { width = 120 height = 34 }
 				position = { x = -5 y = 45 }
-				
+				clipping = yes
 				iconType = {
 					name = "planet_stability_icon"
 					spriteType = "GFX_stability"
@@ -227,7 +227,7 @@ guiTypes = {
 				name = "planet_pops"
 				size = { width = 120 height = 34 }
 				position = { x = 84 y = 45 }
-
+				clipping = yes
 				iconType = {
 					name = "planet_pops_icon"
 					spriteType = "GFX_pop"
@@ -258,20 +258,21 @@ guiTypes = {
 					name = "planet_crime"
 					size = { width = 77 height = 34 }
 					position = { x = 5 y = 1 }
-					
+					clipping = yes
 					iconType = {
 						name = "planet_crime_icon"
 						spriteType = "GFX_planet_view_crime"
-						position = { x = 8 y = 2 }
+						position = { x = 7 y = 2 }
 					}
 					effectButtonType = {
 						name = "sector_crime"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 45 y = 1 }
+						borderSize = { x = 40 y = 0 }
+						position = { x = 5 y = 1 }
 						format = left
 						font = "cg_16b"
-						text = "10"
+						text = "irm.ui.sector.demo.crime"
 						effect = irm_bt_sector_crime
 					}
 
@@ -282,7 +283,7 @@ guiTypes = {
 					name = "planet_housing"
 					size = { width = 76 height = 34 }
 					position = { x = 95 y = -1 }
-
+					clipping = yes
 					iconType = {
 						name = "free_housing_icon"
 						spriteType = "GFX_planet_view_planet_housing"
@@ -292,10 +293,11 @@ guiTypes = {
 						name = "sector_housing"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 45 y = 1 }
+						borderSize = { x = 40 y = 0 }
+						position = { x = 5 y = 1 }
 						format = left
 						font = "cg_16b"
-						text = "10"
+						text = "irm.ui.sector.demo.housing"
 						effect = irm_bt_sector_housing
 					}
 
@@ -306,7 +308,7 @@ guiTypes = {
 					name = "planet_amenities"
 					size = { width = 76 height = 34 }
 					position = { x = 185 y = -2 }
-
+					clipping = yes
 					iconType = {
 						name = "planet_amenities_icon"
 						spriteType = "GFX_planet_view_planet_amenities"
@@ -316,10 +318,11 @@ guiTypes = {
 						name = "sector_amenities"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 45 y = 1 }
+						borderSize = { x = 40 y = 0 }
+						position = { x = 5 y = 1 }
 						format = left
 						font = "cg_16b"
-						text = "10"
+						text = "irm.ui.sector.demo.amenities"
 						effect = irm_bt_sector_amenities
 					}
 
@@ -330,7 +333,7 @@ guiTypes = {
 					name = "planet_jobs"
 					size = { width = 76 height = 34 }
 					position = { x = 5 y = 34 }
-
+					clipping = yes
 					iconType = {
 						name = "planet_jobs_icon"
 						spriteType = "GFX_pop_job"
@@ -340,7 +343,8 @@ guiTypes = {
 						name = "sector_system_jobs"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 45 y = 1 }
+						borderSize = { x = 40 y = 0 }
+						position = { x = 5 y = 1 }
 						format = left
 						font = "cg_16b"
 						text = "10"
@@ -354,7 +358,7 @@ guiTypes = {
 					name = "planet_unemployed"
 					size = { width = 155 height = 34 }
 					position = { x = 95 y = 33 }
-
+					clipping = yes
 					iconType = {
 						name = "planet_unemployed_icon"
 						spriteType = "GFX_unemployed"
@@ -364,7 +368,8 @@ guiTypes = {
 						name = "sector_unemployed"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 45 y = 1 }
+						borderSize = { x = 40 y = 0 }
+						position = { x = 5 y = 1 }
 						format = left
 						font = "cg_16b"
 						text = "10"
@@ -378,7 +383,7 @@ guiTypes = {
 					name = "planet_happiness"
 					size = { width = 155 height = 34 }
 					position = { x = 190 y = 38 }
-
+					clipping = yes
 					iconType = {
 						name = "planet_happiness_icon"
 						spriteType = "GFX_text_happiness"
@@ -388,7 +393,8 @@ guiTypes = {
 						name = "sector_happiness"
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
-						position = { x = 40 y = -4 }
+						borderSize = { x = 40 y = 0 }
+						position = { x = 0 y = -4 }
 						format = left
 						font = "cg_16b"
 						text = "10%"

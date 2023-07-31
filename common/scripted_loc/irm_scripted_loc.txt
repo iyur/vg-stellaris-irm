@@ -61,12 +61,6 @@ defined_text = {
  	random = no
  	default = "irm.ui.y"
  	text = {
- 		localization_key = "irm.ui.l"
- 		trigger = {
- 			check_variable = { which = irm_stability value = 0 }
- 		}
- 	}
- 	text = {
  		localization_key = "irm.ui.r"
  		trigger = {
  			check_variable = { which = irm_stability value < 30 }
@@ -76,6 +70,57 @@ defined_text = {
  		localization_key = "irm.ui.g"
  		trigger = {
  			check_variable = { which = irm_stability value >= 50 }
+ 		}
+ 	}
+}
+defined_text = {
+	name = irm_GetCrimeState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_crime value < 1 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_crime value >= 25 }
+ 		}
+ 	}
+}
+defined_text = {
+	name = irm_GetHousingState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_housing value > 0 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_housing value < 0 }
+ 		}
+ 	}
+}
+defined_text = {
+	name = irm_GetAmenitiesState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_amenities value > 0 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_amenities value < 0 }
  		}
  	}
 }

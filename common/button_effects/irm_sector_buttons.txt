@@ -31,6 +31,18 @@ irm_bt_sector_stability = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.demo.stability.tt" } }	
 }
+irm_bt_sector_crime = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.demo.crime.tt" } }	
+}
+irm_bt_sector_housing = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.demo.housing.tt" } }	
+}
+irm_bt_sector_amenities = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.demo.amenities.tt" } }	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {

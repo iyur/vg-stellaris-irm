@@ -27,9 +27,11 @@ irm_get_stats = {
 	if = {
 		limit = { check_variable = { which = irm_owned_colonies value > 0 } }
 			divide_variable = { which = irm_stability value = irm_owned_colonies }
+			divide_variable = { which = irm_crime value = irm_owned_colonies }
 	}
 	# roundings
 	floor_variable = irm_stability
+	floor_variable = irm_crime
 }
 
 # This = System / Sector
@@ -37,7 +39,12 @@ irm_get_stats = {
 irm_del_stats = {
 	irm_unset = { which = irm_owned_colonies }
 	irm_unset = { which = irm_habitable }
-	irm_del_stats_demography = yes
+	# demography
+	irm_unset = { which = irm_pops }
+	irm_unset = { which = irm_stability }
+	irm_unset = { which = irm_crime }
+	irm_unset = { which = irm_housing }
+	irm_unset = { which = irm_amenities }
 }
 
 # This = System / Sector
@@ -45,11 +52,8 @@ irm_get_stats_demography = {
 	event_target:$target$ = {
 		change_variable = { which = irm_pops value = prev.trigger:num_pops }
 		change_variable = { which = irm_stability value = prev.trigger:planet_stability }
+		change_variable = { which = irm_crime value = prev.trigger:planet_crime }
+		change_variable = { which = irm_housing value = prev.trigger:free_housing }
+		change_variable = { which = irm_amenities value = prev.trigger:free_amenities }
 	}
-}
-
-# This = System / Sector
-irm_del_stats_demography = {
-	irm_unset = { which = irm_pops }
-	irm_unset = { which = irm_stability }
 }

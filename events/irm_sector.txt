@@ -48,7 +48,7 @@ system_event = {
 
 	# to prevent disappearing of all options
 	option = {
-	name = "irm.ui.0"
+		name = "irm.ui.0"
 		custom_gui = "irm_ui_opt_dummy"
 	}
 
