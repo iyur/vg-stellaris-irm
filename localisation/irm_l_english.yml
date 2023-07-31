@@ -60,4 +60,4 @@ l_english:
   irm.ui.sector.right.auto.colony: "Colonization"
 
   irm.ui.sector.space.colonies: "[irm_ui_sector.irm_owned_colonies]"
-  irm.ui.sector.space.colonies.tt: "§HSector Colonies§!\nOwned: §Y[irm_ui_sector.irm_owned_colonies]§!\nPotential: §YX§!$irm.ui.1$§EPlanets are, without a doubt, a vital part of a stellar empire because they provide the overwhelming majority of resources and the population required for an empire to grow and prosper."
+  irm.ui.sector.space.colonies.tt: "§HSector Colonies§!\nOwned: §Y[irm_ui_sector.irm_owned_colonies]§!\nPotential: §Y[irm_ui_sector.irm_habitable]§!$irm.ui.1$§EPlanets are, without a doubt, a vital part of a stellar empire because they provide the overwhelming majority of resources and the population required for an empire to grow and prosper."

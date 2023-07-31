@@ -5,7 +5,8 @@
 # This = System / Sector
 # Get key stats for the chosen scope
 irm_get_stats = {
-	set_variable = { which = irm_owned_colonies value = value:irm_owned_colonies_ }
+	set_variable = { which = irm_owned_colonies value = value:irm_planets_|owned|y| }
+	set_variable = { which = irm_habitable value = value:irm_planets_|habitable|y| }
 	# psystem / planet main loop
 	root.owner = {
 		every_system_within_border = {
@@ -35,6 +36,7 @@ irm_get_stats = {
 # Clears all variables
 irm_del_stats = {
 	irm_unset = { which = irm_owned_colonies }
+	irm_unset = { which = irm_habitable }
 	irm_del_stats_demography = yes
 }
 

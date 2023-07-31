@@ -4,7 +4,7 @@
 
 # This = System / Sector
 # Evaluates the number of colonies within the scoped system / sector
-irm_owned_colonies_ = {
+irm_planets_ = {
 	base = 0
 	complex_trigger_modifier = {
    		potential = {
@@ -14,8 +14,18 @@ irm_owned_colonies_ = {
    		trigger = count_system_planet
    		parameters = {
    		   	limit = {
-   		   		is_owned_by = root.owner
-   		   		is_under_colonization = no
+   		   		[[owned]
+	   		   		is_owned_by = root.owner
+	   		   		is_under_colonization = no
+   		   		]
+   		   		[[habitable]
+   		   			is_colony = no
+   		   			is_under_colonization = no
+   		   			or = {
+    		   			is_colonizable = yes
+   		   				has_modifier = terraforming_candidate
+   		   			}
+   		   		]
    		   	}
    		}
    		mode = add
@@ -25,14 +35,26 @@ irm_owned_colonies_ = {
    		potential = {
    			is_scope_type = sector
    		}
-   		trigger_scope = root.sector
-   		trigger = count_owned_planet
+   		trigger_scope = root.owner
+   		trigger = count_planet_within_border
    		parameters = {
    		   	limit = {
-   		   		is_owned_by = root.owner
-   		   		is_under_colonization = no
-   		   		exists = sector
-   		   		sector = { is_same_value = root.sector }
+   		   		[[owned]
+	   		   		is_owned_by = root.owner
+	   		   		is_under_colonization = no
+	   		   		exists = sector
+	   		   		sector = { is_same_value = root.sector }
+   		   		]
+   		   		[[habitable]
+   		   			is_colony = no
+   		   			is_under_colonization = no
+	   		   		exists = sector
+	   		   		sector = { is_same_value = root.sector }
+   		   			or = {
+    		   			is_colonizable = yes
+   		   				has_modifier = terraforming_candidate
+   		   			}
+   		   		]
    		   	}
    		}
    		mode = add
