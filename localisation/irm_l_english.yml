@@ -36,6 +36,11 @@ l_english:
   irm.ui.sector.type.normal.tt: "§H$irm.ui.sector.type.normal$§!$irm.ui.1$§LThe newly explored region once had been colonized and now organized as administrative unit of your empire. Farther from the heavy foot of central bureaucracy, now it's looking for a new opportunities and prosperiry."
   irm.ui.sector.type.none: "No Sector"
 
+  # demography
+  irm.ui.sector.demo.pops: "[irm_ui_sector.irm_pops]"
+  irm.ui.sector.demo.pops.tt: "§!$irm.ui.1$§EPopulation, also known as £pops£ §YPops§!, is the center of productivity and political action within an empire. They provide resources by working in £job£ §YJobs§! created by §Y£district£§! §YDistricts§! and £building£ §YBuildings§!, and also produce £unity£ §YUnity§! if they are part of a specific pop faction."
+
+
   # side left overview
   irm.ui.sector.left: "Overview"
   irm.ui.sector.left.development: "Development"

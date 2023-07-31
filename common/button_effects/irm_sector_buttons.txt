@@ -22,3 +22,8 @@ irm_bt_sector_type = {
 	}
 }
 
+# Stat values
+irm_bt_sector_pops = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.demo.pops.tt" } }	
+}

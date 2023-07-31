@@ -240,7 +240,7 @@ guiTypes = {
 					position = { x = 56 y = 4 }
 					format = left
 					font = "cg_16b"
-					text = "10"
+					text = "irm.ui.sector.demo.pops"
 					effect = irm_bt_sector_pops
 				}
 

@@ -2,6 +2,29 @@
 # Author: Iyur
 # Mod custom scripted effects & routines
 
-irm_test = {
-	log = "irm debug test"
+# Get key stats for the chosen scope
+irm_get_stats = {
+	every_system_planet = {
+		limit = {
+			has_owner = yes
+			is_under_colonization = no
+		}
+		irm_get_stats_demography = { target = $target$ }
+	}
+}
+
+# This = System / Sector
+# Clears all variables
+irm_del_stats = {
+	irm_del_stats_demography = yes
+}
+
+irm_get_stats_demography = {
+	event_target:$target$ = {
+		change_variable = { which = irm_pops value = prev.trigger:num_pops }
+	}
+}
+
+irm_del_stats_demography = {
+	irm_unset = { which = irm_pops }
 }

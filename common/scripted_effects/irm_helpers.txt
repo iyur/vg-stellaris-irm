@@ -11,3 +11,14 @@ irm_clear_target = {
 			clear_global_event_target = $target$
 	}
 }
+
+# This = Any
+# Clears existing variable
+irm_unset = {
+	[[which]
+		if = {
+			limit = { is_variable_set = $which$ }
+				clear_variable = $which$
+		}
+	]
+}
