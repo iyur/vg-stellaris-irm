@@ -154,7 +154,7 @@ guiTypes = {
 				name = "icon"
 				quadTextureSprite = @nobg
 				size = { x = 35 y = 35 }
-				position = { x = 6 y = 7 }
+				position = { x = 6 y = 6 }
 				format = left
 				font = "cg_16b"
 				text = "irm.ui.sector.icon"
@@ -164,7 +164,7 @@ guiTypes = {
 				name = "type"
 				quadTextureSprite = @nobg
 				size = { x = 250 y = 30 }
-				position = { x = 50 y = 7 }
+				position = { x = 50 y = 8 }
 				format = left
 				font = "cg_16b"
 				text = "irm.ui.sector.type"
@@ -175,7 +175,7 @@ guiTypes = {
 
 		# DEMOGRAPHY ------------------------------------------------------------------------------
 
-		@xDemoField = 85
+		@xDemoField = 150
 
 		containerWindowType = {
 			name = "sector_demography"
@@ -205,17 +205,18 @@ guiTypes = {
 				iconType = {
 					name = "planet_stability_icon"
 					spriteType = "GFX_stability"
-					position = { x = 15 y = 2 }
+					position = { x = 16 y = 2 }
 					scale = 1
 				}
 				effectButtonType = {
 					name = "sector_stability"
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
-					position = { x = 55 y = 4 }
+					borderSize = { x = 40 y = 0 }
+					position = { x = 15 y = 4 }
 					format = left
 					font = "cg_16b"
-					text = "10%"
+					text = "irm.ui.sector.demo.stability"
 					effect = irm_bt_sector_stability
 				}
 
@@ -237,7 +238,8 @@ guiTypes = {
 					name = "sector_population"
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
-					position = { x = 56 y = 4 }
+					borderSize = { x = 40 y = 0 }
+					position = { x = 16 y = 4 }
 					format = left
 					font = "cg_16b"
 					text = "irm.ui.sector.demo.pops"
@@ -1167,8 +1169,8 @@ guiTypes = {
 							vertical_alignment = bottom
 							format = center
 							font = "cg_16b"
-							text = "0"
-							effect = irm_bt_sector_planets
+							text = "irm.ui.sector.space.colonies"
+							effect = irm_bt_sector_colonies
 						}
 						iconType = {
 							name = "sector_planets_icon"

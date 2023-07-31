@@ -2,29 +2,52 @@
 # Author: Iyur
 # Mod custom scripted effects & routines
 
+# This = System / Sector
 # Get key stats for the chosen scope
 irm_get_stats = {
-	every_system_planet = {
-		limit = {
-			has_owner = yes
-			is_under_colonization = no
+	set_variable = { which = irm_owned_colonies value = value:irm_owned_colonies_ }
+	# psystem / planet main loop
+	root.owner = {
+		every_system_within_border = {
+			limit = {
+				exists = sector
+				sector = { is_same_value = prevprevprev }
+			}
+			every_system_planet = {
+				limit = {
+					has_owner = yes
+					is_under_colonization = no
+				}
+				irm_get_stats_demography = { target = $target$ }
+			}
 		}
-		irm_get_stats_demography = { target = $target$ }
 	}
+	# calculations
+	if = {
+		limit = { check_variable = { which = irm_owned_colonies value > 0 } }
+			divide_variable = { which = irm_stability value = irm_owned_colonies }
+	}
+	# roundings
+	floor_variable = irm_stability
 }
 
 # This = System / Sector
 # Clears all variables
 irm_del_stats = {
+	irm_unset = { which = irm_owned_colonies }
 	irm_del_stats_demography = yes
 }
 
+# This = System / Sector
 irm_get_stats_demography = {
 	event_target:$target$ = {
 		change_variable = { which = irm_pops value = prev.trigger:num_pops }
+		change_variable = { which = irm_stability value = prev.trigger:planet_stability }
 	}
 }
 
+# This = System / Sector
 irm_del_stats_demography = {
 	irm_unset = { which = irm_pops }
+	irm_unset = { which = irm_stability }
 }

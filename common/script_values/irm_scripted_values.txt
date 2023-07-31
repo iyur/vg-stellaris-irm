@@ -1,0 +1,41 @@
+# IRM: Imperial Routine Mod
+# Author: Iyur
+# Dynamic scripted values
+
+# This = System / Sector
+# Evaluates the number of colonies within the scoped system / sector
+irm_owned_colonies_ = {
+	base = 0
+	complex_trigger_modifier = {
+   		potential = {
+   			is_scope_type = galactic_object
+   		}
+   		trigger_scope = root
+   		trigger = count_system_planet
+   		parameters = {
+   		   	limit = {
+   		   		is_owned_by = root.owner
+   		   		is_under_colonization = no
+   		   	}
+   		}
+   		mode = add
+   		mult = 1
+	}
+	complex_trigger_modifier = {
+   		potential = {
+   			is_scope_type = sector
+   		}
+   		trigger_scope = root.sector
+   		trigger = count_owned_planet
+   		parameters = {
+   		   	limit = {
+   		   		is_owned_by = root.owner
+   		   		is_under_colonization = no
+   		   		exists = sector
+   		   		sector = { is_same_value = root.sector }
+   		   	}
+   		}
+   		mode = add
+   		mult = 1
+	}
+}

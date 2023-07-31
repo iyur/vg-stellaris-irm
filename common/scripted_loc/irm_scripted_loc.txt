@@ -6,26 +6,22 @@
 defined_text = {
 	name = irm_GetSectorType
  	random = no
- 	default = irm.ui.sector.type.none
+ 	default = "irm.ui.sector.type.none"
  	text = {
- 		localization_key = irm.ui.sector.type.core
+ 		localization_key = "irm.ui.sector.type.core"
  		trigger = {
- 			or = {
- 				and = {
- 					exists = event_target:irm_ui_sector
- 					event_target:irm_ui_sector = { has_sector_type = core_sector }
- 				}
+ 			this = {
+ 				is_scope_type = sector
+ 				has_sector_type = core_sector
  			}
  		}
  	}
  	text = {
- 		localization_key = irm.ui.sector.type.normal
+ 		localization_key = "irm.ui.sector.type.normal"
  		trigger = {
- 			or = {
- 				and = {
- 					exists = event_target:irm_ui_sector
- 					event_target:irm_ui_sector = { has_sector_type = normal_sector }
- 				}
+ 			this = {
+ 				is_scope_type = sector
+ 				has_sector_type = normal_sector
  			}
  		}
  	}
@@ -33,9 +29,9 @@ defined_text = {
 defined_text = {
 	name = irm_GetSectorTypeIcon
  	random = no
- 	default = irm.ui.sector.type.none.icon
+ 	default = "irm.ui.sector.type.none.icon"
  	text = {
- 		localization_key = irm.ui.sector.type.core.icon
+ 		localization_key = "irm.ui.sector.type.core.icon"
  		trigger = {
  			or = {
  				and = {
@@ -46,7 +42,7 @@ defined_text = {
  		}
  	}
  	text = {
- 		localization_key = irm.ui.sector.type.normal.icon
+ 		localization_key = "irm.ui.sector.type.normal.icon"
  		trigger = {
  			or = {
  				and = {
@@ -58,3 +54,28 @@ defined_text = {
  	}
 }
 
+# This = System / Sector
+# Indicates the state of system stats & parameters
+defined_text = {
+	name = irm_GetStabilityState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.l"
+ 		trigger = {
+ 			check_variable = { which = irm_stability value = 0 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_stability value < 30 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_stability value >= 50 }
+ 		}
+ 	}
+}

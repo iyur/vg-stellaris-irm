@@ -31,15 +31,8 @@ system_event = {
 			# sector dummy (for ui purposes)
 			save_global_event_target_as = irm_ui_sector
 
-			root.owner = {
-				every_system_within_border = {
-					limit = {
-						exists = sector
-						sector = { is_same_value = prevprevprev }
-					}
-					irm_get_stats = { target = irm_ui_sector }
-				}
-			}
+			# collect statistics
+			irm_get_stats = { target = irm_ui_sector }
 
 		}
 
