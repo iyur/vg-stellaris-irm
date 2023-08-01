@@ -51,6 +51,12 @@ l_english:
   irm.ui.sector.demo.housing.tt: "§H$PLANET_HOUSING_TITLE$§!\nTotal: §Y[irm_ui_sector.irm_housing]§!$irm.ui.1$$PLANET_HOUSING_DESC$"
   irm.ui.sector.demo.amenities: "[irm_ui_sector.irm_GetAmenitiesState][irm_ui_sector.irm_amenities]"
   irm.ui.sector.demo.amenities.tt: "§H$PLANET_AMENITIES$§!\nTotal: §Y[irm_ui_sector.irm_amenities]§!$irm.ui.1$$PLANET_AMENITIES_DESC$"
+  irm.ui.sector.demo.jobs: "[irm_ui_sector.irm_GetJobsState][irm_ui_sector.irm_jobs]"
+  irm.ui.sector.demo.jobs.tt: "§HAvailable Jobs§!\nAvailable: §Y[irm_ui_sector.irm_jobs]§!$irm.ui.1$§EA job is where £pops£ §YPops§! work to produce resources on planets. Jobs are divided into different strata, with one higher than the other. Most Jobs are created by Districts and Buildings and thus limited in number."
+  irm.ui.sector.demo.unemployed: "[irm_ui_sector.irm_GetUnemployedState][irm_ui_sector.irm_unemployed]"
+  irm.ui.sector.demo.unemployed.tt: "§H$PLANET_UNEMPLOYMENT_TITLE$§!\nTotal: §Y[irm_ui_sector.irm_unemployed]§!$irm.ui.1$$PLANET_UNEMPLOYMENT_DESC$"
+  irm.ui.sector.demo.happiness: "[irm_ui_sector.irm_GetHappinessState][irm_ui_sector.irm_happiness]%"
+  irm.ui.sector.demo.happiness.tt: "§H$AVERAGE_HAPPINESS_TITLE$§!\nAverage: §Y[irm_ui_sector.irm_happiness]%§!$irm.ui.1$$AVERAGE_HAPPINESS_DESC$"
 
   # side left overview
   irm.ui.sector.left: "Overview"

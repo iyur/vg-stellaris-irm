@@ -213,7 +213,7 @@ guiTypes = {
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
 					borderSize = { x = 40 y = 0 }
-					position = { x = 15 y = 4 }
+					position = { x = 20 y = 4 }
 					format = left
 					font = "cg_16b"
 					text = "irm.ui.sector.demo.stability"
@@ -239,7 +239,7 @@ guiTypes = {
 					quadTextureSprite = "GFX_invisible"
 					size = { x = @xDemoField y = 28 }
 					borderSize = { x = 40 y = 0 }
-					position = { x = 16 y = 4 }
+					position = { x = 20 y = 4 }
 					format = left
 					font = "cg_16b"
 					text = "irm.ui.sector.demo.pops"
@@ -269,7 +269,7 @@ guiTypes = {
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
 						borderSize = { x = 40 y = 0 }
-						position = { x = 5 y = 1 }
+						position = { x = 10 y = 1 }
 						format = left
 						font = "cg_16b"
 						text = "irm.ui.sector.demo.crime"
@@ -294,7 +294,7 @@ guiTypes = {
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
 						borderSize = { x = 40 y = 0 }
-						position = { x = 5 y = 1 }
+						position = { x = 10 y = 3 }
 						format = left
 						font = "cg_16b"
 						text = "irm.ui.sector.demo.housing"
@@ -319,7 +319,7 @@ guiTypes = {
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
 						borderSize = { x = 40 y = 0 }
-						position = { x = 5 y = 1 }
+						position = { x = 5 y = 3 }
 						format = left
 						font = "cg_16b"
 						text = "irm.ui.sector.demo.amenities"
@@ -344,10 +344,10 @@ guiTypes = {
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
 						borderSize = { x = 40 y = 0 }
-						position = { x = 5 y = 1 }
+						position = { x = 10 y = 1 }
 						format = left
 						font = "cg_16b"
-						text = "10"
+						text = "irm.ui.sector.demo.jobs"
 						effect = irm_bt_sector_jobs
 					}
 
@@ -369,10 +369,10 @@ guiTypes = {
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
 						borderSize = { x = 40 y = 0 }
-						position = { x = 5 y = 1 }
+						position = { x = 10 y = 2 }
 						format = left
 						font = "cg_16b"
-						text = "10"
+						text = "irm.ui.sector.demo.unemployed"
 						effect = irm_bt_sector_unemployed
 					}
 
@@ -394,10 +394,10 @@ guiTypes = {
 						quadTextureSprite = "GFX_invisible"
 						size = { x = @xDemoField y = 28 }
 						borderSize = { x = 40 y = 0 }
-						position = { x = 0 y = -4 }
+						position = { x = 0 y = -3 }
 						format = left
 						font = "cg_16b"
-						text = "10%"
+						text = "irm.ui.sector.demo.happiness"
 						effect = irm_bt_sector_happiness
 					}
 

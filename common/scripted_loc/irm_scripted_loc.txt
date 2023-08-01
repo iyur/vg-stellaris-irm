@@ -124,3 +124,54 @@ defined_text = {
  		}
  	}
 }
+defined_text = {
+	name = irm_GetJobsState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_jobs value > 0 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_jobs value < 0 }
+ 		}
+ 	}
+}
+defined_text = {
+	name = irm_GetUnemployedState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_unemployed value <= 0 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_unemployed value > 0 }
+ 		}
+ 	}
+}
+defined_text = {
+	name = irm_GetHappinessState
+ 	random = no
+ 	default = "irm.ui.y"
+ 	text = {
+ 		localization_key = "irm.ui.g"
+ 		trigger = {
+ 			check_variable = { which = irm_happiness value >= 50 }
+ 		}
+ 	}
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = {
+ 			check_variable = { which = irm_happiness value < 30 }
+ 		}
+ 	}
+}

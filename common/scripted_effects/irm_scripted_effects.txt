@@ -28,10 +28,13 @@ irm_get_stats = {
 		limit = { check_variable = { which = irm_owned_colonies value > 0 } }
 			divide_variable = { which = irm_stability value = irm_owned_colonies }
 			divide_variable = { which = irm_crime value = irm_owned_colonies }
+			divide_variable = { which = irm_happiness value = irm_owned_colonies }
+			multiply_variable = { which = irm_happiness value = 100 }
 	}
 	# roundings
 	floor_variable = irm_stability
 	floor_variable = irm_crime
+	floor_variable = irm_happiness
 }
 
 # This = System / Sector
@@ -45,6 +48,9 @@ irm_del_stats = {
 	irm_unset = { which = irm_crime }
 	irm_unset = { which = irm_housing }
 	irm_unset = { which = irm_amenities }
+	irm_unset = { which = irm_jobs }
+	irm_unset = { which = irm_unemployed }
+	irm_unset = { which = irm_happiness }
 }
 
 # This = System / Sector
@@ -55,5 +61,8 @@ irm_get_stats_demography = {
 		change_variable = { which = irm_crime value = prev.trigger:planet_crime }
 		change_variable = { which = irm_housing value = prev.trigger:free_housing }
 		change_variable = { which = irm_amenities value = prev.trigger:free_amenities }
+		change_variable = { which = irm_jobs value = prev.trigger:free_jobs }
+		change_variable = { which = irm_unemployed value = prev.trigger:num_unemployed }
+		change_variable = { which = irm_happiness value = prev.trigger:happiness_planet }
 	}
 }
