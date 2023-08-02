@@ -32,7 +32,7 @@ system_event = {
 			save_global_event_target_as = irm_ui_sector
 
 			# collect statistics
-			irm_get_stats = { target = irm_ui_sector }
+			irm_get_stats = yes
 
 		}
 

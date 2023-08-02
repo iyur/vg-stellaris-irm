@@ -477,15 +477,15 @@ guiTypes = {
 							size = { x = 40 y = 40 }
 							format = center
 							font = "malgun_goth_24"
-							text = "0"
+							text = "irm.ui.sector.res.trade"
 							effect = irm_bt_sector_trade
-							alwaysTransparent = yes
+							#alwaysTransparent = yes
 						}
 					}
 
 					# resources			
 					containerWindowType = {
-						name = "system_economy_resources"
+						name = "sector_economy_resources"
 						position = { x = 120 y = @yPosBC1 }
 						@wRes = 40
 						@hRes = 50

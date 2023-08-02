@@ -58,6 +58,10 @@ l_english:
   irm.ui.sector.demo.happiness: "[irm_ui_sector.irm_GetHappinessState][irm_ui_sector.irm_happiness]%"
   irm.ui.sector.demo.happiness.tt: "§H$AVERAGE_HAPPINESS_TITLE$§!\nAverage: §Y[irm_ui_sector.irm_happiness]%§!$irm.ui.1$$AVERAGE_HAPPINESS_DESC$"
 
+  # resources
+  irm.ui.sector.res.trade: "§G[irm_ui_sector.irm_trade_value]§!"
+  irm.ui.sector.res.trade.tt: "§H$TRADE_VALUE$§!\nMonthly Gain: §Y[irm_ui_sector.irm_trade_value]§!$irm.ui.1$$TRADE_VALUE_DESC$"
+
   # side left overview
   irm.ui.sector.left: "Overview"
   irm.ui.sector.left.development: "Development"

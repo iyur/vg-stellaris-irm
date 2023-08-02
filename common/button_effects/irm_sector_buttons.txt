@@ -56,6 +56,12 @@ irm_bt_sector_happiness = {
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.demo.happiness.tt" } }	
 }
 
+# Stats overview
+irm_bt_sector_trade = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.res.trade.tt" } }	
+}
+
 # Stats space values
 irm_bt_sector_colonies = {
 	potential = { exists = event_target:irm_ui_sector }
