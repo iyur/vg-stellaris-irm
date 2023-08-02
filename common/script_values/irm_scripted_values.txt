@@ -2,6 +2,21 @@
 # Author: Iyur
 # Dynamic scripted values
 
+# This = Planet
+# Evaluates the production of resource
+irm_resource_amount_ = {
+	base = 0
+	complex_trigger_modifier = {
+   		trigger = planet_resource_compare
+   		parameters = {
+   		   	resource = $RES$
+   		   	type = $CALC|balance$
+   		}
+   		mode = add
+   		mult = 1
+	}
+}
+
 # This = System / Sector
 # Evaluates the number of colonies within the scoped system / sector
 irm_planets_ = {

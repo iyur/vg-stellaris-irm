@@ -19,47 +19,41 @@ irm_get_stats = {
 			}
 			every_system_planet = {
 				limit = {
-					has_owner = yes
+					exists = owner
+					owner = { is_same_value = root.owner }
 					is_under_colonization = no
 				}
 				irm_get_stats_demography = yes
+				irm_get_stats_resources = yes
 			}
 		}
 	}
 	# calculations
 	if = {
+		# avergaes
 		limit = { check_variable = { which = irm_owned_colonies value > 0 } }
 			divide_variable = { which = irm_stability value = irm_owned_colonies }
 			divide_variable = { which = irm_crime value = irm_owned_colonies }
 			divide_variable = { which = irm_happiness value = irm_owned_colonies }
 			multiply_variable = { which = irm_happiness value = 100 }
 	}
+	if = {
+		# capitasl bonuses
+		limit = {
+			exists = root.owner.capital_scope.sector
+			root.owner.capital_scope.sector = { is_same_value = prev }
+		}
+		change_variable = { which = irm_energy value = 20 }
+	}
 	# roundings
-	floor_variable = irm_stability
-	floor_variable = irm_crime
-	floor_variable = irm_happiness
-	
-	floor_variable = irm_trade_value
+	round_variable = irm_stability
+	round_variable = irm_crime
+	round_variable = irm_happiness
+
+	round_variable = irm_trade_value
+	round_variable = irm_energy
 }
 
-# This = System / Sector
-# Clears all variables
-irm_del_stats = {
-	irm_unset = { which = irm_owned_colonies }
-	irm_unset = { which = irm_habitable }
-	irm_unset = { which = irm_trade_value }
-	# demography
-	irm_unset = { which = irm_pops }
-	irm_unset = { which = irm_stability }
-	irm_unset = { which = irm_crime }
-	irm_unset = { which = irm_housing }
-	irm_unset = { which = irm_amenities }
-	irm_unset = { which = irm_jobs }
-	irm_unset = { which = irm_unemployed }
-	irm_unset = { which = irm_happiness }
-}
-
-# This = System / Sector
 irm_get_stats_demography = {
 	prevprevprev = {
 		change_variable = { which = irm_pops value = prev.trigger:num_pops }
@@ -71,4 +65,28 @@ irm_get_stats_demography = {
 		change_variable = { which = irm_unemployed value = prev.trigger:num_unemployed }
 		change_variable = { which = irm_happiness value = prev.trigger:happiness_planet }
 	}
+}
+irm_get_stats_resources = {
+	prevprevprev = {
+		change_variable = { which = irm_energy value = prev.value:irm_resource_amount_|RES|energy| }
+	}
+}
+
+# This = System / Sector
+# Clears all variables
+irm_del_stats = {
+	irm_unset = { which = irm_owned_colonies }
+	irm_unset = { which = irm_habitable }
+	# demography
+	irm_unset = { which = irm_pops }
+	irm_unset = { which = irm_stability }
+	irm_unset = { which = irm_crime }
+	irm_unset = { which = irm_housing }
+	irm_unset = { which = irm_amenities }
+	irm_unset = { which = irm_jobs }
+	irm_unset = { which = irm_unemployed }
+	irm_unset = { which = irm_happiness }
+	# resources
+	irm_unset = { which = irm_trade_value }
+	irm_unset = { which = irm_energy }
 }
