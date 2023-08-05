@@ -602,7 +602,7 @@ guiTypes = {
 								position = { x = 0 y = 13 }
 								format = center
 								font = "cg_16b"
-								text = "0"
+								text = "irm.ui.sector.res.alloys"
 								effect = irm_bt_sector_alloys
 							}
 						}

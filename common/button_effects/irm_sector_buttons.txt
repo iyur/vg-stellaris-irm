@@ -181,6 +181,35 @@ irm_bt_sector_goods = {
 		}
 	}	
 }
+irm_bt_sector_alloys = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.alloys.tt"
+				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = { check_variable = { which = irm_alloys_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.alloys.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_alloys_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.alloys.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_alloys_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.alloys.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.tt.exp"
+				if = {
+					limit = { check_variable = { which = irm_alloys_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.alloys.tt.planet.exp"
+				}
+				custom_tooltip = "irm.ui.sector.res.alloys.tte"
+			}
+		}
+	}	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {
