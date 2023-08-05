@@ -67,7 +67,7 @@ irm_bt_sector_energy = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.energy.tt"
-				custom_tooltip = "irm.ui.sector.res.energy.tt.inc"
+				custom_tooltip = "irm.ui.sector.res.tt.inc"
 				if = {
 					limit = { check_variable = { which = irm_energy_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.energy.tt.base.inc"
@@ -80,7 +80,7 @@ irm_bt_sector_energy = {
 					limit = { check_variable = { which = irm_energy_planet_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.energy.tt.planet.inc"
 				}
-				custom_tooltip = "irm.ui.sector.res.energy.tt.exp"
+				custom_tooltip = "irm.ui.sector.res.tt.exp"
 				if = {
 					limit = { check_variable = { which = irm_energy_station_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.energy.tt.station.exp"
@@ -94,6 +94,35 @@ irm_bt_sector_energy = {
 					custom_tooltip = "irm.ui.sector.res.energy.tt.planet.exp"
 				}
 				custom_tooltip = "irm.ui.sector.res.energy.tte"
+			}
+		}
+	}	
+}
+irm_bt_sector_minerals = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.minerals.tt"
+				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = { check_variable = { which = irm_minerals_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.minerals.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_minerals_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.minerals.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_minerals_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.minerals.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.tt.exp"
+				if = {
+					limit = { check_variable = { which = irm_minerals_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.minerals.tt.planet.exp"
+				}
+				custom_tooltip = "irm.ui.sector.res.minerals.tte"
 			}
 		}
 	}	

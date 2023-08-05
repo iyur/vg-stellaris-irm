@@ -54,6 +54,7 @@ irm_get_stats = {
 
 	round_variable = irm_trade_value
 	round_variable = irm_energy
+	round_variable = irm_minerals
 }
 
 # This = Planet
@@ -88,6 +89,10 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_energy value = prev.value:irm_resource_amount_|RES|energy| }
 			change_variable = { which = irm_energy_planet_exp value = prev.value:irm_resource_amount_|RES|energy|CALC|upkeep| }
 			change_variable = { which = irm_energy_planet_inc value = prev.value:irm_resource_amount_|RES|energy|CALC|produces| }
+
+			change_variable = { which = irm_minerals value = prev.value:irm_resource_amount_|RES|minerals| }
+			change_variable = { which = irm_minerals_planet_exp value = prev.value:irm_resource_amount_|RES|minerals|CALC|upkeep| }
+			change_variable = { which = irm_minerals_planet_inc value = prev.value:irm_resource_amount_|RES|minerals|CALC|produces| }
 		}
 		# capital case
 		if = {
@@ -95,6 +100,8 @@ irm_get_stats_resources = {
 			prevprevprev = {
 				change_variable = { which = irm_energy value = 20 }
 				change_variable = { which = irm_energy_base_inc value = 20 }
+				change_variable = { which = irm_minerals value = 20 }
+				change_variable = { which = irm_minerals_base_inc value = 20 }
 			}
 		}
 	}
@@ -113,8 +120,11 @@ irm_get_stats_resources = {
 		prevprevprev = {
 			change_variable = { which = irm_energy value = prev.value:irm_resource_amount_|RES|energy| }
 			change_variable = { which = irm_energy_station_inc value = prev.value:irm_resource_amount_|RES|energy| }
+
+			change_variable = { which = irm_minerals value = prev.value:irm_resource_amount_|RES|minerals| }
+			change_variable = { which = irm_minerals_station_inc value = prev.value:irm_resource_amount_|RES|minerals| }
 		}
-		# non-energy stations
+		# non-energy stations upkeep
 		if = {
 			limit = { has_resource = { type = energy amount = 0 } }
 			prevprevprev = {
@@ -148,4 +158,8 @@ irm_del_stats = {
 	irm_unset = { which = irm_energy_station_exp }
 	irm_unset = { which = irm_energy_station_inc }
 	irm_unset = { which = irm_energy_starbase_exp }
+	irm_unset = { which = irm_minerals }
+	irm_unset = { which = irm_minerals_base_inc }
+	irm_unset = { which = irm_minerals_planet_exp }
+	irm_unset = { which = irm_minerals_planet_inc }
 }
