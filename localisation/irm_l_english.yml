@@ -80,6 +80,13 @@ l_english:
   irm.ui.sector.res.minerals.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_minerals_planet_inc]§!"
   irm.ui.sector.res.minerals.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_minerals_station_inc]§!"
   irm.ui.sector.res.minerals.tte: "$irm.ui.1$$minerals_desc$"
+  irm.ui.sector.res.food: "[irm_ui_sector.irm_GetFoodState][irm_ui_sector.irm_food]"
+  irm.ui.sector.res.food.tt: "§H$food$§!\nMonthly Gain: §Y[irm_ui_sector.irm_food]§!"
+  irm.ui.sector.res.food.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_food_base_inc]§!"
+  irm.ui.sector.res.food.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_food_planet_exp]§!"
+  irm.ui.sector.res.food.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_food_planet_inc]§!"
+  irm.ui.sector.res.food.tt.starbase.inc: "$irm.ui.tab$Starbases: §G+[irm_ui_sector.irm_food_starbase_inc]§!"
+  irm.ui.sector.res.food.tte: "$irm.ui.1$$food_desc$"
 
   # side left overview
   irm.ui.sector.left: "Overview"

@@ -127,6 +127,35 @@ irm_bt_sector_minerals = {
 		}
 	}	
 }
+irm_bt_sector_food = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.food.tt"
+				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = { check_variable = { which = irm_food_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.food.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_food_starbase_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.food.tt.starbase.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_food_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.food.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.tt.exp"
+				if = {
+					limit = { check_variable = { which = irm_food_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.food.tt.planet.exp"
+				}
+				custom_tooltip = "irm.ui.sector.res.food.tte"
+			}
+		}
+	}	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {

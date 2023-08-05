@@ -194,3 +194,12 @@ defined_text = {
  		trigger = { check_variable = { which = irm_minerals value < 0 } }
  	}
 }
+defined_text = {
+	name = irm_GetFoodState
+ 	random = no
+ 	default = "irm.ui.0"
+ 	text = {
+ 		localization_key = "irm.ui.r"
+ 		trigger = { check_variable = { which = irm_food value < 0 } }
+ 	}
+}

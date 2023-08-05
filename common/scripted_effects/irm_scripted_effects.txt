@@ -21,6 +21,7 @@ irm_get_stats = {
 			}
 			# starbases
 			starbase.fleet = {
+				# energy upkeep
 				switch = {
 					trigger = is_ship_size
 						starbase_outpost = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 1 } } }
@@ -28,6 +29,32 @@ irm_get_stats = {
 						starbase_starhold = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 3 } } }
 						starbase_starfortress = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 4 } } }
 						starbase_citadel = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 5 } } }
+				}
+			}
+			starbase = {
+				# food production
+				export_trigger_value_to_variable = {
+					trigger = count_starbase_buildings
+					parameters = {
+						type = hydroponics_bay
+						include_being_constructed = no
+					}
+					variable = irm_food_starbase_num
+				}
+				if = {
+					limit = { check_variable = { which = irm_food_starbase_num value > 0 } }
+						root.owner = {
+							export_modifier_to_variable = { modifier = starbase_constructions_food_produces_mult variable = irm_food_starbase_mod }
+							prevprevprevprev = {
+								set_variable = { which = irm_food_starbase_inc value = prev.irm_food_starbase_mod }
+								change_variable = { which = irm_food_starbase_inc value = 1 }
+								multiply_variable = { which = irm_food_starbase_inc value = 10 }
+								multiply_variable = { which = irm_food_starbase_inc value = prevprev.irm_food_starbase_num }
+								change_variable = { which = irm_food value = irm_food_starbase_inc }
+							}
+							irm_unset = { which = irm_food_starbase_mod }
+						}
+					irm_unset = { which = irm_food_starbase_num }
 				}
 			}
 
@@ -55,6 +82,7 @@ irm_get_stats = {
 	round_variable = irm_trade_value
 	round_variable = irm_energy
 	round_variable = irm_minerals
+	round_variable = irm_food
 }
 
 # This = Planet
@@ -93,6 +121,10 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_minerals value = prev.value:irm_resource_amount_|RES|minerals| }
 			change_variable = { which = irm_minerals_planet_exp value = prev.value:irm_resource_amount_|RES|minerals|CALC|upkeep| }
 			change_variable = { which = irm_minerals_planet_inc value = prev.value:irm_resource_amount_|RES|minerals|CALC|produces| }
+
+			change_variable = { which = irm_food value = prev.value:irm_resource_amount_|RES|food| }
+			change_variable = { which = irm_food_planet_exp value = prev.value:irm_resource_amount_|RES|food|CALC|upkeep| }
+			change_variable = { which = irm_food_planet_inc value = prev.value:irm_resource_amount_|RES|food|CALC|produces| }
 		}
 		# capital case
 		if = {
@@ -102,6 +134,8 @@ irm_get_stats_resources = {
 				change_variable = { which = irm_energy_base_inc value = 20 }
 				change_variable = { which = irm_minerals value = 20 }
 				change_variable = { which = irm_minerals_base_inc value = 20 }
+				change_variable = { which = irm_food value = 10 }
+				change_variable = { which = irm_food_base_inc value = 10 }
 			}
 		}
 	}
@@ -162,4 +196,10 @@ irm_del_stats = {
 	irm_unset = { which = irm_minerals_base_inc }
 	irm_unset = { which = irm_minerals_planet_exp }
 	irm_unset = { which = irm_minerals_planet_inc }
+	irm_unset = { which = irm_food }
+	irm_unset = { which = irm_food_base_inc }
+	irm_unset = { which = irm_food_planet_exp }
+	irm_unset = { which = irm_food_planet_inc }
+	irm_unset = { which = irm_food_starbase_inc }
+	irm_unset = { which = irm_food_starbase_mod }
 }
