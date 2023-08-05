@@ -87,6 +87,12 @@ l_english:
   irm.ui.sector.res.food.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_food_planet_inc]§!"
   irm.ui.sector.res.food.tt.starbase.inc: "$irm.ui.tab$Starbases: §G+[irm_ui_sector.irm_food_starbase_inc]§!"
   irm.ui.sector.res.food.tte: "$irm.ui.1$$food_desc$"
+  irm.ui.sector.res.goods: "[irm_ui_sector.irm_GetGoodsState][irm_ui_sector.irm_goods]"
+  irm.ui.sector.res.goods.tt: "§H$consumer_goods$§!\nMonthly Gain: §Y[irm_ui_sector.irm_goods]§!"
+  irm.ui.sector.res.goods.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_goods_base_inc]§!"
+  irm.ui.sector.res.goods.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_goods_planet_exp]§!"
+  irm.ui.sector.res.goods.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_goods_planet_inc]§!"
+  irm.ui.sector.res.goods.tte: "$irm.ui.1$$consumer_goods_desc$"
 
   # side left overview
   irm.ui.sector.left: "Overview"

@@ -83,6 +83,7 @@ irm_get_stats = {
 	round_variable = irm_energy
 	round_variable = irm_minerals
 	round_variable = irm_food
+	round_variable = irm_goods
 }
 
 # This = Planet
@@ -125,6 +126,10 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_food value = prev.value:irm_resource_amount_|RES|food| }
 			change_variable = { which = irm_food_planet_exp value = prev.value:irm_resource_amount_|RES|food|CALC|upkeep| }
 			change_variable = { which = irm_food_planet_inc value = prev.value:irm_resource_amount_|RES|food|CALC|produces| }
+
+			change_variable = { which = irm_goods value = prev.value:irm_resource_amount_|RES|consumer_goods| }
+			change_variable = { which = irm_goods_planet_exp value = prev.value:irm_resource_amount_|RES|consumer_goods|CALC|upkeep| }
+			change_variable = { which = irm_goods_planet_inc value = prev.value:irm_resource_amount_|RES|consumer_goods|CALC|produces| }
 		}
 		# capital case
 		if = {
@@ -136,6 +141,8 @@ irm_get_stats_resources = {
 				change_variable = { which = irm_minerals_base_inc value = 20 }
 				change_variable = { which = irm_food value = 10 }
 				change_variable = { which = irm_food_base_inc value = 10 }
+				change_variable = { which = irm_goods value = 10 }
+				change_variable = { which = irm_goods_base_inc value = 10 }
 			}
 		}
 	}
@@ -202,4 +209,8 @@ irm_del_stats = {
 	irm_unset = { which = irm_food_planet_inc }
 	irm_unset = { which = irm_food_starbase_inc }
 	irm_unset = { which = irm_food_starbase_mod }
+	irm_unset = { which = irm_goods }
+	irm_unset = { which = irm_goods_base_inc }
+	irm_unset = { which = irm_goods_planet_exp }
+	irm_unset = { which = irm_goods_planet_inc }
 }
