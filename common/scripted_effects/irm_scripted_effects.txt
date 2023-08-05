@@ -7,30 +7,35 @@
 irm_get_stats = {
 	set_variable = { which = irm_owned_colonies value = value:irm_planets_|owned|y| }
 	set_variable = { which = irm_habitable value = value:irm_planets_|habitable|y| }
-	# system / planet main loop
 	root.owner = {
 		every_system_within_border = {
 			limit = {
 				exists = sector
 				sector = { is_same_value = prevprevprev }
 			}
-			prevprev = {
-				change_variable = { which = irm_trade_value value = prev.trigger:has_system_trade_value }
-			}
+			prevprev = { change_variable = { which = irm_trade_value value = prev.trigger:has_system_trade_value } }
+			# planet loop
 			every_system_planet = {
-				limit = {
-					exists = owner
-					owner = { is_same_value = root.owner }
-					is_under_colonization = no
-				}
 				irm_get_stats_demography = yes
 				irm_get_stats_resources = yes
 			}
-		}
+			# starbases
+			starbase.fleet = {
+				switch = {
+					trigger = is_ship_size
+						starbase_outpost = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 1 } } }
+						starbase_starport = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 2 } } }
+						starbase_starhold = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 3 } } }
+						starbase_starfortress = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 4 } } }
+						starbase_citadel = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 5 } } }
+				}
+			}
+
+		} # system
 	}
-	# calculations
+	# final calculations
 	if = {
-		# avergaes
+		# averages
 		limit = { check_variable = { which = irm_owned_colonies value > 0 } }
 			divide_variable = { which = irm_stability value = irm_owned_colonies }
 			divide_variable = { which = irm_crime value = irm_owned_colonies }
@@ -38,12 +43,9 @@ irm_get_stats = {
 			multiply_variable = { which = irm_happiness value = 100 }
 	}
 	if = {
-		# capitasl bonuses
-		limit = {
-			exists = root.owner.capital_scope.sector
-			root.owner.capital_scope.sector = { is_same_value = prev }
-		}
-		change_variable = { which = irm_energy value = 20 }
+		# starbases upkeep
+		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
+			subtract_variable = { which = irm_energy value = irm_energy_starbase_exp }
 	}
 	# roundings
 	round_variable = irm_stability
@@ -54,21 +56,72 @@ irm_get_stats = {
 	round_variable = irm_energy
 }
 
+# This = Planet
 irm_get_stats_demography = {
-	prevprevprev = {
-		change_variable = { which = irm_pops value = prev.trigger:num_pops }
-		change_variable = { which = irm_stability value = prev.trigger:planet_stability }
-		change_variable = { which = irm_crime value = prev.trigger:planet_crime }
-		change_variable = { which = irm_housing value = prev.trigger:free_housing }
-		change_variable = { which = irm_amenities value = prev.trigger:free_amenities }
-		change_variable = { which = irm_jobs value = prev.trigger:free_jobs }
-		change_variable = { which = irm_unemployed value = prev.trigger:num_unemployed }
-		change_variable = { which = irm_happiness value = prev.trigger:happiness_planet }
+	if = {
+		limit = {
+			exists = owner
+			owner = { is_same_value = root.owner }
+			is_under_colonization = no
+		}
+		prevprevprev = {
+			change_variable = { which = irm_pops value = prev.trigger:num_pops }
+			change_variable = { which = irm_stability value = prev.trigger:planet_stability }
+			change_variable = { which = irm_crime value = prev.trigger:planet_crime }
+			change_variable = { which = irm_housing value = prev.trigger:free_housing }
+			change_variable = { which = irm_amenities value = prev.trigger:free_amenities }
+			change_variable = { which = irm_jobs value = prev.trigger:free_jobs }
+			change_variable = { which = irm_unemployed value = prev.trigger:num_unemployed }
+			change_variable = { which = irm_happiness value = prev.trigger:happiness_planet }
+		}
 	}
 }
 irm_get_stats_resources = {
-	prevprevprev = {
-		change_variable = { which = irm_energy value = prev.value:irm_resource_amount_|RES|energy| }
+	if = {
+		# for owned
+		limit = {
+			exists = owner
+			owner = { is_same_value = root.owner }
+			is_under_colonization = no
+		}
+		prevprevprev = {
+			change_variable = { which = irm_energy value = prev.value:irm_resource_amount_|RES|energy| }
+			change_variable = { which = irm_energy_planet_exp value = prev.value:irm_resource_amount_|RES|energy|CALC|upkeep| }
+			change_variable = { which = irm_energy_planet_inc value = prev.value:irm_resource_amount_|RES|energy|CALC|produces| }
+		}
+		# capital case
+		if = {
+			limit = { is_same_value = root.owner.capital_scope }
+			prevprevprev = {
+				change_variable = { which = irm_energy value = 20 }
+				change_variable = { which = irm_energy_base_inc value = 20 }
+			}
+		}
+	}
+	if = {
+		# for just resourceful
+		limit = {
+			is_colony = no
+			has_owner = no
+			has_resource = yes
+			or = {
+				has_mining_station = yes
+				has_research_station = yes
+				has_observation_outpost = yes
+			}
+		}
+		prevprevprev = {
+			change_variable = { which = irm_energy value = prev.value:irm_resource_amount_|RES|energy| }
+			change_variable = { which = irm_energy_station_inc value = prev.value:irm_resource_amount_|RES|energy| }
+		}
+		# non-energy stations
+		if = {
+			limit = { has_resource = { type = energy amount = 0 } }
+			prevprevprev = {
+				change_variable = { which = irm_energy value = -1 }
+				change_variable = { which = irm_energy_station_exp value = 1 }
+			}
+		}
 	}
 }
 
@@ -89,4 +142,10 @@ irm_del_stats = {
 	# resources
 	irm_unset = { which = irm_trade_value }
 	irm_unset = { which = irm_energy }
+	irm_unset = { which = irm_energy_base_inc }
+	irm_unset = { which = irm_energy_planet_exp }
+	irm_unset = { which = irm_energy_planet_inc }
+	irm_unset = { which = irm_energy_station_exp }
+	irm_unset = { which = irm_energy_station_inc }
+	irm_unset = { which = irm_energy_starbase_exp }
 }

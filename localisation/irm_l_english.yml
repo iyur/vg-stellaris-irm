@@ -23,6 +23,7 @@ l_english:
   irm.ui.y: "§Y"
   irm.ui.g: "§G"
   irm.ui.l: "§L"
+  irm.ui.tab: "    "
 
 # Sector
 
@@ -62,7 +63,16 @@ l_english:
   irm.ui.sector.res.trade: "§G[irm_ui_sector.irm_trade_value]§!"
   irm.ui.sector.res.trade.tt: "§H$TRADE_VALUE$§!\nMonthly Gain: §Y[irm_ui_sector.irm_trade_value]§!$irm.ui.1$$TRADE_VALUE_DESC$"
   irm.ui.sector.res.energy: "[irm_ui_sector.irm_GetEnergyState][irm_ui_sector.irm_energy]"
-  irm.ui.sector.res.energy.tt: "§H$energy$§!\nMonthly Gain: §Y[irm_ui_sector.irm_energy]§!$irm.ui.1$$energy_desc$"
+  irm.ui.sector.res.energy.tt: "§H$energy$§!\nMonthly Gain: §Y[irm_ui_sector.irm_energy]§!"
+  irm.ui.sector.res.energy.tt.inc: "\nProduced:"
+  irm.ui.sector.res.energy.tt.exp: "\nConsumed:"
+  irm.ui.sector.res.energy.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_energy_base_inc]§!"
+  irm.ui.sector.res.energy.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_energy_planet_exp]§!"
+  irm.ui.sector.res.energy.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_energy_planet_inc]§!"
+  irm.ui.sector.res.energy.tt.station.exp: "$irm.ui.tab$Stations: §R-[irm_ui_sector.irm_energy_station_exp]§!"
+  irm.ui.sector.res.energy.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_energy_station_inc]§!"
+  irm.ui.sector.res.energy.tt.starbase.exp: "$irm.ui.tab$Starbases: §R-[irm_ui_sector.irm_energy_starbase_exp]§!"
+  irm.ui.sector.res.energy.tte: "$irm.ui.1$$energy_desc$"
 
   # side left overview
   irm.ui.sector.left: "Overview"

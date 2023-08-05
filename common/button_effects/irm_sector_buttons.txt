@@ -63,7 +63,40 @@ irm_bt_sector_trade = {
 }
 irm_bt_sector_energy = {
 	potential = { exists = event_target:irm_ui_sector }
-	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.res.energy.tt" } }	
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.energy.tt"
+				custom_tooltip = "irm.ui.sector.res.energy.tt.inc"
+				if = {
+					limit = { check_variable = { which = irm_energy_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.energy.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_energy_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.energy.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_energy_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.energy.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.energy.tt.exp"
+				if = {
+					limit = { check_variable = { which = irm_energy_station_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.energy.tt.station.exp"
+				}
+				if = {
+					limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.energy.tt.starbase.exp"
+				}
+				if = {
+					limit = { check_variable = { which = irm_energy_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.energy.tt.planet.exp"
+				}
+				custom_tooltip = "irm.ui.sector.res.energy.tte"
+			}
+		}
+	}	
 }
 
 # Stats space values
