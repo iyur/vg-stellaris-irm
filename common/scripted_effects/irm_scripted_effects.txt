@@ -69,6 +69,10 @@ irm_get_stats = {
 			divide_variable = { which = irm_happiness value = irm_owned_colonies }
 			multiply_variable = { which = irm_happiness value = 100 }
 	}
+	# research
+	change_variable = { which = irm_research value = irm_physics }
+	change_variable = { which = irm_research value = irm_society }
+	change_variable = { which = irm_research value = irm_engineering }
 	if = {
 		# starbases upkeep
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
@@ -86,6 +90,7 @@ irm_get_stats = {
 	round_variable = irm_goods
 	round_variable = irm_alloys
 	round_variable = irm_unity
+	round_variable = irm_research
 }
 
 # This = Planet
@@ -140,6 +145,13 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_unity value = prev.value:irm_resource_amount_|RES|unity| }
 			change_variable = { which = irm_unity_planet_exp value = prev.value:irm_resource_amount_|RES|unity|CALC|upkeep| }
 			change_variable = { which = irm_unity_planet_inc value = prev.value:irm_resource_amount_|RES|unity|CALC|produces| }
+
+			change_variable = { which = irm_physics value = prev.value:irm_resource_amount_|RES|physics_research| }
+			change_variable = { which = irm_physics_planet_inc value = prev.value:irm_resource_amount_|RES|physics_research|CALC|produces| }
+			change_variable = { which = irm_society value = prev.value:irm_resource_amount_|RES|society_research| }
+			change_variable = { which = irm_society_planet_inc value = prev.value:irm_resource_amount_|RES|society_research|CALC|produces| }
+			change_variable = { which = irm_engineering value = prev.value:irm_resource_amount_|RES|engineering_research| }
+			change_variable = { which = irm_engineering_planet_inc value = prev.value:irm_resource_amount_|RES|engineering_research|CALC|produces| }
 		}
 		# capital case
 		if = {
@@ -157,6 +169,12 @@ irm_get_stats_resources = {
 				change_variable = { which = irm_alloys_base_inc value = 5 }
 				change_variable = { which = irm_unity value = 5 }
 				change_variable = { which = irm_unity_base_inc value = 5 }
+				change_variable = { which = irm_physics value = 10 }
+				change_variable = { which = irm_physics_base_inc value = 10 }
+				change_variable = { which = irm_society value = 10 }
+				change_variable = { which = irm_society_base_inc value = 10 }
+				change_variable = { which = irm_engineering value = 10 }
+				change_variable = { which = irm_engineering_base_inc value = 10 }
 			}
 		}
 	}
@@ -184,6 +202,13 @@ irm_get_stats_resources = {
 
 			change_variable = { which = irm_unity value = prev.value:irm_resource_amount_|RES|unity| }
 			change_variable = { which = irm_unity_station_inc value = prev.value:irm_resource_amount_|RES|unity| }
+
+			change_variable = { which = irm_physics value = prev.value:irm_resource_amount_|RES|physics_research| }
+			change_variable = { which = irm_physics_station_inc value = prev.value:irm_resource_amount_|RES|physics_research| }
+			change_variable = { which = irm_society value = prev.value:irm_resource_amount_|RES|society_research| }
+			change_variable = { which = irm_society_station_inc value = prev.value:irm_resource_amount_|RES|society_research| }
+			change_variable = { which = irm_engineering value = prev.value:irm_resource_amount_|RES|engineering_research| }
+			change_variable = { which = irm_engineering_station_inc value = prev.value:irm_resource_amount_|RES|engineering_research| }
 		}
 		# non-energy stations upkeep
 		if = {
@@ -242,4 +267,13 @@ irm_del_stats = {
 	irm_unset = { which = irm_unity_station_inc }
 	irm_unset = { which = irm_unity_planet_exp }
 	irm_unset = { which = irm_unity_planet_inc }
+	irm_unset = { which = irm_physics }
+	irm_unset = { which = irm_physics_base_inc }
+	irm_unset = { which = irm_physics_station_inc }
+	irm_unset = { which = irm_physics_planet_inc }
+	irm_unset = { which = irm_society }
+	irm_unset = { which = irm_society_base_inc }
+	irm_unset = { which = irm_society_station_inc }
+	irm_unset = { which = irm_society_planet_inc }
+	irm_unset = { which = irm_research }
 }

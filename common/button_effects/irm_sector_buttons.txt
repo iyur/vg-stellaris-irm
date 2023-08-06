@@ -239,6 +239,56 @@ irm_bt_sector_unity = {
 		}
 	}	
 }
+irm_bt_sector_research = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.research.tt"
+				custom_tooltip = "irm.ui.sector.res.physics.tt"
+				if = {
+					limit = { check_variable = { which = irm_physics_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.physics.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_physics_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.physics.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_physics_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.physics.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.society.tt"
+				if = {
+					limit = { check_variable = { which = irm_society_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.society.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_society_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.society.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_society_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.society.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.engineering.tt"
+				if = {
+					limit = { check_variable = { which = irm_engineering_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.engineering.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_engineering_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.engineering.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_engineering_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.engineering.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.research.tte"
+			}
+		}
+	}	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {
