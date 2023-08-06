@@ -119,7 +119,7 @@ l_english:
   irm.ui.sector.res.society.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_society_planet_inc]§!"
   irm.ui.sector.res.engineering.tt: "\nEngineering: §G+[irm_ui_sector.irm_engineering]§!"
   irm.ui.sector.res.engineering.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_engineering_base_inc]§!"
-  irm.ui.sector.res.engineering.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_engineering_station_inc]§!"
+  irm.ui.sector.res.engineering.tt.ion.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_engineering_station_inc]§!"
   irm.ui.sector.res.engineering.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_engineering_planet_inc]§!"
   irm.ui.sector.res.research.tte: "$irm.ui.1$§HResearch Points§! (£physics£, £society£, £engineering£) is used to research new technologies. We can increase our output by: \n§Y1.§! Building £building£ §HResearch Labs§! buildings on our colonies. \n§Y2.§! Using §HConstruction Ships§! to build §HResearch Stations§! around certain planets or stars.§!"
   irm.ui.sector.res.influence: "[irm_ui_sector.irm_GetInfluenceState][irm_ui_sector.irm_influence]"
@@ -127,6 +127,13 @@ l_english:
   irm.ui.sector.res.influence.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_influence_base_inc]§!"
   irm.ui.sector.res.influence.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_influence_planet_inc]§!"
   irm.ui.sector.res.influence.tte: "$irm.ui.1$$influence_desc$"
+  irm.ui.sector.res.strategic: "[irm_ui_sector.irm_GetStrategicState][irm_ui_sector.irm_strategic]"
+  irm.ui.sector.res.strategic.tt: "§HStrategic§!\nMonthly Gain: §Y[irm_ui_sector.irm_strategic]§!"
+  irm.ui.sector.res.volatile_motes.tt: "\n$volatile_motes$: [irm_ui_sector.irm_volatile_motes]"
+  irm.ui.sector.res.volatile_motes.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_volatile_motes_station_inc]§!"
+  irm.ui.sector.res.volatile_motes.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_volatile_motes_planet_exp]§!"
+  irm.ui.sector.res.volatile_motes.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_volatile_motes_planet_inc]§!"
+  irm.ui.sector.res.strategic.tte: "$irm.ui.1$$TUTORIAL_STRATEGIC_RESOURCES_DESC$"
 
   # side left overview
   irm.ui.sector.left: "Overview"

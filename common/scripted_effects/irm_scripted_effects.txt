@@ -73,6 +73,8 @@ irm_get_stats = {
 	change_variable = { which = irm_research value = irm_physics }
 	change_variable = { which = irm_research value = irm_society }
 	change_variable = { which = irm_research value = irm_engineering }
+	# strategic
+	change_variable = { which = irm_strategic value = irm_volatile_motes }
 	if = {
 		# starbases upkeep
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
@@ -91,6 +93,7 @@ irm_get_stats = {
 	round_variable = irm_alloys
 	round_variable = irm_unity
 	round_variable = irm_research
+	round_variable = irm_strategic
 	round_variable = irm_influence
 }
 
@@ -156,6 +159,12 @@ irm_get_stats_resources = {
 
 			change_variable = { which = irm_influence value = prev.value:irm_resource_amount_|RES|influence| }
 			change_variable = { which = irm_influence_planet_inc value = prev.value:irm_resource_amount_|RES|influence|CALC|produces| }
+
+			# strategic
+			change_variable = { which = irm_volatile_motes value = prev.value:irm_resource_amount_|RES|volatile_motes| }
+			change_variable = { which = irm_volatile_motes_planet_exp value = prev.value:irm_resource_amount_|RES|volatile_motes|CALC|upkeep| }
+			change_variable = { which = irm_volatile_motes_planet_inc value = prev.value:irm_resource_amount_|RES|volatile_motes|CALC|produces| }
+
 		}
 		# capital case
 		if = {
@@ -215,6 +224,10 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_society_station_inc value = prev.value:irm_resource_amount_|RES|society_research| }
 			change_variable = { which = irm_engineering value = prev.value:irm_resource_amount_|RES|engineering_research| }
 			change_variable = { which = irm_engineering_station_inc value = prev.value:irm_resource_amount_|RES|engineering_research| }
+
+			# strategic
+			change_variable = { which = irm_volatile_motes value = prev.value:irm_resource_amount_|RES|volatile_motes| }
+			change_variable = { which = irm_volatile_motes_station_inc value = prev.value:irm_resource_amount_|RES|volatile_motes|CALC|produces| }
 		}
 		# non-energy stations upkeep
 		if = {
@@ -285,4 +298,9 @@ irm_del_stats = {
 	irm_unset = { which = irm_influence }
 	irm_unset = { which = irm_influence_base_inc }
 	irm_unset = { which = irm_influence_planet_inc }
+	irm_unset = { which = irm_strategic }
+	irm_unset = { which = irm_volatile_motes }
+	irm_unset = { which = irm_volatile_motes_station_inc }
+	irm_unset = { which = irm_volatile_motes_planet_exp }
+	irm_unset = { which = irm_volatile_motes_planet_inc }
 }
