@@ -91,6 +91,7 @@ irm_get_stats = {
 	round_variable = irm_alloys
 	round_variable = irm_unity
 	round_variable = irm_research
+	round_variable = irm_influence
 }
 
 # This = Planet
@@ -152,6 +153,9 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_society_planet_inc value = prev.value:irm_resource_amount_|RES|society_research|CALC|produces| }
 			change_variable = { which = irm_engineering value = prev.value:irm_resource_amount_|RES|engineering_research| }
 			change_variable = { which = irm_engineering_planet_inc value = prev.value:irm_resource_amount_|RES|engineering_research|CALC|produces| }
+
+			change_variable = { which = irm_influence value = prev.value:irm_resource_amount_|RES|influence| }
+			change_variable = { which = irm_influence_planet_inc value = prev.value:irm_resource_amount_|RES|influence|CALC|produces| }
 		}
 		# capital case
 		if = {
@@ -175,6 +179,8 @@ irm_get_stats_resources = {
 				change_variable = { which = irm_society_base_inc value = 10 }
 				change_variable = { which = irm_engineering value = 10 }
 				change_variable = { which = irm_engineering_base_inc value = 10 }
+				change_variable = { which = irm_influence value = 3 }
+				change_variable = { which = irm_influence_base_inc value = 3 }
 			}
 		}
 	}
@@ -276,4 +282,7 @@ irm_del_stats = {
 	irm_unset = { which = irm_society_station_inc }
 	irm_unset = { which = irm_society_planet_inc }
 	irm_unset = { which = irm_research }
+	irm_unset = { which = irm_influence }
+	irm_unset = { which = irm_influence_base_inc }
+	irm_unset = { which = irm_influence_planet_inc }
 }

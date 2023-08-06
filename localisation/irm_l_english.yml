@@ -122,6 +122,11 @@ l_english:
   irm.ui.sector.res.engineering.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_engineering_station_inc]§!"
   irm.ui.sector.res.engineering.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_engineering_planet_inc]§!"
   irm.ui.sector.res.research.tte: "$irm.ui.1$§HResearch Points§! (£physics£, £society£, £engineering£) is used to research new technologies. We can increase our output by: \n§Y1.§! Building £building£ §HResearch Labs§! buildings on our colonies. \n§Y2.§! Using §HConstruction Ships§! to build §HResearch Stations§! around certain planets or stars.§!"
+  irm.ui.sector.res.influence: "[irm_ui_sector.irm_GetInfluenceState][irm_ui_sector.irm_influence]"
+  irm.ui.sector.res.influence.tt: "§H$influence$§!\nMonthly Gain: §Y[irm_ui_sector.irm_influence]§!"
+  irm.ui.sector.res.influence.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_influence_base_inc]§!"
+  irm.ui.sector.res.influence.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_influence_planet_inc]§!"
+  irm.ui.sector.res.influence.tte: "$irm.ui.1$$influence_desc$"
 
   # side left overview
   irm.ui.sector.left: "Overview"

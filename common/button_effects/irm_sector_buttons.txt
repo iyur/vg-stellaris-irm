@@ -289,6 +289,26 @@ irm_bt_sector_research = {
 		}
 	}	
 }
+irm_bt_sector_influence = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.influence.tt"
+				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = { check_variable = { which = irm_influence_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.influence.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_influence_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.influence.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.influence.tte"
+			}
+		}
+	}	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {
