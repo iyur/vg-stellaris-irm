@@ -210,6 +210,35 @@ irm_bt_sector_alloys = {
 		}
 	}	
 }
+irm_bt_sector_unity = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.res.unity.tt"
+				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = { check_variable = { which = irm_unity_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.unity.tt.base.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_unity_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.unity.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_unity_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.unity.tt.planet.inc"
+				}
+				custom_tooltip = "irm.ui.sector.res.tt.exp"
+				if = {
+					limit = { check_variable = { which = irm_unity_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.unity.tt.planet.exp"
+				}
+				custom_tooltip = "irm.ui.sector.res.unity.tte"
+			}
+		}
+	}	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {

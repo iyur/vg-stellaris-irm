@@ -85,6 +85,7 @@ irm_get_stats = {
 	round_variable = irm_food
 	round_variable = irm_goods
 	round_variable = irm_alloys
+	round_variable = irm_unity
 }
 
 # This = Planet
@@ -135,6 +136,10 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_alloys value = prev.value:irm_resource_amount_|RES|alloys| }
 			change_variable = { which = irm_alloys_planet_exp value = prev.value:irm_resource_amount_|RES|alloys|CALC|upkeep| }
 			change_variable = { which = irm_alloys_planet_inc value = prev.value:irm_resource_amount_|RES|alloys|CALC|produces| }
+
+			change_variable = { which = irm_unity value = prev.value:irm_resource_amount_|RES|unity| }
+			change_variable = { which = irm_unity_planet_exp value = prev.value:irm_resource_amount_|RES|unity|CALC|upkeep| }
+			change_variable = { which = irm_unity_planet_inc value = prev.value:irm_resource_amount_|RES|unity|CALC|produces| }
 		}
 		# capital case
 		if = {
@@ -150,6 +155,8 @@ irm_get_stats_resources = {
 				change_variable = { which = irm_goods_base_inc value = 10 }
 				change_variable = { which = irm_alloys value = 5 }
 				change_variable = { which = irm_alloys_base_inc value = 5 }
+				change_variable = { which = irm_unity value = 5 }
+				change_variable = { which = irm_unity_base_inc value = 5 }
 			}
 		}
 	}
@@ -174,6 +181,9 @@ irm_get_stats_resources = {
 
 			change_variable = { which = irm_alloys value = prev.value:irm_resource_amount_|RES|alloys| }
 			change_variable = { which = irm_alloys_station_inc value = prev.value:irm_resource_amount_|RES|alloys| }
+
+			change_variable = { which = irm_unity value = prev.value:irm_resource_amount_|RES|unity| }
+			change_variable = { which = irm_unity_station_inc value = prev.value:irm_resource_amount_|RES|unity| }
 		}
 		# non-energy stations upkeep
 		if = {
@@ -227,5 +237,9 @@ irm_del_stats = {
 	irm_unset = { which = irm_alloys_base_inc }
 	irm_unset = { which = irm_alloys_station_inc }
 	irm_unset = { which = irm_alloys_planet_exp }
-	irm_unset = { which = irm_alloys_planet_inc }
+	irm_unset = { which = irm_unity }
+	irm_unset = { which = irm_unity_base_inc }
+	irm_unset = { which = irm_unity_station_inc }
+	irm_unset = { which = irm_unity_planet_exp }
+	irm_unset = { which = irm_unity_planet_inc }
 }

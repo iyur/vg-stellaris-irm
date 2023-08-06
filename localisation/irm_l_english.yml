@@ -100,6 +100,13 @@ l_english:
   irm.ui.sector.res.alloys.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_alloys_planet_exp]§!"
   irm.ui.sector.res.alloys.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_alloys_planet_inc]§!"
   irm.ui.sector.res.alloys.tte: "$irm.ui.1$$alloys_desc$"
+  irm.ui.sector.res.unity: "[irm_ui_sector.irm_GetUnityState][irm_ui_sector.irm_unity]"
+  irm.ui.sector.res.unity.tt: "§H$unity$§!\nMonthly Gain: §Y[irm_ui_sector.irm_unity]§!"
+  irm.ui.sector.res.unity.tt.base.inc: "$irm.ui.tab$Base: §G+[irm_ui_sector.irm_unity_base_inc]§!"
+  irm.ui.sector.res.unity.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_unity_station_inc]§!"
+  irm.ui.sector.res.unity.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_unity_planet_exp]§!"
+  irm.ui.sector.res.unity.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_unity_planet_inc]§!"
+  irm.ui.sector.res.unity.tte: "$irm.ui.1$$unity_desc$"
 
   # side left overview
   irm.ui.sector.left: "Overview"
