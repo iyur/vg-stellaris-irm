@@ -311,6 +311,38 @@ irm_bt_sector_strategic = {
 					limit = { check_variable = { which = irm_volatile_motes_planet_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.volatile_motes.tt.planet.exp"
 				}
+				if = {
+					limit = { check_variable = { which = irm_exotic_gases value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt"
+				}
+				if = {
+					limit = { check_variable = { which = irm_exotic_gases_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_exotic_gases_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt.planet.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_exotic_gases_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt.planet.exp"
+				}
+				if = {
+					limit = { check_variable = { which = irm_rare_crystals value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt"
+				}
+				if = {
+					limit = { check_variable = { which = irm_rare_crystals_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_rare_crystals_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt.planet.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_rare_crystals_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt.planet.exp"
+				}
 				custom_tooltip = "irm.ui.sector.res.strategic.tte"
 			}
 		}
