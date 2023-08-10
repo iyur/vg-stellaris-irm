@@ -141,6 +141,10 @@ l_english:
   irm.ui.sector.res.rare_crystals.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_rare_crystals_station_inc]§!"
   irm.ui.sector.res.rare_crystals.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_rare_crystals_planet_exp]§!"
   irm.ui.sector.res.rare_crystals.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_rare_crystals_planet_inc]§!"
+  irm.ui.sector.res.sr_living_metal.tt: "\n$sr_living_metal$: [irm_ui_sector.irm_sr_living_metal]"
+  irm.ui.sector.res.sr_living_metal.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_sr_living_metal_station_inc]§!"
+  irm.ui.sector.res.sr_living_metal.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_sr_living_metal_planet_exp]§!"
+  irm.ui.sector.res.sr_living_metal.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_sr_living_metal_planet_inc]§!"
   irm.ui.sector.res.strategic.tte: "$irm.ui.1$$TUTORIAL_STRATEGIC_RESOURCES_DESC$"
 
   # side left overview

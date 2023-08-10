@@ -77,6 +77,7 @@ irm_get_stats = {
 	change_variable = { which = irm_strategic value = irm_volatile_motes }
 	change_variable = { which = irm_strategic value = irm_exotic_gases }
 	change_variable = { which = irm_strategic value = irm_rare_crystals }
+	change_variable = { which = irm_strategic value = irm_sr_living_metal }
 	if = {
 		# starbases upkeep
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
@@ -175,6 +176,10 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_rare_crystals_planet_exp value = prev.value:irm_resource_amount_|RES|rare_crystals|CALC|upkeep| }
 			change_variable = { which = irm_rare_crystals_planet_inc value = prev.value:irm_resource_amount_|RES|rare_crystals|CALC|produces| }
 
+			change_variable = { which = irm_sr_living_metal value = prev.value:irm_resource_amount_|RES|sr_living_metal| }
+			change_variable = { which = irm_sr_living_metal_planet_exp value = prev.value:irm_resource_amount_|RES|sr_living_metal|CALC|upkeep| }
+			change_variable = { which = irm_sr_living_metal_planet_inc value = prev.value:irm_resource_amount_|RES|sr_living_metal|CALC|produces| }
+
 		}
 		# capital case
 		if = {
@@ -244,6 +249,9 @@ irm_get_stats_resources = {
 
 			change_variable = { which = irm_rare_crystals value = prev.value:irm_resource_amount_|RES|rare_crystals| }
 			change_variable = { which = irm_rare_crystals_station_inc value = prev.value:irm_resource_amount_|RES|rare_crystals|CALC|produces| }
+
+			change_variable = { which = irm_sr_living_metal value = prev.value:irm_resource_amount_|RES|sr_living_metal| }
+			change_variable = { which = irm_sr_living_metal_station_inc value = prev.value:irm_resource_amount_|RES|sr_living_metal|CALC|produces| }
 		}
 		# non-energy stations upkeep
 		if = {
@@ -327,4 +335,8 @@ irm_del_stats = {
 	irm_unset = { which = irm_rare_crystals_station_inc }
 	irm_unset = { which = irm_rare_crystals_planet_exp }
 	irm_unset = { which = irm_rare_crystals_planet_inc }
+	irm_unset = { which = irm_sr_living_metal }
+	irm_unset = { which = irm_sr_living_metal_station_inc }
+	irm_unset = { which = irm_sr_living_metal_planet_exp }
+	irm_unset = { which = irm_sr_living_metal_planet_inc }
 }
