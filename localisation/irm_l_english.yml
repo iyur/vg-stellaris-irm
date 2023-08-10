@@ -153,6 +153,14 @@ l_english:
   irm.ui.sector.res.sr_dark_matter.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_sr_dark_matter_station_inc]§!"
   irm.ui.sector.res.sr_dark_matter.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_sr_dark_matter_planet_exp]§!"
   irm.ui.sector.res.sr_dark_matter.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_sr_dark_matter_planet_inc]§!"
+  irm.ui.sector.res.nanites.tt: "\n$nanites$: [irm_ui_sector.irm_nanites]"
+  irm.ui.sector.res.nanites.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_nanites_station_inc]§!"
+  irm.ui.sector.res.nanites.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_nanites_planet_exp]§!"
+  irm.ui.sector.res.nanites.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_nanites_planet_inc]§!"
+  irm.ui.sector.res.minor_artifacts.tt: "\n$minor_artifacts$: [irm_ui_sector.irm_minor_artifacts]"
+  irm.ui.sector.res.minor_artifacts.tt.station.inc: "$irm.ui.tab$Stations: §G+[irm_ui_sector.irm_minor_artifacts_station_inc]§!"
+  irm.ui.sector.res.minor_artifacts.tt.planet.exp: "$irm.ui.tab$Planets: §R-[irm_ui_sector.irm_minor_artifacts_planet_exp]§!"
+  irm.ui.sector.res.minor_artifacts.tt.planet.inc: "$irm.ui.tab$Planets: §G+[irm_ui_sector.irm_minor_artifacts_planet_inc]§!"
   irm.ui.sector.res.strategic.tte: "$irm.ui.1$$TUTORIAL_STRATEGIC_RESOURCES_DESC$"
 
   # side left overview

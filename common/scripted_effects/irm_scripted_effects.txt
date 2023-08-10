@@ -80,6 +80,8 @@ irm_get_stats = {
 	change_variable = { which = irm_strategic value = irm_sr_living_metal }
 	change_variable = { which = irm_strategic value = irm_sr_zro }
 	change_variable = { which = irm_strategic value = irm_sr_dark_matter }
+	change_variable = { which = irm_strategic value = irm_nanites }
+	change_variable = { which = irm_strategic value = irm_minor_artifacts }
 	if = {
 		# starbases upkeep
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
@@ -190,6 +192,14 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_sr_dark_matter_planet_exp value = prev.value:irm_resource_amount_|RES|sr_dark_matter|CALC|upkeep| }
 			change_variable = { which = irm_sr_dark_matter_planet_inc value = prev.value:irm_resource_amount_|RES|sr_dark_matter|CALC|produces| }
 
+			change_variable = { which = irm_nanites value = prev.value:irm_resource_amount_|RES|nanites| }
+			change_variable = { which = irm_nanites_planet_exp value = prev.value:irm_resource_amount_|RES|nanites|CALC|upkeep| }
+			change_variable = { which = irm_nanites_planet_inc value = prev.value:irm_resource_amount_|RES|nanites|CALC|produces| }
+
+			change_variable = { which = irm_minor_artifacts value = prev.value:irm_resource_amount_|RES|minor_artifacts| }
+			change_variable = { which = irm_minor_artifacts_planet_exp value = prev.value:irm_resource_amount_|RES|minor_artifacts|CALC|upkeep| }
+			change_variable = { which = irm_minor_artifacts_planet_inc value = prev.value:irm_resource_amount_|RES|minor_artifacts|CALC|produces| }
+
 		}
 		# capital case
 		if = {
@@ -268,6 +278,12 @@ irm_get_stats_resources = {
 
 			change_variable = { which = irm_sr_dark_matter value = prev.value:irm_resource_amount_|RES|sr_dark_matter| }
 			change_variable = { which = irm_sr_dark_matter_station_inc value = prev.value:irm_resource_amount_|RES|sr_dark_matter|CALC|produces| }
+
+			change_variable = { which = irm_nanites value = prev.value:irm_resource_amount_|RES|nanites| }
+			change_variable = { which = irm_nanites_station_inc value = prev.value:irm_resource_amount_|RES|nanites|CALC|produces| }
+
+			change_variable = { which = irm_minor_artifacts value = prev.value:irm_resource_amount_|RES|minor_artifacts| }
+			change_variable = { which = irm_minor_artifacts_station_inc value = prev.value:irm_resource_amount_|RES|minor_artifacts|CALC|produces| }
 		}
 		# non-energy stations upkeep
 		if = {
@@ -363,4 +379,12 @@ irm_del_stats = {
 	irm_unset = { which = irm_sr_dark_matter_station_inc }
 	irm_unset = { which = irm_sr_dark_matter_planet_exp }
 	irm_unset = { which = irm_sr_dark_matter_planet_inc }
+	irm_unset = { which = irm_nanites }
+	irm_unset = { which = irm_nanites_station_inc }
+	irm_unset = { which = irm_nanites_planet_exp }
+	irm_unset = { which = irm_nanites_planet_inc }
+	irm_unset = { which = irm_minor_artifacts }
+	irm_unset = { which = irm_minor_artifacts_station_inc }
+	irm_unset = { which = irm_minor_artifacts_planet_exp }
+	irm_unset = { which = irm_minor_artifacts_planet_inc }
 }
