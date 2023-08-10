@@ -359,6 +359,38 @@ irm_bt_sector_strategic = {
 					limit = { check_variable = { which = irm_sr_living_metal_planet_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.sr_living_metal.tt.planet.exp"
 				}
+				if = {
+					limit = { check_variable = { which = irm_sr_zro value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_zro.tt"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_zro_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_zro.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_zro_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_zro.tt.planet.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_zro_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_zro.tt.planet.exp"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_dark_matter value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_dark_matter.tt"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_dark_matter_station_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_dark_matter.tt.station.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_dark_matter_planet_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_dark_matter.tt.planet.inc"
+				}
+				if = {
+					limit = { check_variable = { which = irm_sr_dark_matter_planet_exp value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.sr_dark_matter.tt.planet.exp"
+				}
 				custom_tooltip = "irm.ui.sector.res.strategic.tte"
 			}
 		}

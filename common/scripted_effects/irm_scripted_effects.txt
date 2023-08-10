@@ -78,6 +78,8 @@ irm_get_stats = {
 	change_variable = { which = irm_strategic value = irm_exotic_gases }
 	change_variable = { which = irm_strategic value = irm_rare_crystals }
 	change_variable = { which = irm_strategic value = irm_sr_living_metal }
+	change_variable = { which = irm_strategic value = irm_sr_zro }
+	change_variable = { which = irm_strategic value = irm_sr_dark_matter }
 	if = {
 		# starbases upkeep
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
@@ -180,6 +182,14 @@ irm_get_stats_resources = {
 			change_variable = { which = irm_sr_living_metal_planet_exp value = prev.value:irm_resource_amount_|RES|sr_living_metal|CALC|upkeep| }
 			change_variable = { which = irm_sr_living_metal_planet_inc value = prev.value:irm_resource_amount_|RES|sr_living_metal|CALC|produces| }
 
+			change_variable = { which = irm_sr_zro value = prev.value:irm_resource_amount_|RES|sr_zro| }
+			change_variable = { which = irm_sr_zro_planet_exp value = prev.value:irm_resource_amount_|RES|sr_zro|CALC|upkeep| }
+			change_variable = { which = irm_sr_zro_planet_inc value = prev.value:irm_resource_amount_|RES|sr_zro|CALC|produces| }
+
+			change_variable = { which = irm_sr_dark_matter value = prev.value:irm_resource_amount_|RES|sr_dark_matter| }
+			change_variable = { which = irm_sr_dark_matter_planet_exp value = prev.value:irm_resource_amount_|RES|sr_dark_matter|CALC|upkeep| }
+			change_variable = { which = irm_sr_dark_matter_planet_inc value = prev.value:irm_resource_amount_|RES|sr_dark_matter|CALC|produces| }
+
 		}
 		# capital case
 		if = {
@@ -252,6 +262,12 @@ irm_get_stats_resources = {
 
 			change_variable = { which = irm_sr_living_metal value = prev.value:irm_resource_amount_|RES|sr_living_metal| }
 			change_variable = { which = irm_sr_living_metal_station_inc value = prev.value:irm_resource_amount_|RES|sr_living_metal|CALC|produces| }
+
+			change_variable = { which = irm_sr_zro value = prev.value:irm_resource_amount_|RES|sr_zro| }
+			change_variable = { which = irm_sr_zro_station_inc value = prev.value:irm_resource_amount_|RES|sr_zro|CALC|produces| }
+
+			change_variable = { which = irm_sr_dark_matter value = prev.value:irm_resource_amount_|RES|sr_dark_matter| }
+			change_variable = { which = irm_sr_dark_matter_station_inc value = prev.value:irm_resource_amount_|RES|sr_dark_matter|CALC|produces| }
 		}
 		# non-energy stations upkeep
 		if = {
@@ -339,4 +355,12 @@ irm_del_stats = {
 	irm_unset = { which = irm_sr_living_metal_station_inc }
 	irm_unset = { which = irm_sr_living_metal_planet_exp }
 	irm_unset = { which = irm_sr_living_metal_planet_inc }
+	irm_unset = { which = irm_sr_zro }
+	irm_unset = { which = irm_sr_zro_station_inc }
+	irm_unset = { which = irm_sr_zro_planet_exp }
+	irm_unset = { which = irm_sr_zro_planet_inc }
+	irm_unset = { which = irm_sr_dark_matter }
+	irm_unset = { which = irm_sr_dark_matter_station_inc }
+	irm_unset = { which = irm_sr_dark_matter_planet_exp }
+	irm_unset = { which = irm_sr_dark_matter_planet_inc }
 }
