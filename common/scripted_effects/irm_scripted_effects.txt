@@ -31,33 +31,6 @@ irm_get_stats = {
 						starbase_citadel = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 5 } } }
 				}
 			}
-			starbase = {
-				# food production
-				export_trigger_value_to_variable = {
-					trigger = count_starbase_buildings
-					parameters = {
-						type = hydroponics_bay
-						include_being_constructed = no
-					}
-					variable = irm_food_starbase_num
-				}
-				if = {
-					limit = { check_variable = { which = irm_food_starbase_num value > 0 } }
-						root.owner = {
-							export_modifier_to_variable = { modifier = starbase_constructions_food_produces_mult variable = irm_food_starbase_mod }
-							prevprevprevprev = {
-								set_variable = { which = irm_food_starbase_inc value = prev.irm_food_starbase_mod }
-								change_variable = { which = irm_food_starbase_inc value = 1 }
-								multiply_variable = { which = irm_food_starbase_inc value = 10 }
-								multiply_variable = { which = irm_food_starbase_inc value = prevprev.irm_food_starbase_num }
-								change_variable = { which = irm_food value = irm_food_starbase_inc }
-							}
-							irm_unset = { which = irm_food_starbase_mod }
-						}
-					irm_unset = { which = irm_food_starbase_num }
-				}
-			}
-
 		} # system
 	}
 	# final calculations
