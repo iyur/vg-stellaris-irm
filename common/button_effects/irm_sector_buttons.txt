@@ -67,7 +67,16 @@ irm_bt_sector_energy = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.energy.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_energy_base_inc value > 0 }
+							check_variable = { which = irm_energy_station_inc value > 0 }
+							check_variable = { which = irm_energy_station_inc value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
+				}
 				if = {
 					limit = { check_variable = { which = irm_energy_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.energy.tt.base.inc"
@@ -77,10 +86,19 @@ irm_bt_sector_energy = {
 					custom_tooltip = "irm.ui.sector.res.energy.tt.station.inc"
 				}
 				if = {
-					limit = { check_variable = { which = irm_energy_planet_inc value > 0 } }
+					limit = { check_variable = { which = irm_energy_station_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.energy.tt.planet.inc"
 				}
-				custom_tooltip = "irm.ui.sector.res.tt.exp"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_energy_station_exp value > 0 }
+							check_variable = { which = irm_energy_starbase_exp value > 0 }
+							check_variable = { which = irm_energy_planet_exp value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.exp"
+				}
 				if = {
 					limit = { check_variable = { which = irm_energy_station_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.energy.tt.station.exp"
@@ -104,7 +122,16 @@ irm_bt_sector_minerals = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.minerals.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_minerals_base_inc value > 0 }
+							check_variable = { which = irm_minerals_station_inc value > 0 }
+							check_variable = { which = irm_minerals_planet_inc value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
+				}
 				if = {
 					limit = { check_variable = { which = irm_minerals_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.minerals.tt.base.inc"
@@ -133,7 +160,16 @@ irm_bt_sector_food = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.food.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_food_base_inc value > 0 }
+							check_variable = { which = irm_food_starbase_inc value > 0 }
+							check_variable = { which = irm_food_planet_inc value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
+				}
 				if = {
 					limit = { check_variable = { which = irm_food_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.food.tt.base.inc"
@@ -162,7 +198,15 @@ irm_bt_sector_goods = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.consumer_goods.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_consumer_goods_base_inc value > 0 }
+							check_variable = { which = irm_consumer_goods_planet_inc value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
+				}
 				if = {
 					limit = { check_variable = { which = irm_consumer_goods_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.consumer_goods.tt.base.inc"
@@ -187,7 +231,16 @@ irm_bt_sector_alloys = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.alloys.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_alloys_base_inc value > 0 }
+							check_variable = { which = irm_alloys_station_inc value > 0 }
+							check_variable = { which = irm_alloys_planet_inc value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
+				}
 				if = {
 					limit = { check_variable = { which = irm_alloys_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.alloys.tt.base.inc"
@@ -216,7 +269,16 @@ irm_bt_sector_unity = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.unity.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_unity_base_inc value > 0 }
+							check_variable = { which = irm_unity_station_inc value > 0 }
+							check_variable = { which = irm_unity_planet_inc value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
+				}
 				if = {
 					limit = { check_variable = { which = irm_unity_base_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.unity.tt.base.inc"
@@ -229,7 +291,6 @@ irm_bt_sector_unity = {
 					limit = { check_variable = { which = irm_unity_planet_inc value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.unity.tt.planet.inc"
 				}
-				custom_tooltip = "irm.ui.sector.res.tt.exp"
 				if = {
 					limit = { check_variable = { which = irm_unity_planet_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.tt.exp"
@@ -435,9 +496,9 @@ irm_bt_sector_influence = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.influence.tt"
-				custom_tooltip = "irm.ui.sector.res.tt.inc"
 				if = {
 					limit = { check_variable = { which = irm_influence_base_inc value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.tt.inc"
 					custom_tooltip = "irm.ui.sector.res.influence.tt.base.inc"
 				}
 				if = {
