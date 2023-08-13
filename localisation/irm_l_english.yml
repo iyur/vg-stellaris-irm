@@ -163,6 +163,14 @@ l_english:
   irm.ui.sector.res.minor_artifacts.tt.planet.inc: "$irm.ui.tab$ $irm.ui.tab$ Planets: §G+[irm_ui_sector.irm_minor_artifacts_planet_inc]§!"
   irm.ui.sector.res.strategic.tte: "$irm.ui.1$$TUTORIAL_STRATEGIC_RESOURCES_DESC$"
 
+  # development
+  irm.ui.sector.dev.districts: "[irm_ui_sector.irm_districts] / [irm_ui_sector.irm_districts_total]"
+  irm.ui.sector.dev.districts.tt: "§H$DISTRICTS_TITLE$§!"
+  irm.ui.sector.dev.districts.tt.built: "Built Districts: §Y[irm_ui_sector.irm_districts]§!"
+  irm.ui.sector.dev.districts.tt.free: "Free District Slots: §Y[irm_ui_sector.irm_districts_free]§!"
+  irm.ui.sector.dev.districts.tt.blocked: "Blocked Districts: §R[irm_ui_sector.irm_districts_blocked]§!"
+  irm.ui.sector.dev.districts.tt.end: "$irm.ui.1$§E£district£ §HDistricts§! represent large areas of development on a planet dedicated towards a particular purpose, whether that is housing or resource production. The total number of districts that can be built on a planet is limited by district slots, which are equal to the planet size unless modified by §HTraditions§!, §HPlanetary Features§!, §HPlanet Modifiers§!, or §Hblockers§."
+
   # side left overview
   irm.ui.sector.left: "Overview"
   irm.ui.sector.left.development: "Development"

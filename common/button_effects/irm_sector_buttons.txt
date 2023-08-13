@@ -511,6 +511,32 @@ irm_bt_sector_influence = {
 	}	
 }
 
+# Stats development
+irm_bt_sector_districts = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.dev.districts.tt"
+				if = {
+					limit = { check_variable = { which = irm_districts value > 0 } }
+					custom_tooltip = "irm.ui.sector.dev.districts.tt.built"
+				}
+				if = {
+					limit = { check_variable = { which = irm_districts_free value > 0 } }
+					custom_tooltip = "irm.ui.sector.dev.districts.tt.free"
+				}
+				if = {
+					limit = { check_variable = { which = irm_districts_blocked value > 0 } }
+					custom_tooltip = "irm.ui.sector.dev.districts.tt.blocked"
+				}
+				custom_tooltip = "irm.ui.sector.dev.districts.tt.end"
+			}
+		}
+	}
+}
+
+
 # Stats space values
 irm_bt_sector_colonies = {
 	potential = { exists = event_target:irm_ui_sector }

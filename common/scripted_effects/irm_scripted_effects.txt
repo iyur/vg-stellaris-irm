@@ -18,6 +18,7 @@ irm_get_stats = {
 			every_system_planet = {
 				irm_get_stats_demography = yes
 				irm_get_stats_resources = yes
+				irm_get_stats_development = yes
 			}
 			# starbases
 			starbase.fleet = {
@@ -60,6 +61,10 @@ irm_get_stats = {
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
 			subtract_variable = { which = irm_energy value = irm_energy_starbase_exp }
 	}
+	change_variable = { which = irm_districts_total value = irm_districts }
+	change_variable = { which = irm_districts_total value = irm_districts_free }
+	change_variable = { which = irm_districts_total value = irm_districts_blocked }
+
 	# roundings
 	round_variable = irm_stability
 	round_variable = irm_crime
@@ -97,6 +102,7 @@ irm_get_stats_demography = {
 		}
 	}
 }
+
 irm_get_stats_resources = {
 	if = {
 		# for owned
@@ -191,6 +197,50 @@ irm_get_stats_resources = {
 				change_variable = { which = irm_energy_station_exp value = 1 }
 			}
 		}
+	}
+}
+
+irm_get_stats_development = {
+	if = {
+		limit = {
+			exists = owner
+			owner = { not = { is_same_value = root.owner } }
+		}
+		# just skip for non-owned planets within borders (pre-ftl, etc)
+	}
+	else_if = {
+		limit = {
+			or = {
+				and = {
+					exists = owner
+					owner = { is_same_value = root.owner }
+				}
+	   			is_colonizable = yes
+	   			has_modifier = terraforming_candidate
+			}
+		}
+		export_trigger_value_to_variable = {
+			trigger = num_districts
+			parameters = { type = any }
+			variable = irm_districts
+		}
+		export_trigger_value_to_variable = {
+			trigger = num_free_districts
+			parameters = { type = any }
+			variable = irm_districts_free
+		}
+		export_trigger_value_to_variable = {
+			trigger = num_uncleared_blockers
+			variable = irm_districts_blocked
+		}
+		prevprevprev = {
+			change_variable = { which = irm_districts value = prev.irm_districts }
+			change_variable = { which = irm_districts_free value = prev.irm_districts_free }
+			change_variable = { which = irm_districts_blocked value = prev.irm_districts_blocked }
+		}
+		irm_unset = { which = irm_districts }
+		irm_unset = { which = irm_districts_free }
+		irm_unset = { which = irm_districts_blocked }
 	}
 }
 
@@ -289,4 +339,9 @@ irm_del_stats = {
 	irm_unset = { which = irm_minor_artifacts_station_inc }
 	irm_unset = { which = irm_minor_artifacts_planet_exp }
 	irm_unset = { which = irm_minor_artifacts_planet_inc }
+	# development
+	irm_unset = { which = irm_districts }
+	irm_unset = { which = irm_districts_free }
+	irm_unset = { which = irm_districts_blocked }
+	irm_unset = { which = irm_districts_total }
 }
