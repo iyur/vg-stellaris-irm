@@ -64,6 +64,8 @@ irm_get_stats = {
 	change_variable = { which = irm_districts_total value = irm_districts }
 	change_variable = { which = irm_districts_total value = irm_districts_free }
 	change_variable = { which = irm_districts_total value = irm_districts_blocked }
+	change_variable = { which = irm_buildings_total value = irm_buildings }
+	change_variable = { which = irm_buildings_total value = irm_buildings_free }
 
 	# roundings
 	round_variable = irm_stability
@@ -233,14 +235,27 @@ irm_get_stats_development = {
 			trigger = num_uncleared_blockers
 			variable = irm_districts_blocked
 		}
+		export_trigger_value_to_variable = {
+			trigger = num_buildings
+			parameters = { type = any }
+			variable = irm_buildings
+		}
+		export_trigger_value_to_variable = {
+			trigger = free_building_slots
+			variable = irm_buildings_free
+		}
 		prevprevprev = {
 			change_variable = { which = irm_districts value = prev.irm_districts }
 			change_variable = { which = irm_districts_free value = prev.irm_districts_free }
 			change_variable = { which = irm_districts_blocked value = prev.irm_districts_blocked }
+			change_variable = { which = irm_buildings value = prev.irm_buildings }
+			change_variable = { which = irm_buildings_free value = prev.irm_buildings_free }
 		}
 		irm_unset = { which = irm_districts }
 		irm_unset = { which = irm_districts_free }
 		irm_unset = { which = irm_districts_blocked }
+		irm_unset = { which = irm_buildings }
+		irm_unset = { which = irm_buildings_free }
 	}
 }
 
@@ -344,4 +359,7 @@ irm_del_stats = {
 	irm_unset = { which = irm_districts_free }
 	irm_unset = { which = irm_districts_blocked }
 	irm_unset = { which = irm_districts_total }
+	irm_unset = { which = irm_buildings }
+	irm_unset = { which = irm_buildings_free }
+	irm_unset = { which = irm_buildings_total }
 }

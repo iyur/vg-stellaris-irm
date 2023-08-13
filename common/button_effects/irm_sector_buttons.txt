@@ -535,7 +535,25 @@ irm_bt_sector_districts = {
 		}
 	}
 }
-
+irm_bt_sector_buildings = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.dev.buildings.tt"
+				if = {
+					limit = { check_variable = { which = irm_buildings value > 0 } }
+					custom_tooltip = "irm.ui.sector.dev.buildings.tt.built"
+				}
+				if = {
+					limit = { check_variable = { which = irm_buildings_free value > 0 } }
+					custom_tooltip = "irm.ui.sector.dev.buildings.tt.free"
+				}
+				custom_tooltip = "irm.ui.sector.dev.buildings.tt.end"
+			}
+		}
+	}
+}
 
 # Stats space values
 irm_bt_sector_colonies = {

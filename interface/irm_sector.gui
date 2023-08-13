@@ -849,7 +849,7 @@ guiTypes = {
 							position = { x = 130 y = 0 }
 							format = center
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.dev.buildings"
 							effect = irm_bt_sector_buildings
 						}
 

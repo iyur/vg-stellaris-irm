@@ -169,7 +169,12 @@ l_english:
   irm.ui.sector.dev.districts.tt.built: "Built Districts: §Y[irm_ui_sector.irm_districts]§!"
   irm.ui.sector.dev.districts.tt.free: "Free District Slots: §Y[irm_ui_sector.irm_districts_free]§!"
   irm.ui.sector.dev.districts.tt.blocked: "Blocked Districts: §R[irm_ui_sector.irm_districts_blocked]§!"
-  irm.ui.sector.dev.districts.tt.end: "$irm.ui.1$§E£district£ §HDistricts§! represent large areas of development on a planet dedicated towards a particular purpose, whether that is housing or resource production. The total number of districts that can be built on a planet is limited by district slots, which are equal to the planet size unless modified by §HTraditions§!, §HPlanetary Features§!, §HPlanet Modifiers§!, or §Hblockers§."
+  irm.ui.sector.dev.districts.tt.end: "$irm.ui.1$§E£district£ §HDistricts§! represent large areas of development on a planet dedicated towards a particular purpose, whether that is housing or resource production. The total number of districts that can be built on a planet is limited by district slots, which are equal to the planet size unless modified by §HTraditions§!, §HPlanetary Features§!, §HPlanet Modifiers§!, or §Hblockers§!."
+  irm.ui.sector.dev.buildings: "[irm_ui_sector.irm_buildings] / [irm_ui_sector.irm_buildings_total]"
+  irm.ui.sector.dev.buildings.tt: "§H$BUILDINGS_TITLE$§!"
+  irm.ui.sector.dev.buildings.tt.built: "Built: §Y[irm_ui_sector.irm_buildings]§!"
+  irm.ui.sector.dev.buildings.tt.free: "Free Building Slots: §Y[irm_ui_sector.irm_buildings_free]§!"
+  irm.ui.sector.dev.buildings.tt.end: "$irm.ui.1$§EA £building£ §HBuilding§! represents a collection of facilities scattered across a world that create £job£ §HJobs§! that generate different kinds of resources that are not suitable to large-scale resource gathering."
 
   # side left overview
   irm.ui.sector.left: "Overview"
