@@ -358,7 +358,12 @@ irm_bt_sector_strategic = {
 			event_target:irm_ui_sector = {
 				custom_tooltip = "irm.ui.sector.res.strategic.tt"
 				if = {
-					limit = { check_variable = { which = irm_volatile_motes value > 0 } }
+					limit = {
+						or = {
+							not = { check_variable = { which = irm_volatile_motes value = 0 } }
+							check_variable = { which = irm_deposit_volatile_motes value > 0 }
+						}
+					}
 					custom_tooltip = "irm.ui.sector.res.volatile_motes.tt"
 				}
 				if = {
@@ -374,7 +379,16 @@ irm_bt_sector_strategic = {
 					custom_tooltip = "irm.ui.sector.res.volatile_motes.tt.planet.exp"
 				}
 				if = {
-					limit = { check_variable = { which = irm_exotic_gases value > 0 } }
+					limit = { check_variable = { which = irm_deposit_volatile_motes value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.volatile_motes.tt.deposit"
+				}
+				if = {
+					limit = {
+						or = {
+							not = { check_variable = { which = irm_exotic_gases value = 0 } }
+							check_variable = { which = irm_deposit_exotic_gases value > 0 }
+						}
+					}
 					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt"
 				}
 				if = {
@@ -390,7 +404,16 @@ irm_bt_sector_strategic = {
 					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt.planet.exp"
 				}
 				if = {
-					limit = { check_variable = { which = irm_rare_crystals value > 0 } }
+					limit = { check_variable = { which = irm_deposit_exotic_gases value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.exotic_gases.tt.deposit"
+				}
+				if = {
+					limit = {
+						or = {
+							not = { check_variable = { which = irm_rare_crystals value = 0 } }
+							check_variable = { which = irm_deposit_rare_crystals value > 0 }
+						}
+					}
 					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt"
 				}
 				if = {
@@ -404,6 +427,10 @@ irm_bt_sector_strategic = {
 				if = {
 					limit = { check_variable = { which = irm_rare_crystals_planet_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt.planet.exp"
+				}
+				if = {
+					limit = { check_variable = { which = irm_deposit_rare_crystals value > 0 } }
+					custom_tooltip = "irm.ui.sector.res.rare_crystals.tt.deposit"
 				}
 				if = {
 					limit = { check_variable = { which = irm_sr_living_metal value > 0 } }
@@ -484,6 +511,26 @@ irm_bt_sector_strategic = {
 				if = {
 					limit = { check_variable = { which = irm_minor_artifacts_planet_exp value > 0 } }
 					custom_tooltip = "irm.ui.sector.res.minor_artifacts.tt.planet.exp"
+				}
+				# other
+				if = {
+					limit = {
+						or = {
+							check_variable = { which = irm_deposit_betharian value > 0 }
+							check_variable = { which = irm_deposit_xeno value > 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.res.other.tt"
+				}
+				if = {
+					limit = { check_variable = { which = irm_deposit_betharian value > 0 } }
+						custom_tooltip = "irm.ui.sector.res.betharian.tt"
+						custom_tooltip = "irm.ui.sector.res.betharian.tt.deposit"
+				}
+				if = {
+					limit = { check_variable = { which = irm_deposit_xeno value > 0 } }
+						custom_tooltip = "irm.ui.sector.res.xeno.tt"
+						custom_tooltip = "irm.ui.sector.res.xeno.tt.deposit"
 				}
 				custom_tooltip = "irm.ui.sector.res.strategic.tte"
 			}

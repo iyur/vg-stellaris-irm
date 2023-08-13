@@ -200,6 +200,17 @@ irm_get_stats_resources = {
 			}
 		}
 	}
+	# natural deposits
+	prevprevprev = {
+		change_variable = { which = irm_deposit_volatile_motes value = prev.modifier:building_mote_harvesters_max }
+		change_variable = { which = irm_deposit_exotic_gases value = prev.modifier:building_gas_extractors_max }
+		change_variable = { which = irm_deposit_rare_crystals value = prev.modifier:building_crystal_mines_max }
+		change_variable = { which = irm_deposit_betharian value = prev.modifier:building_betharian_power_plant_max }
+	}
+	if = {
+		limit = { has_deposit = d_alien_pets_deposit }
+		prevprevprev = { change_variable = { which = irm_deposit_xeno value = 1 } }
+	}
 }
 
 irm_get_stats_development = {
@@ -354,6 +365,11 @@ irm_del_stats = {
 	irm_unset = { which = irm_minor_artifacts_station_inc }
 	irm_unset = { which = irm_minor_artifacts_planet_exp }
 	irm_unset = { which = irm_minor_artifacts_planet_inc }
+	irm_unset = { which = irm_deposit_volatile_motes }
+	irm_unset = { which = irm_deposit_exotic_gases }
+	irm_unset = { which = irm_deposit_rare_crystals }
+	irm_unset = { which = irm_deposit_betharian }
+	irm_unset = { which = irm_deposit_xeno }
 	# development
 	irm_unset = { which = irm_districts }
 	irm_unset = { which = irm_districts_free }
