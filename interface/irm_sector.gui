@@ -733,31 +733,6 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				# deposits			
-				containerWindowType = {
-					name = "deposits"
-					position = { x = 190 y = 5 }
-					size = { width = 60 height = 30 }
-					background = { name = "background" quadTextureSprite = @dark }	
-					iconType = {
-						name = "sector_deposits_icon"
-						quadTextureSprite = "GFX_text_irm_valuable_res"
-						position = { x = 8 y = 6 }
-						alwaysTransparent = yes
-						scale = 0.60
-					}
-					effectButtonType = {
-						name = "sector_deposits"
-						quadTextureSprite = "GFX_invisible"
-						size = { x = 45 y = 30 }
-						position = { x = 16 y = 0 }
-						format = center
-						font = "cg_16b"
-						text = 0
-						effect = irm_bt_sector_deposits
-					}
-				}
-
 				containerWindowType = {
 					name = "dev_stats"
 					position = { x = 0 y = 50 }
