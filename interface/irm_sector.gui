@@ -744,31 +744,63 @@ guiTypes = {
 						name = "sector_focus"
 						position = { x = @xPosBC1 y = @yPosBC1 }
 						size = { width = 250 height = 70 }
-
-						background = {
-							name = "bg"
-							spriteType = "GFX_tiles_dark_area_cut_8"
-						}
+						background = { name = "bg" spriteType = @dark }
 
 						effectButtonType = {
-							name = "sector_focus_bg"
-							quadTextureSprite = "GFX_empty_green_frame"
-							size = { x = @dBtSize y = @dBtSize }
-							position = { x = 5 y = 10 }
-							font = "cg_16b"
-							effect = irm_bg_sector_focus
-							alwaysTransparent = yes
-						}
-						effectButtonType = {
-							name = "sector_focus_ico"
-							quadTextureSprite = "GFX_invisible"
+							name = "sector_focus_none"
+							quadTextureSprite = "GFX_sector_focus_type_disabled_selected"
 							size = { x = @dBtSize y = @dBtSize }
 							position = { x = 5 y = 9 }
-							format = center
+							format = left
 							font = "cg_16b"
-							text = X
-							effect = irm_bt_sector_focus
+							effect = irm_bt_sector_focus_none
 						}
+						effectButtonType = {
+							name = "sector_focus_balanced"
+							quadTextureSprite = "GFX_sector_focus_type_balanced_selected"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 9 }
+							format = left
+							font = "cg_16b"
+							effect = irm_bt_sector_focus_balanced
+						}
+						effectButtonType = {
+							name = "sector_focus_production"
+							quadTextureSprite = "GFX_sector_focus_type_production_selected"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 9 }
+							format = left
+							font = "cg_16b"
+							effect = irm_bt_sector_focus_production
+						}
+						effectButtonType = {
+							name = "sector_focus_manufacturing"
+							quadTextureSprite = "GFX_sector_focus_type_manufacturing_selected"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 9 }
+							format = left
+							font = "cg_16b"
+							effect = irm_bt_sector_focus_manufacturing
+						}
+						effectButtonType = {
+							name = "sector_focus_research"
+							quadTextureSprite = "GFX_sector_focus_type_research_selected"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 9 }
+							format = left
+							font = "cg_16b"
+							effect = irm_bt_sector_focus_research
+						}
+						effectButtonType = {
+							name = "sector_focus_unity"
+							quadTextureSprite = "GFX_sector_focus_type_unity_selected"
+							size = { x = @dBtSize y = @dBtSize }
+							position = { x = 5 y = 9 }
+							format = left
+							font = "cg_16b"
+							effect = irm_bt_sector_focus_unity
+						}
+
 						effectButtonType = {
 							name = "sector_focus_name"
 							quadTextureSprite = "GFX_invisible"

@@ -183,6 +183,20 @@ l_english:
   irm.ui.sector.dev.buildings.tt.built: "Built: §Y[irm_ui_sector.irm_buildings]§!"
   irm.ui.sector.dev.buildings.tt.free: "Free Building Slots: §Y[irm_ui_sector.irm_buildings_free]§!"
   irm.ui.sector.dev.buildings.tt.end: "$irm.ui.1$§EA £building£ §HBuilding§! represents a collection of facilities scattered across a world that create £job£ §HJobs§! that generate different kinds of resources that are not suitable to large-scale resource gathering."
+  irm.ui.sector.dev.focus.none: "No Focus"
+  irm.ui.sector.dev.focus.none.tt: "§HNo Focus§!\nNo Sector Focus"
+  irm.ui.sector.dev.focus.balanced: "$st_balanced$"
+  irm.ui.sector.dev.focus.balanced.tt: "§H$irm.ui.sector.dev.focus.balanced$§!\n$st_balanced_desc$"
+  irm.ui.sector.dev.focus.production: "$st_production$"
+  irm.ui.sector.dev.focus.production.tt: "§H$irm.ui.sector.dev.focus.production$\n§!$st_production_desc$"
+  irm.ui.sector.dev.focus.manufacturing: "$st_manufacturing$"
+  irm.ui.sector.dev.focus.manufacturing.tt: "§H$irm.ui.sector.dev.focus.manufacturing$\n§!$st_manufacturing_desc$"
+  irm.ui.sector.dev.focus.research: "$st_research$"
+  irm.ui.sector.dev.focus.research.tt: "§H$irm.ui.sector.dev.focus.research$\n§!$st_research_desc$"
+  irm.ui.sector.dev.focus.unity: "$st_unity$"
+  irm.ui.sector.dev.focus.unity.tt: "§H$irm.ui.sector.dev.focus.unity$n\n§!$st_unity_desc$"
+
+
 
   # side left overview
   irm.ui.sector.left: "Overview"
