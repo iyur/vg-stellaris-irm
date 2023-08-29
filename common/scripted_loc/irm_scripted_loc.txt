@@ -248,3 +248,15 @@ defined_text = {
  		trigger = { check_variable = { which = irm_strategic value < 0 } }
  	}
 }
+# Sector designation focuses
+defined_text = {
+	name = irm_CheckFocus
+ 	random = no
+ 	default = "irm.ui.sector.dev.focus.none"
+ 	text = {
+ 		localization_key = "irm.ui.sector.dev.focus.active"
+ 		trigger = {
+ 			has_any_sector_focus = yes
+ 		}
+ 	}
+}

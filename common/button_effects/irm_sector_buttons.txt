@@ -606,7 +606,7 @@ irm_bt_sector_focus_none = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			not = { has_any_sector_focus = any }
+			not = { has_any_sector_focus = yes }
 		}
 	}
 	effect = {

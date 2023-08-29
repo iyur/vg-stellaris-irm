@@ -801,25 +801,31 @@ guiTypes = {
 							effect = irm_bt_sector_focus_unity
 						}
 
-						effectButtonType = {
-							name = "sector_focus_name"
-							quadTextureSprite = "GFX_invisible"
-							size = { x = 150 y = 80 }
-							position = { x = 65 y = -12 }
-							format = left
-							font = "cg_16b"
-							text = "Focus"
-							effect = irm_bt_sector_focus
+						# infrastructure
+						containerWindowType = {
+							name = "sector_focus"
+							position = { x = 65 y = 14 }
+
+							instantTextBoxType = {
+								name = "sector_focus_desc"
+								font = "cg_16b"
+								position = { x = 0 y = 0 }
+								format = left
+								text = "irm.ui.sector.dev.focus"
+								alwaysTransparent = yes
+							}
+							effectButtonType = {
+								name = "sector_focus_name"
+								quadTextureSprite = "GFX_invisible"
+								size = { x = 150 y = 35 }
+								position = { x = 0 y = 13 }
+								format = left
+								font = "cg_16b"
+								text = "irm.ui.sector.dev.focus.check"
+								effect = irm_bt_sector_focus
+							}
 						}
-						instantTextBoxType = {
-							name = "sector_focus_desc"
-							font = "cg_16b"
-							orientation = upper_left
-							position = { x = 65 y = 37 }
-							format = left
-							text = "Focus desc"
-							alwaysTransparent = yes
-						}
+
 					}
 
 					# infrastructure			
