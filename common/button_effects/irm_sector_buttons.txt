@@ -688,7 +688,10 @@ irm_bt_sector_factions = {
 		hidden_effect = { custom_tooltip = "irm.ui.sector.society.factions.tt.desc" }
 	}	
 }
-
+irm_bt_sector_regionalism = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.society.regionalism.tt" } }	
+}
 
 # Stats space values
 irm_bt_sector_colonies = {
