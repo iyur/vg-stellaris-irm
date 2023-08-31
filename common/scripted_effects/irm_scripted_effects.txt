@@ -8,6 +8,7 @@ irm_get_stats = {
 	set_variable = { which = irm_owned_colonies value = value:irm_planets_|owned|y| }
 	set_variable = { which = irm_habitable value = value:irm_planets_|habitable|y| }
 	root.owner = {
+		# main loop
 		every_system_within_border = {
 			limit = {
 				exists = sector
@@ -19,6 +20,7 @@ irm_get_stats = {
 				irm_get_stats_demography = yes
 				irm_get_stats_resources = yes
 				irm_get_stats_development = yes
+				irm_get_stats_society = yes
 			}
 			# starbases
 			starbase.fleet = {
@@ -32,7 +34,31 @@ irm_get_stats = {
 						starbase_citadel = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 5 } } }
 				}
 			}
-		} # system
+		}
+		# factions
+		export_trigger_value_to_variable = {
+			trigger = count_pop_faction
+			parameters = {
+				limit = {
+					any_owned_pop = {
+						member_of_faction = prev
+						exists = planet
+						if = {
+							limit = { prevprevprev = { is_scope_type = galactic_object } }
+								planet.solar_system = { is_same_value = root }
+						}
+						else_if = {
+							limit = { prevprevprev = { is_scope_type = sector } }
+								planet.sector = { is_same_value = root.sector }
+						}
+					}
+					log = "- This: \\[This.GetName]"
+				}
+			}
+			variable = irm_factions
+		}
+		prev = { set_variable = { which = irm_factions value = prev.irm_factions } }
+		irm_unset = { which = irm_factions }
 	}
 	# final calculations
 	if = {
@@ -270,6 +296,18 @@ irm_get_stats_development = {
 	}
 }
 
+# This = Planet
+irm_get_stats_society = {
+	#if = {
+	#	limit = {
+	#		exists = owner
+	#		owner = { is_same_value = root.owner }
+	#		is_under_colonization = no
+	#	}
+	#	
+	#}
+}
+
 # This = System / Sector
 # Clears all variables
 irm_del_stats = {
@@ -378,4 +416,6 @@ irm_del_stats = {
 	irm_unset = { which = irm_buildings }
 	irm_unset = { which = irm_buildings_free }
 	irm_unset = { which = irm_buildings_total }
+	# society
+	irm_unset = { which = irm_factions }
 }

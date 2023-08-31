@@ -932,24 +932,26 @@ guiTypes = {
 					containerWindowType = {
 						name = "factions"
 						position = { x = @xPosBC1 y = @yPosBC2 }
-						iconType = {
-							name = "sector_factions_icon"
-							quadTextureSprite = "GFX_species_right_colonization_controls"
-							position = { x = 7 y = 6 }
-							scale = 0.75
-							frame = 1
-							alwaysTransparent = yes
-						}
+						size = { width = @cell_W height = @cell_Y }
+						background = { name = "bg" spriteType = @dark }
 						effectButtonType = {
 							name = "sector_factions"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
-							size = { x = @cell_W y = @cell_Y }
+							quadTextureSprite = @nobg
+							size = { x = 270 y = @cell_Y }
 							position = { x = 0 y = 0 }
 							format = left
 							borderSize = { x = 43 y = 0 }
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.society.factions"
 							effect = irm_bt_sector_factions
+						}
+						iconType = {
+							name = "sector_factions_icon"
+							quadTextureSprite = "GFX_topbar_leaders_button"
+							position = { x = 0 y = 6 }
+							scale = 0.77
+							frame = 1
+							alwaysTransparent = yes
 						}
 
 					}

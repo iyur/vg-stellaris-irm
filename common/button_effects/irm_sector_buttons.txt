@@ -669,6 +669,26 @@ irm_bt_sector_focus_unity = {
 	}	
 }
 
+# society
+irm_bt_sector_factions = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = { custom_tooltip = "irm.ui.sector.society.factions.tt" }
+		from = {
+			owned_pop_faction_list_tooltip = {
+				limit = {
+					any_owned_pop = {
+						member_of_faction = prev
+						exists = planet
+						planet.sector = { is_same_value = event_target:irm_ui_sector }
+					}
+				}
+			}
+		}
+		hidden_effect = { custom_tooltip = "irm.ui.sector.society.factions.tt.desc" }
+	}	
+}
+
 
 # Stats space values
 irm_bt_sector_colonies = {
