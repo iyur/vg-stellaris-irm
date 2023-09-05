@@ -14,7 +14,10 @@ irm_get_stats = {
 				exists = sector
 				sector = { is_same_value = prevprevprev }
 			}
-			prevprev = { change_variable = { which = irm_trade_value value = prev.trigger:has_system_trade_value } }
+			prevprev = {
+				change_variable = { which = irm_owned_systems value = 1 }
+				change_variable = { which = irm_trade_value value = prev.trigger:has_system_trade_value }
+			}
 			# planet loop
 			every_system_planet = {
 				irm_get_stats_demography = yes
@@ -323,6 +326,7 @@ irm_get_stats_society = {
 # This = System / Sector
 # Clears all variables
 irm_del_stats = {
+	irm_unset = { which = irm_owned_systems }
 	irm_unset = { which = irm_owned_colonies }
 	irm_unset = { which = irm_habitable }
 	# demography

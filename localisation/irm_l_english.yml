@@ -217,10 +217,13 @@ l_english:
 
   # side right sector
   irm.ui.sector.right: "Sector"
-  irm.ui.sector.right.auto: "Automation"
-  irm.ui.sector.right.auto.fleets: "Fleet Operations"
-  irm.ui.sector.right.auto.expanse: "Border Expansion"
-  irm.ui.sector.right.auto.colony: "Colonization"
 
+  irm.ui.sector.space.systems: "[irm_ui_sector.irm_owned_systems]"
+  irm.ui.sector.space.systems.tt: "§HSector Systems§!\nOwned: §Y[irm_ui_sector.irm_owned_systems]§!$irm.ui.1$§HSystems§E are the crucial administrative unit in your empire, organizing the colonozied space."
   irm.ui.sector.space.colonies: "[irm_ui_sector.irm_owned_colonies]"
-  irm.ui.sector.space.colonies.tt: "§HSector Colonies§!\nOwned: §Y[irm_ui_sector.irm_owned_colonies]§!\nPotential: §Y[irm_ui_sector.irm_habitable]§!$irm.ui.1$§EPlanets are, without a doubt, a vital part of a stellar empire because they provide the overwhelming majority of resources and the population required for an empire to grow and prosper."
+  irm.ui.sector.space.colonies.tt: "§HSector Colonies§!\nOwned: §Y[irm_ui_sector.irm_owned_colonies]§!\nPotential: §Y[irm_ui_sector.irm_habitable]§!$irm.ui.1$§HPlanets§E are, without a doubt, a vital part of a stellar empire because they provide the overwhelming majority of resources and the population required for an empire to grow and prosper."
+  
+  irm.ui.sector.auto: "Automation"
+  irm.ui.sector.auto.fleets: "Fleet Operations"
+  irm.ui.sector.auto.expanse: "Border Expansion"
+  irm.ui.sector.auto.colony: "Colonization"

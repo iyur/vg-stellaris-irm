@@ -698,6 +698,10 @@ irm_bt_sector_regionalism = {
 }
 
 # Stats space values
+irm_bt_sector_systems = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.space.systems.tt" } }	
+}
 irm_bt_sector_colonies = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.space.colonies.tt" } }	

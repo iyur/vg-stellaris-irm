@@ -1207,7 +1207,7 @@ guiTypes = {
 
 					# area
 					containerWindowType = {
-						name = "area"
+						name = "systems"
 						position = { x = 0 y = 0 }
 						size = { width = @wRes height = @hRes }
 						effectButtonType = {
@@ -1219,11 +1219,11 @@ guiTypes = {
 							vertical_alignment = bottom
 							format = center
 							font = "cg_16b"
-							text = "0"
-							effect = irm_bt_sector_area
+							text = "irm.ui.sector.space.systems"
+							effect = irm_bt_sector_systems
 						}
 						iconType = {
-							name = "sector_area_icon"
+							name = "sector_systems_icon"
 							quadTextureSprite = "GFX_text_systems"
 							position = { x = 100 y = 8 }
 							#scale = 0.72
@@ -1295,7 +1295,7 @@ guiTypes = {
 						font = "cg_16b"
 						position = { x = 44 y = 9 }
 						format = left
-						text = "irm.ui.sector.right.auto"
+						text = "irm.ui.sector.auto"
 					}
 
 					# auto fleet	
@@ -1310,7 +1310,7 @@ guiTypes = {
 							borderSize = { x = 40 y = 0 }
 							font = "cg_16b"
 							format = left
-							text = "irm.ui.sector.right.auto.fleets"
+							text = "irm.ui.sector.auto.fleets"
 							effect = irm_cb_sector_auto_fleet
 						}
 						effectButtonType = {
@@ -1334,7 +1334,7 @@ guiTypes = {
 							borderSize = { x = 40 y = 0 }
 							font = "cg_16b"
 							format = left
-							text = "irm.ui.sector.right.auto.expanse"
+							text = "irm.ui.sector.auto.expanse"
 							effect = irm_cb_sector_auto_expansion
 						}
 						effectButtonType = {
@@ -1358,7 +1358,7 @@ guiTypes = {
 							borderSize = { x = 40 y = 0 }
 							font = "cg_16b"
 							format = left
-							text = "irm.ui.sector.right.auto.colony"
+							text = "irm.ui.sector.auto.colony"
 							effect = irm_cb_sector_auto_expansion
 						}
 						effectButtonType = {
