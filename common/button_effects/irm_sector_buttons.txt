@@ -670,6 +670,10 @@ irm_bt_sector_focus_unity = {
 }
 
 # society
+irm_bt_sector_migration = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.society.migration.tt" } }	
+}
 irm_bt_sector_factions = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = {

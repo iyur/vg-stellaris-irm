@@ -908,24 +908,26 @@ guiTypes = {
 					containerWindowType = {
 						name = "migration"
 						position = { x = @xPosBC1 y = @yPosBC1 }
-						iconType = {
-							name = "sector_migration_icon"
-							quadTextureSprite = "GFX_topbar_species_button"
-							position = { x = 0 y = 5 }
-							scale = 0.75
-							frame = 1
-							alwaysTransparent = yes
-						}
+						size = { width = @cell_W height = @cell_Y }
+						background = { name = "bg" spriteType = @dark }
 						effectButtonType = {
 							name = "sector_migration"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							quadTextureSprite = @nobg
 							size = { x = @cell_W y = @cell_Y }
 							position = { x = 0 y = 0 }
 							format = left
-							borderSize = { x = 43 y = 0 }
+							borderSize = { x = 42 y = 0 }
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.society.migration"
 							effect = irm_bt_sector_migration
+						}
+						iconType = {
+							name = "sector_migration_icon"
+							quadTextureSprite = "GFX_topbar_species_button"
+							position = { x = 2 y = 5 }
+							scale = 0.75
+							frame = 1
+							alwaysTransparent = yes
 						}
 					}
 					# factions			

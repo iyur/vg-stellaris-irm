@@ -203,9 +203,10 @@ l_english:
   irm.ui.sector.society.factions: "Political Factions:  §H[irm_ui_sector.irm_factions]§!"
   irm.ui.sector.society.factions.tt: "§HPolitical Factions§!\nTotal: §Y[irm_ui_sector.irm_factions]§!\n §Y"
   irm.ui.sector.society.factions.tt.desc: "$irm.ui.1$§E§HFactions§! represent political parties and have a potentially high impact on pop £happiness£ §HHappiness§!. There is at least one faction for each ethic and in most cases every pop joins the faction corresponding to its ethic. Faction names are randomly generated but can be manually changed at any point."
-
   irm.ui.sector.society.regionalism: "Regionalism:  §H0§!"
   irm.ui.sector.society.regionalism.tt: "soon (tm) ..."
+  irm.ui.sector.society.migration: "Migration:  §H[irm_ui_sector.irm_immigration]/§H[irm_ui_sector.irm_emigration]§!"
+  irm.ui.sector.society.migration.tt: "§HMigration§!\nImmigration Pull: §G+[irm_ui_sector.irm_immigration]§!\nEmigration Push: §R-[irm_ui_sector.irm_emigration]§!$irm.ui.1$$PLANET_MIGRATION_DESC$"
 
 
   # side left overview

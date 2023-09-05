@@ -52,7 +52,6 @@ irm_get_stats = {
 								planet.sector = { is_same_value = root.sector }
 						}
 					}
-					log = "- This: \\[This.GetName]"
 				}
 			}
 			variable = irm_factions
@@ -108,6 +107,9 @@ irm_get_stats = {
 	round_variable = irm_research
 	round_variable = irm_strategic
 	round_variable = irm_influence
+
+	round_variable = irm_immigration
+	round_variable = irm_emigration
 }
 
 # This = Planet
@@ -133,7 +135,6 @@ irm_get_stats_demography = {
 
 irm_get_stats_resources = {
 	if = {
-		# for owned
 		limit = {
 			exists = owner
 			owner = { is_same_value = root.owner }
@@ -298,14 +299,25 @@ irm_get_stats_development = {
 
 # This = Planet
 irm_get_stats_society = {
-	#if = {
-	#	limit = {
-	#		exists = owner
-	#		owner = { is_same_value = root.owner }
-	#		is_under_colonization = no
-	#	}
-	#	
-	#}
+	if = {
+		limit = {
+			exists = owner
+			owner = { is_same_value = root.owner }
+			is_under_colonization = no
+		}
+		prevprevprev = {
+			set_variable = { which = irm_immigration_mod value = 1 }
+			change_variable = { which = irm_immigration_mod value = prev.modifier:planet_immigration_pull_mult }
+			multiply_variable = { which = irm_immigration_mod value = prev.modifier:planet_immigration_pull_add }
+			change_variable = { which = irm_immigration value = irm_immigration_mod }
+
+			set_variable = { which = irm_emigration_mod value = 1 }
+			change_variable = { which = irm_emigration_mod value = prev.modifier:planet_emigration_push_mult }
+			multiply_variable = { which = irm_emigration_mod value = prev.modifier:planet_emigration_push_add }
+			change_variable = { which = irm_emigration value = irm_emigration_mod }
+		}
+	}
+
 }
 
 # This = System / Sector
@@ -417,5 +429,10 @@ irm_del_stats = {
 	irm_unset = { which = irm_buildings_free }
 	irm_unset = { which = irm_buildings_total }
 	# society
+	irm_unset = { which = irm_immigration }
+	irm_unset = { which = irm_immigration_mod }
+	irm_unset = { which = irm_emigration }
+	irm_unset = { which = irm_emigration_mod }
 	irm_unset = { which = irm_factions }
+}
 }
