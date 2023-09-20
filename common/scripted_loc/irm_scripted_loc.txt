@@ -256,7 +256,7 @@ defined_text = {
  	text = {
  		localization_key = "irm.ui.sector.dev.focus.active"
  		trigger = {
- 			has_any_sector_focus = yes
+ 			always = yes
  		}
  	}
 }

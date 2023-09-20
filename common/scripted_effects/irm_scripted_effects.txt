@@ -89,11 +89,72 @@ irm_get_stats = {
 		limit = { check_variable = { which = irm_energy_starbase_exp value > 0 } }
 			subtract_variable = { which = irm_energy value = irm_energy_starbase_exp }
 	}
+	# development
 	change_variable = { which = irm_districts_total value = irm_districts }
 	change_variable = { which = irm_districts_total value = irm_districts_free }
 	change_variable = { which = irm_districts_total value = irm_districts_blocked }
 	change_variable = { which = irm_buildings_total value = irm_buildings }
 	change_variable = { which = irm_buildings_total value = irm_buildings_free }
+
+	# sprawl
+	set_variable = { which = irm_sprawl value = 0 }
+
+		# from systems
+		change_variable = { which = irm_sprawl_systems value = irm_owned_systems }
+		set_variable = { which = irm_sprawl_systems_mod value = 1 }
+		change_variable = { which = irm_sprawl_systems_mod value = owner.modifier:empire_size_systems_mult }
+		multiply_variable = { which = irm_sprawl_systems value = irm_sprawl_systems_mod }
+		change_variable = { which = irm_sprawl_systems_mod value = -1 } # tooltip reason
+		multiply_variable = { which = irm_sprawl_systems_mod value = 100 } # tooltip reason
+
+		# from colonies 
+		set_variable = { which = irm_sprawl_colonies value = 10 }
+		set_variable = { which = irm_sprawl_colonies_mod value = 1 }
+		change_variable = { which = irm_sprawl_colonies_mod value = owner.modifier:empire_size_colonies_mult }
+		multiply_variable = { which = irm_sprawl_colonies value = irm_owned_colonies }
+		multiply_variable = { which = irm_sprawl_colonies value = irm_sprawl_colonies_mod }
+		change_variable = { which = irm_sprawl_colonies_mod value = -1 } # tooltip reason
+		multiply_variable = { which = irm_sprawl_colonies_mod value = 100 } # tooltip reason
+
+		# from districts
+		set_variable = { which = irm_sprawl_districts value = 0.5 }
+		set_variable = { which = irm_sprawl_districts_mod value = 1 }
+		change_variable = { which = irm_sprawl_districts_mod value = owner.modifier:empire_size_districts_mult }
+		multiply_variable = { which = irm_sprawl_districts value = irm_districts }
+		multiply_variable = { which = irm_sprawl_districts value = irm_sprawl_districts_mod }
+		change_variable = { which = irm_sprawl_districts_mod value = -1 } # tooltip reason
+		multiply_variable = { which = irm_sprawl_districts_mod value = 100 } # tooltip reason
+
+		# from pops
+		sector_capital = {
+			random_owned_pop = { root.sector = { change_variable = { which = irm_sprawl_species_mod value = prev.modifier:species_empire_size_mult } } }
+		}
+		set_variable = { which = irm_sprawl_pops value = irm_pops }
+		set_variable = { which = irm_sprawl_pops_mod value = 1 }
+		change_variable = { which = irm_sprawl_pops_mod value = owner.modifier:empire_size_pops_mult }
+		change_variable = { which = irm_sprawl_pops_mod value = irm_sprawl_species_mod }
+		multiply_variable = { which = irm_sprawl_pops value = irm_sprawl_pops_mod }
+		change_variable = { which = irm_sprawl_pops_mod value = -1 } # tooltip reason
+		multiply_variable = { which = irm_sprawl_pops_mod value = 100 } # tooltip reason
+
+		# other (empire-wide)
+		change_variable = { which = irm_sprawl_mod value = owner.modifier:empire_size_mult }
+		multiply_variable = { which = irm_sprawl_mod value = 100 } # tooltip reason
+
+		change_variable = { which = irm_sprawl_upd value = owner.modifier:empire_size_add }
+
+	change_variable = { which = irm_sprawl value = irm_sprawl_systems }
+	change_variable = { which = irm_sprawl value = irm_sprawl_colonies }
+	change_variable = { which = irm_sprawl value = irm_sprawl_districts }
+	change_variable = { which = irm_sprawl value = irm_sprawl_pops }
+
+#- empire_size_districts_mult, Category: Countries, Planets
+#- empire_size_systems_mult, Category: Countries
+#- empire_size_colonies_mult, Category: Countries
+#- empire_size_pops_mult, Category: Countries
+#- empire_size_mult, Category: Countries
+#- empire_size_add, Category: Countries
+#- species_empire_size_mult, Category: Pops (for leaders)
 
 	# roundings
 	round_variable = irm_stability
@@ -113,6 +174,8 @@ irm_get_stats = {
 
 	round_variable = irm_immigration
 	round_variable = irm_emigration
+
+	round_variable = irm_sprawl
 }
 
 # This = Planet
@@ -329,6 +392,18 @@ irm_del_stats = {
 	irm_unset = { which = irm_owned_systems }
 	irm_unset = { which = irm_owned_colonies }
 	irm_unset = { which = irm_habitable }
+	irm_unset = { which = irm_sprawl }
+	irm_unset = { which = irm_sprawl_mod }
+	irm_unset = { which = irm_sprawl_upd }
+	irm_unset = { which = irm_sprawl_systems }
+	irm_unset = { which = irm_sprawl_systems_mod }
+	irm_unset = { which = irm_sprawl_colonies }
+	irm_unset = { which = irm_sprawl_colonies_mod }
+	irm_unset = { which = irm_sprawl_districts }
+	irm_unset = { which = irm_sprawl_districts_mod }
+	irm_unset = { which = irm_sprawl_pops }
+	irm_unset = { which = irm_sprawl_pops_mod }
+	irm_unset = { which = irm_sprawl_species_mod }
 	# demography
 	irm_unset = { which = irm_pops }
 	irm_unset = { which = irm_stability }

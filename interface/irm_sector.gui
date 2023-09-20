@@ -746,15 +746,15 @@ guiTypes = {
 						size = { width = 250 height = 70 }
 						background = { name = "bg" spriteType = @dark }
 
-						effectButtonType = {
-							name = "sector_focus_none"
-							quadTextureSprite = "GFX_sector_focus_type_disabled_selected"
-							size = { x = @dBtSize y = @dBtSize }
-							position = { x = 5 y = 9 }
-							format = left
-							font = "cg_16b"
-							effect = irm_bt_sector_focus_none
-						}
+						#effectButtonType = {
+						#	name = "sector_focus_none"
+						#	quadTextureSprite = "GFX_sector_focus_type_disabled_selected"
+						#	size = { x = @dBtSize y = @dBtSize }
+						#	position = { x = 5 y = 9 }
+						#	format = left
+						#	font = "cg_16b"
+						#	effect = irm_bt_sector_focus_none
+						#}
 						effectButtonType = {
 							name = "sector_focus_balanced"
 							quadTextureSprite = "GFX_sector_focus_type_balanced_selected"
@@ -764,42 +764,42 @@ guiTypes = {
 							font = "cg_16b"
 							effect = irm_bt_sector_focus_balanced
 						}
-						effectButtonType = {
-							name = "sector_focus_production"
-							quadTextureSprite = "GFX_sector_focus_type_production_selected"
-							size = { x = @dBtSize y = @dBtSize }
-							position = { x = 5 y = 9 }
-							format = left
-							font = "cg_16b"
-							effect = irm_bt_sector_focus_production
-						}
-						effectButtonType = {
-							name = "sector_focus_manufacturing"
-							quadTextureSprite = "GFX_sector_focus_type_manufacturing_selected"
-							size = { x = @dBtSize y = @dBtSize }
-							position = { x = 5 y = 9 }
-							format = left
-							font = "cg_16b"
-							effect = irm_bt_sector_focus_manufacturing
-						}
-						effectButtonType = {
-							name = "sector_focus_research"
-							quadTextureSprite = "GFX_sector_focus_type_research_selected"
-							size = { x = @dBtSize y = @dBtSize }
-							position = { x = 5 y = 9 }
-							format = left
-							font = "cg_16b"
-							effect = irm_bt_sector_focus_research
-						}
-						effectButtonType = {
-							name = "sector_focus_unity"
-							quadTextureSprite = "GFX_sector_focus_type_unity_selected"
-							size = { x = @dBtSize y = @dBtSize }
-							position = { x = 5 y = 9 }
-							format = left
-							font = "cg_16b"
-							effect = irm_bt_sector_focus_unity
-						}
+						#effectButtonType = {
+						#	name = "sector_focus_production"
+						#	quadTextureSprite = "GFX_sector_focus_type_production_selected"
+						#	size = { x = @dBtSize y = @dBtSize }
+						#	position = { x = 5 y = 9 }
+						#	format = left
+						#	font = "cg_16b"
+						#	effect = irm_bt_sector_focus_production
+						#}
+						#effectButtonType = {
+						#	name = "sector_focus_manufacturing"
+						#	quadTextureSprite = "GFX_sector_focus_type_manufacturing_selected"
+						#	size = { x = @dBtSize y = @dBtSize }
+						#	position = { x = 5 y = 9 }
+						#	format = left
+						#	font = "cg_16b"
+						#	effect = irm_bt_sector_focus_manufacturing
+						#}
+						#effectButtonType = {
+						#	name = "sector_focus_research"
+						#	quadTextureSprite = "GFX_sector_focus_type_research_selected"
+						#	size = { x = @dBtSize y = @dBtSize }
+						#	position = { x = 5 y = 9 }
+						#	format = left
+						#	font = "cg_16b"
+						#	effect = irm_bt_sector_focus_research
+						#}
+						#effectButtonType = {
+						#	name = "sector_focus_unity"
+						#	quadTextureSprite = "GFX_sector_focus_type_unity_selected"
+						#	size = { x = @dBtSize y = @dBtSize }
+						#	position = { x = 5 y = 9 }
+						#	format = left
+						#	font = "cg_16b"
+						#	effect = irm_bt_sector_focus_unity
+						#}
 
 						# infrastructure
 						containerWindowType = {
@@ -1168,7 +1168,7 @@ guiTypes = {
 							vertical_alignment = bottom
 							format = center
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.space.sprawl"
 							effect = irm_bt_sector_sprawl
 						}
 						iconType = {
@@ -1205,7 +1205,7 @@ guiTypes = {
 						}
 					}
 
-					# area
+					# systems
 					containerWindowType = {
 						name = "systems"
 						position = { x = 0 y = 0 }

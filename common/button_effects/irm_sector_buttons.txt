@@ -602,72 +602,72 @@ irm_bt_sector_buildings = {
 	}
 }
 # sector focuses
-irm_bt_sector_focus_none = {
-	potential = {
-		exists = event_target:irm_ui_sector
-		event_target:irm_ui_sector = {
-			not = { has_any_sector_focus = yes }
-		}
-	}
-	effect = {
-		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.none.tt" } }
-	}	
-}
+#irm_bt_sector_focus_none = {
+#	potential = {
+#		exists = event_target:irm_ui_sector
+#		event_target:irm_ui_sector = {
+#			not = { has_any_sector_focus = yes }
+#		}
+#	}
+#	effect = {
+#		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.none.tt" } }
+#	}	
+#}
 irm_bt_sector_focus_balanced = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			has_sector_focus = balanced
+			always = yes
 		}
 	}
 	effect = {
 		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.balanced.tt" } }
 	}	
 }
-irm_bt_sector_focus_production = {
-	potential = {
-		exists = event_target:irm_ui_sector
-		event_target:irm_ui_sector = {
-			has_sector_focus = production
-		}
-	}
-	effect = {
-		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.production.tt" } }
-	}	
-}
-irm_bt_sector_focus_manufacturing = {
-	potential = {
-		exists = event_target:irm_ui_sector
-		event_target:irm_ui_sector = {
-			has_sector_focus = manufacturing
-		}
-	}
-	effect = {
-		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.manufacturing.tt" } }
-	}	
-}
-irm_bt_sector_focus_research = {
-	potential = {
-		exists = event_target:irm_ui_sector
-		event_target:irm_ui_sector = {
-			has_sector_focus = research
-		}
-	}
-	effect = {
-		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.research.tt" } }
-	}	
-}
-irm_bt_sector_focus_unity = {
-	potential = {
-		exists = event_target:irm_ui_sector
-		event_target:irm_ui_sector = {
-			has_sector_focus = unity
-		}
-	}
-	effect = {
-		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.unity.tt" } }
-	}	
-}
+#irm_bt_sector_focus_production = {
+#	potential = {
+#		exists = event_target:irm_ui_sector
+#		event_target:irm_ui_sector = {
+#			has_sector_focus = production
+#		}
+#	}
+#	effect = {
+#		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.production.tt" } }
+#	}	
+#}
+#irm_bt_sector_focus_manufacturing = {
+#	potential = {
+#		exists = event_target:irm_ui_sector
+#		event_target:irm_ui_sector = {
+#			has_sector_focus = manufacturing
+#		}
+#	}
+#	effect = {
+#		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.manufacturing.tt" } }
+#	}	
+#}
+#irm_bt_sector_focus_research = {
+#	potential = {
+#		exists = event_target:irm_ui_sector
+#		event_target:irm_ui_sector = {
+#			has_sector_focus = research
+#		}
+#	}
+#	effect = {
+#		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.research.tt" } }
+#	}	
+#}
+#irm_bt_sector_focus_unity = {
+#	potential = {
+#		exists = event_target:irm_ui_sector
+#		event_target:irm_ui_sector = {
+#			has_sector_focus = unity
+#		}
+#	}
+#	effect = {
+#		hidden_effect = { event_target:irm_ui_sector = { custom_tooltip = "irm.ui.sector.dev.focus.unity.tt" } }
+#	}	
+#}
 
 # society
 irm_bt_sector_migration = {
@@ -705,4 +705,52 @@ irm_bt_sector_systems = {
 irm_bt_sector_colonies = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.space.colonies.tt" } }	
+}
+irm_bt_sector_sprawl = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.space.sprawl.tt"
+				custom_tooltip = "irm.ui.sector.space.sprawl.tt.systems"
+				if = {
+					limit = { not = { check_variable = { which = irm_sprawl_systems_mod value = 0 } } }
+						custom_tooltip = "irm.ui.sector.space.sprawl.tt.systems.m"
+				}
+				custom_tooltip = "irm.ui.sector.space.sprawl.tt.colonies"
+				if = {
+					limit = { not = { check_variable = { which = irm_sprawl_colonies_mod value = 0 } } }
+						custom_tooltip = "irm.ui.sector.space.sprawl.tt.colonies.m"
+				}				
+				custom_tooltip = "irm.ui.sector.space.sprawl.tt.districts"
+				if = {
+					limit = { not = { check_variable = { which = irm_sprawl_districts_mod value = 0 } } }
+						custom_tooltip = "irm.ui.sector.space.sprawl.tt.districts.m"
+				}
+				custom_tooltip = "irm.ui.sector.space.sprawl.tt.pops"
+				if = {
+					limit = { not = { check_variable = { which = irm_sprawl_pops_mod value = 0 } } }
+						custom_tooltip = "irm.ui.sector.space.sprawl.tt.pops.m"
+				}
+				if = {
+					limit = {
+						nor = {
+							check_variable = { which = irm_sprawl_mod value = 0 }
+							check_variable = { which = irm_sprawl_upd value = 0 }
+						}
+					}
+					custom_tooltip = "irm.ui.sector.space.sprawl.tt.empire"
+					if = {
+						limit = { not = { check_variable = { which = irm_sprawl_mod value = 0 } } }
+							custom_tooltip = "irm.ui.sector.space.sprawl.tt.empire.m"
+					}
+					if = {
+						limit = { not = { check_variable = { which = irm_sprawl_upd value = 0 } } }
+							custom_tooltip = "irm.ui.sector.space.sprawl.tt.empire.u"
+					}
+					custom_tooltip = "irm.ui.sector.space.sprawl.tt.desc"
+				}
+			}
+		}
+	}	
 }
