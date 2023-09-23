@@ -260,3 +260,14 @@ defined_text = {
  		}
  	}
 }
+
+# Armies and hostiles
+defined_text = {
+	name = irm_CheckArmies
+ 	random = no
+ 	default = "irm.ui.sector.military.armies.1"
+ 	text = {
+ 		localization_key = "irm.ui.sector.military.armies.2"
+ 		trigger = { check_variable = { which = irm_armies_hostile value > 0 } }
+ 	}
+}

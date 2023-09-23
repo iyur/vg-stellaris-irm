@@ -76,3 +76,25 @@ irm_planets_ = {
    		mult = 1
 	}
 }
+
+# This = Planet
+# Evaluates the production of resource
+irm_armies_ = {
+	base = 0
+	complex_trigger_modifier = {
+   		trigger = count_planet_army
+   		parameters = {
+   			limit = {
+     		   	[[owned]is_owned_by = root.owner]
+     		   	[[hostile]
+     		   		not = { is_owned_by = root.owner }
+     		   		owner = { is_hostile = root.owner }
+     		   	]
+   		   		[[assault]army_type = assault_army]
+   		   		[[defense]is_defensive_army = yes]
+   			}
+   		}
+   		mode = add
+   		mult = 1
+	}
+}

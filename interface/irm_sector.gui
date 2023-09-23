@@ -973,7 +973,7 @@ guiTypes = {
 							borderSize = { x = 42 y = 0 }
 							font = "cg_16b"
 							text = "irm.ui.sector.society.regionalism"
-							effect = irm_bt_sector.regionalism
+							effect = irm_bt_sector_regionalism
 						}
 						iconType = {
 							name = "sector_regionalism_icon"
@@ -1076,7 +1076,7 @@ guiTypes = {
 							position = { x = 0 y = 0 }
 							format = center
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.military.armies"
 							effect = irm_bt_sector_armies
 						}
 						iconType = {
@@ -1099,7 +1099,7 @@ guiTypes = {
 							position = { x = 0 y = 0 }
 							format = center
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.military.fleets"
 							effect = irm_bt_sector_fleets
 						}
 						iconType = {

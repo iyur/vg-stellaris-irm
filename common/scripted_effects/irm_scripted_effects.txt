@@ -24,6 +24,7 @@ irm_get_stats = {
 				irm_get_stats_resources = yes
 				irm_get_stats_development = yes
 				irm_get_stats_society = yes
+				irm_get_stats_military = yes
 			}
 			# starbases
 			starbase.fleet = {
@@ -147,6 +148,11 @@ irm_get_stats = {
 	change_variable = { which = irm_sprawl value = irm_sprawl_colonies }
 	change_variable = { which = irm_sprawl value = irm_sprawl_districts }
 	change_variable = { which = irm_sprawl value = irm_sprawl_pops }
+
+	change_variable = { which = irm_armies value = irm_armies_assault }
+	change_variable = { which = irm_armies value = irm_armies_defense }
+
+
 
 #- empire_size_districts_mult, Category: Countries, Planets
 #- empire_size_systems_mult, Category: Countries
@@ -386,6 +392,23 @@ irm_get_stats_society = {
 
 }
 
+# This = Planet
+irm_get_stats_military = {
+	if = {
+		limit = {
+			exists = owner
+			owner = { is_same_value = root.owner }
+			is_under_colonization = no
+		}
+		prevprevprev = {
+			change_variable = { which = irm_armies_assault value = prev.value:irm_armies_|owned|y|assault|y| }
+			change_variable = { which = irm_armies_defense value = prev.value:irm_armies_|owned|y|defense|y| }
+		}
+		root = { change_variable = { which = irm_armies_assault value = prev.value:irm_armies_|owned|y|assault|y| } }
+		root = { change_variable = { which = irm_armies_defense value = prev.value:irm_armies_|owned|y|defense|y| } }
+	}	
+}
+
 # This = System / Sector
 # Clears all variables
 irm_del_stats = {
@@ -513,5 +536,9 @@ irm_del_stats = {
 	irm_unset = { which = irm_emigration }
 	irm_unset = { which = irm_emigration_mod }
 	irm_unset = { which = irm_factions }
+	# military
+	irm_unset = { which = irm_armies }
+	irm_unset = { which = irm_armies_assault }
+	irm_unset = { which = irm_armies_defense }
 }
 }
