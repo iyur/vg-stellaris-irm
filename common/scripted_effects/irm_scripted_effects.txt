@@ -17,6 +17,8 @@ irm_get_stats = {
 			prevprev = {
 				change_variable = { which = irm_owned_systems value = 1 }
 				change_variable = { which = irm_trade_value value = prev.trigger:has_system_trade_value }
+				change_variable = { which = irm_trade_value value = prev.trigger:trade_intercepted_value }
+				change_variable = { which = irm_trade_value value = prev.trigger:trade_intercepted_value }
 			}
 			# planet loop
 			every_system_planet = {
@@ -540,5 +542,9 @@ irm_del_stats = {
 	irm_unset = { which = irm_armies }
 	irm_unset = { which = irm_armies_assault }
 	irm_unset = { which = irm_armies_defense }
+	irm_unset = { which = irm_armies_hostile }
+	irm_unset = { which = irm_piracy }
+	irm_unset = { which = irm_piracy_lost }
+	irm_unset = { which = irm_piracy_protection }
 }
 }

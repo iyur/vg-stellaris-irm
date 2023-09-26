@@ -208,14 +208,14 @@ l_english:
   irm.ui.sector.society.migration: "Migration:  §H[irm_ui_sector.irm_immigration]/§H[irm_ui_sector.irm_emigration]§!"
   irm.ui.sector.society.migration.tt: "§HMigration§!\nImmigration Pull: §G+[irm_ui_sector.irm_immigration]§!\nEmigration Push: §R-[irm_ui_sector.irm_emigration]§!$irm.ui.1$$PLANET_MIGRATION_DESC$"
 
-  irm.ui.sector.military.armies: "[irm_ui_sector.irm_CheckArmies]"
-  irm.ui.sector.military.armies.1: "§H[irm_ui_sector.irm_armies]§!"
-  irm.ui.sector.military.armies.2: "§H[irm_ui_sector.irm_armies] / §R[irm_ui_sector.irm_armies_hostile]§!"
-  irm.ui.sector.military.armies.tt: "§HArmies§!\nAssault: §Y[irm_ui_sector.irm_armies_assault]§!\nDefensive: §Y[irm_ui_sector.irm_armies_defense]§!"
-  irm.ui.sector.military.armies.tt.h: "Hostile: §R[irm_ui_sector.irm_armies_hostile]§!"
-  irm.ui.sector.military.armies.te: "$irm.ui.1$§EWars are not decided only in space. In order to capture enemy planets, entire armies will be needed, along with the preparation and battlefield awareness to properly use them. However planets may only be invaded if the sector's starbase has been occupied."
   irm.ui.sector.military.fleets: "§H0§!"
   irm.ui.sector.military.fleets.tt: "§HFleets§!\nShips: §Y0§!$irm.ui.1$§HSector Fleets§! §Erepresent the naval forces controlled directly by the sector goverment."
+  irm.ui.sector.military.armies.assault: "§H[irm_ui_sector.irm_armies_assault]§!"
+  irm.ui.sector.military.armies.assault.tt: "§HAssault Armies§!\nDeployed: §Y[irm_ui_sector.irm_armies_assault]§!"
+  irm.ui.sector.military.armies.hostile.tt: "Hostile: §R[irm_ui_sector.irm_armies_hostile]§!"
+  irm.ui.sector.military.armies.defense: "§H[irm_ui_sector.irm_armies_defense]§!"
+  irm.ui.sector.military.armies.defense.tt: "§HDefense Armies§!\nGarrisoned: §Y[irm_ui_sector.irm_armies_defense]§!"
+  irm.ui.sector.military.armies.tt: "$irm.ui.1$§EWars are not decided only in space. In order to capture enemy planets, entire armies will be needed, along with the preparation and battlefield awareness to properly use them. However planets may only be invaded if the sector's starbase has been occupied."
 
   # side left overview
   irm.ui.sector.left: "Overview"

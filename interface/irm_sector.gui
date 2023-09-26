@@ -1043,55 +1043,10 @@ guiTypes = {
 						}
 					}
 
-					# piracy			
-					containerWindowType = {
-						name = "piracy"
-						position = { x = 130 y = @yPosBC1 }
-						effectButtonType = {
-							name = "sector_piracy"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
-							size = { x = 120 y = @cell_Y }
-							position = { x = 0 y = 0 }
-							format = center
-							font = "cg_16b"
-							text = "0"
-							effect = irm_bt_sector_piracy
-						}
-						iconType = {
-							name = "sector_piracy_icon"
-							quadTextureSprite = "GFX_trade_piracy_icon"
-							position = { x = 10 y = 6 }
-							alwaysTransparent = yes
-						}
-					}
-
-					# armies			
-					containerWindowType = {
-						name = "armies"
-						position = { x = @xPosBC2 y = @yPosBC1 }
-						effectButtonType = {
-							name = "sector_armies"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
-							size = { x = 120 y = @cell_Y }
-							position = { x = 0 y = 0 }
-							format = center
-							font = "cg_16b"
-							text = "irm.ui.sector.military.armies"
-							effect = irm_bt_sector_armies
-						}
-						iconType = {
-							name = "sector_armies_icon"
-							quadTextureSprite = "GFX_irm_armies"
-							position = { x = 6 y = 4 }
-							scale = 0.90
-							alwaysTransparent = yes
-						}
-					}
-
-					# defense			
+					# fleets			
 					containerWindowType = {
 						name = "fleets"
-						position = { x = 395 y = @yPosBC1 }
+						position = { x = 130 y = @yPosBC1 }
 						effectButtonType = {
 							name = "sector_fleets"
 							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
@@ -1108,6 +1063,52 @@ guiTypes = {
 							position = { x = 2 y = 4 }
 							frame = 1
 							scale = 0.80
+							alwaysTransparent = yes
+						}
+					}
+
+					# assault			
+					containerWindowType = {
+						name = "armies_assault"
+						position = { x = @xPosBC2 y = @yPosBC1 }
+						effectButtonType = {
+							name = "assault"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.military.armies.assault"
+							effect = irm_bt_sector_armies_a
+						}
+						iconType = {
+							name = "sector_armies_icon"
+							quadTextureSprite = "GFX_irm_armies"
+							position = { x = 6 y = 4 }
+							scale = 0.90
+							alwaysTransparent = yes
+						}
+					}
+
+					# defensive			
+					containerWindowType = {
+						name = "armies_defensive"
+						position = { x = 395 y = @yPosBC1 }
+						effectButtonType = {
+							name = "sector_armies"
+							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							size = { x = 120 y = @cell_Y }
+							position = { x = 0 y = 0 }
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.military.armies.defense"
+							effect = irm_bt_sector_armies_d
+						}
+						iconType = {
+							name = "sector_armies_icon"
+							quadTextureSprite = "GFX_irm_armies"
+							position = { x = 6 y = 4 }
+							scale = 0.90
 							alwaysTransparent = yes
 						}
 					}

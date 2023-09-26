@@ -756,22 +756,33 @@ irm_bt_sector_sprawl = {
 }
 
 # Military stats
-irm_bt_sector_armies = {
+irm_bt_sector_fleets = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.military.fleets.tt" } }	
+}
+irm_bt_sector_armies_a = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
-				custom_tooltip = "irm.ui.sector.military.armies.tt"
+				custom_tooltip = "irm.ui.sector.military.armies.assault.tt"
 				if = {
 					limit = { check_variable = { which = irm_armies_hostile value > 0 } }
-					custom_tooltip = "irm.ui.sector.military.armies.tt.h"
+					custom_tooltip = "irm.ui.sector.military.armies.hostile.tt"
 				}
-				custom_tooltip = "irm.ui.sector.military.armies.te"
+				custom_tooltip = "irm.ui.sector.military.armies.tt"
 			}
 		}
 	}
 }
-irm_bt_sector_fleets = {
+irm_bt_sector_armies_d = {
 	potential = { exists = event_target:irm_ui_sector }
-	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.military.fleets.tt" } }	
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.military.armies.defense.tt"
+				custom_tooltip = "irm.ui.sector.military.armies.tt"
+			}
+		}
+	}
 }
