@@ -756,6 +756,29 @@ irm_bt_sector_sprawl = {
 }
 
 # Military stats
+irm_bt_sector_claims = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		custom_tooltip = "irm.ui.sector.military.claims.tt"
+		event_target:irm_ui_sector = {
+			if = {
+				limit = { check_variable = { which = irm_claims value > 0 } }
+					custom_tooltip = "irm.ui.sector.military.claims.tt.list"
+					country_list_tooltip = {
+						limit = {
+							event_target:irm_ui_sector = {
+								any_system_within_border = {
+									prevprev = { has_claim = prev }
+								}
+							}
+						}
+
+					}
+			}
+		}
+		custom_tooltip = "irm.ui.sector.military.claims.tt.desc"
+	}
+}
 irm_bt_sector_fleets = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.military.fleets.tt" } }	

@@ -214,8 +214,13 @@ l_english:
   irm.ui.sector.military.armies.assault.tt: "§HAssault Armies§!\nDeployed: §Y[irm_ui_sector.irm_armies_assault]§!"
   irm.ui.sector.military.armies.hostile.tt: "Hostile: §R[irm_ui_sector.irm_armies_hostile]§!"
   irm.ui.sector.military.armies.defense: "§H[irm_ui_sector.irm_armies_defense]§!"
-  irm.ui.sector.military.armies.defense.tt: "§HDefense Armies§!\nGarrisoned: §Y[irm_ui_sector.irm_armies_defense]§!"
+  irm.ui.sector.military.armies.defense.tt: "§HDefensive Armies§!\nGarrisoned: §Y[irm_ui_sector.irm_armies_defense]§!"
   irm.ui.sector.military.armies.tt: "$irm.ui.1$§EWars are not decided only in space. In order to capture enemy planets, entire armies will be needed, along with the preparation and battlefield awareness to properly use them. However planets may only be invaded if the sector's starbase has been occupied."
+  
+  irm.ui.sector.military.claims: "§H[irm_ui_sector.irm_claims]§!"
+  irm.ui.sector.military.claims.tt: "§HClaims§!\nTotal: §Y[irm_ui_sector.irm_claims]§!"
+  irm.ui.sector.military.claims.tt.list: "\nClaimers: §Y"
+  irm.ui.sector.military.claims.tt.desc: "$irm.ui.1$§EWhile casus belli and wargoals represent the purpose of a war, claims represent territorial ambitions - the sectors which will be controlled by the victor."
 
   # side left overview
   irm.ui.sector.left: "Overview"

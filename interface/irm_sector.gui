@@ -1031,7 +1031,7 @@ guiTypes = {
 							position = { x = 0 y = 0 }
 							format = center
 							font = "cg_16b"
-							text = "0"
+							text = "irm.ui.sector.military.claims"
 							effect = irm_bt_sector_claims
 						}
 						iconType = {

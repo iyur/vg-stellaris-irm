@@ -40,6 +40,13 @@ irm_get_stats = {
 						starbase_citadel = { prevprevprev = { change_variable = { which = irm_energy_starbase_exp value = 5 } } }
 				}
 			}
+			# claims
+			every_country = {
+				limit = { has_claim = prev }
+					prevprevprev = { change_variable = { which = irm_claims value = 1 } }
+			}
+
+
 		}
 		# factions
 		export_trigger_value_to_variable = {
@@ -153,6 +160,8 @@ irm_get_stats = {
 
 	change_variable = { which = irm_armies value = irm_armies_assault }
 	change_variable = { which = irm_armies value = irm_armies_defense }
+
+	change_variable = { which = irm_claims value = 0 }
 
 
 
@@ -539,6 +548,7 @@ irm_del_stats = {
 	irm_unset = { which = irm_emigration_mod }
 	irm_unset = { which = irm_factions }
 	# military
+	irm_unset = { which = irm_claims }
 	irm_unset = { which = irm_armies }
 	irm_unset = { which = irm_armies_assault }
 	irm_unset = { which = irm_armies_defense }
@@ -546,5 +556,4 @@ irm_del_stats = {
 	irm_unset = { which = irm_piracy }
 	irm_unset = { which = irm_piracy_lost }
 	irm_unset = { which = irm_piracy_protection }
-}
 }
