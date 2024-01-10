@@ -1162,7 +1162,7 @@ guiTypes = {
 						size = { width = @wRes height = @hRes }
 						effectButtonType = {
 							name = "sector_sprawl"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							quadTextureSprite = @sResBackground
 							size = { x = @wRes y = @hRes }
 							position = { x = 0 y = 0 }
 							borderSize = { x = 0 y = 4 }
@@ -1188,7 +1188,7 @@ guiTypes = {
 						size = { width = @wRes height = @hRes }
 						effectButtonType = {
 							name = "sector_planets"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							quadTextureSprite = @sResBackground
 							size = { x = @wRes y = @hRes }
 							position = { x = 45 y = 0 }
 							borderSize = { x = 0 y = 4 }
@@ -1213,7 +1213,7 @@ guiTypes = {
 						size = { width = @wRes height = @hRes }
 						effectButtonType = {
 							name = "sector_area"
-							quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+							quadTextureSprite = @sResBackground
 							size = { x = @wRes y = @hRes }
 							position = { x = 90 y = 0 }
 							borderSize = { x = 0 y = 4 }
@@ -1240,44 +1240,31 @@ guiTypes = {
 						effectButtonType = {
 							name = "range_tt"
 							quadTextureSprite = @sResBackground
-							position = { x = 187 y = 0 }
-							size = { x = 73 y = @hRes }
-							effect = irm_cb_sector_range
+							position = { x = 135 y = 0 }
+							size = { x = @wRes y = @hRes }
+							effect = irm_bt_sector_size
 						}
 						effectButtonType = {
 							name = "range_val"
 							quadTextureSprite = "GFX_invisible"
-							position = { x = 192 y = 22 }
+							position = { x = 137 y = 22 }
 							size = { x = 35 y = 32 }
 							format = center
 							font = "cg_16b"
-							text = "0"
-							effect = irm_cb_sector_range
+							text = "irm.ui.sector.space.size"
+							effect = irm_bt_sector_size
 						}
 						iconType = {
 							name = "range_ico"
 							spriteType = "GFX_sector_cap_icon"
-							position = { x = 196 y = 5 }
+							position = { x = 141 y = 5 }
 							alwaysTransparent = yes
 						}
-						# controls
-						#effectButtonType = {
-						#	name = "range_plus"
-						#	quadTextureSprite = "GFX_topbar_date_plus"
-						#	position = { x = 227 y = 5 }
-						#	effect = irm_cb_sector_range_plus
-						#}
-						#effectButtonType = {
-						#	name = "range_minus"
-						#	quadTextureSprite = "GFX_topbar_date_minus"
-						#	position = { x = 227 y = 27 }
-						#	effect = irm_cb_sector_range_minus
-						#}
 					}
 
 				# automation
 				containerWindowType = {
-					name = "automation"
+					name = "directives"
 					position = { x = 0 y = 75 }
 
 					iconType = {
@@ -1298,77 +1285,72 @@ guiTypes = {
 						format = left
 						text = "irm.ui.sector.auto"
 					}
-
+					# GFX_hotjoin_requests_background
 					# auto fleet	
 					containerWindowType = {
-						name = "auto_fleet"
-						position = { x = @xPosBC1 y = 44 }	
+						name = "auto_fleet11"
+						position = { x = @xPosBC1 y = 43 }	
 						effectButtonType = {
-							name = "auto_fleet_name"
-							quadTextureSprite = "GFX_invisible"
-							position = { x = 4 y = 1 }
-							size = { x = 300 y = 32 }
-							borderSize = { x = 40 y = 0 }
+							name = "auto_fleet_name11"
+							quadTextureSprite = "GFX_button_light"
+							position = { x = 35 y = 0 }
+							size = { x = 220 y = 32 }
+							borderSize = { x = 10 y = 0 }
 							font = "cg_16b"
 							format = left
-							text = "irm.ui.sector.auto.fleets"
+							text = "Sector Policies"
 							effect = irm_cb_sector_auto_fleet
 						}
-						effectButtonType = {
-							name = "auto_fleet_on"
-							quadTextureSprite = "GFX_checkbox_20_20_01"
-							position = { x = 4 y = 6 }
-							scale = 0.75
-							frame = 1
-							effect = irm_cb_sector_auto_fleet_on
+
+						containerWindowType = {
+							name = "by11"
+							position = { x = 0 y = 0 }
+							size = { width = 34 height = 34 }
+							clipping = yes
+							effectButtonType = {
+								name = "auto_fleet_on"
+								quadTextureSprite = "GFX_resolution_view_supporters_button"
+								position = { x = -3 y = -3 }
+								format = left
+								#scale = 0.75
+								#frame = 1
+								effect = irm_cb_sector_auto_fleet_on
+								#alwaysTransparent = yes
+							}
+
 						}
 					}
 
 					containerWindowType = {
-						name = "auto_expansion"
+						name = "auto_fleet1122"
 						position = { x = @xPosBC1 y = 83 }	
 						effectButtonType = {
-							name = "auto_expansion_name"
-							quadTextureSprite = "GFX_invisible"
-							position = { x = 4 y = 1 }
-							size = { x = 300 y = 32 }
-							borderSize = { x = 40 y = 0 }
+							name = "auto_fleet_name131"
+							quadTextureSprite = "GFX_button_light"
+							position = { x = 35 y = 0 }
+							size = { x = 220 y = 32 }
+							borderSize = { x = 10 y = 0 }
 							font = "cg_16b"
 							format = left
-							text = "irm.ui.sector.auto.expanse"
-							effect = irm_cb_sector_auto_expansion
+							text = "Fleet Operations"
+							effect = irm_cb_sector_auto_fleet
 						}
-						effectButtonType = {
-							name = "auto_expansion_on"
-							quadTextureSprite = "GFX_checkbox_20_20_01"
-							position = { x = 4 y = 6 }
-							scale = 0.75
-							frame = 1
-							effect = irm_cb_sector_auto_expansion
-						}
-					}
 
-					containerWindowType = {
-						name = "auto_colonisation"
-						position = { x = @xPosBC1 y = 122 }	
-						effectButtonType = {
-							name = "auto_colonisation_name"
-							quadTextureSprite = "GFX_invisible"
-							position = { x = 4 y = 1 }
-							size = { x = 300 y = 32 }
-							borderSize = { x = 40 y = 0 }
-							font = "cg_16b"
-							format = left
-							text = "irm.ui.sector.auto.colony"
-							effect = irm_cb_sector_auto_expansion
-						}
-						effectButtonType = {
-							name = "auto_colonisation_on"
-							quadTextureSprite = "GFX_checkbox_20_20_01"
-							position = { x = 4 y = 6 }
-							scale = 0.75
-							frame = 1
-							effect = irm_cb_sector_auto_expansion
+						containerWindowType = {
+							name = "by1122"
+							position = { x = 0 y = 0 }
+							size = { width = 34 height = 34 }
+							clipping = yes
+							effectButtonType = {
+								name = "auto_fleet_on"
+								quadTextureSprite = "GFX_fleet_manager_button"
+								position = { x = -3 y = -3 }
+								format = left
+								#scale = 0.75
+								#frame = 1
+								effect = irm_cb_sector_auto_fleet_on
+								#alwaysTransparent = yes
+							}
 						}
 					}
 

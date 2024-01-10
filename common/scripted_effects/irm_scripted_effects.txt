@@ -557,3 +557,12 @@ irm_del_stats = {
 	irm_unset = { which = irm_piracy_lost }
 	irm_unset = { which = irm_piracy_protection }
 }
+
+# This = Sector
+# Defines range with all the expansions
+irm_sector_get_size = {
+	if = {
+		limit = { check_variable = { which = irm_sector_size value = 0 } }
+		set_variable = { which = irm_sector_size value = 5 }
+	}
+}

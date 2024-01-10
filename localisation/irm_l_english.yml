@@ -209,7 +209,7 @@ l_english:
   irm.ui.sector.society.migration.tt: "§HMigration§!\nImmigration Pull: §G+[irm_ui_sector.irm_immigration]§!\nEmigration Push: §R-[irm_ui_sector.irm_emigration]§!$irm.ui.1$$PLANET_MIGRATION_DESC$"
 
   irm.ui.sector.military.fleets: "§H0§!"
-  irm.ui.sector.military.fleets.tt: "§HFleets§!\nShips: §Y0§!$irm.ui.1$§HSector Fleets§! §Erepresent the naval forces controlled directly by the sector goverment."
+  irm.ui.sector.military.fleets.tt: "§HFleets§!\nShips: §Y0§!$irm.ui.1$§HSector Fleets§! §Erepresents the naval forces controlled directly by the sector goverment."
   irm.ui.sector.military.armies.assault: "§H[irm_ui_sector.irm_armies_assault]§!"
   irm.ui.sector.military.armies.assault.tt: "§HAssault Armies§!\nDeployed: §Y[irm_ui_sector.irm_armies_assault]§!"
   irm.ui.sector.military.armies.hostile.tt: "Hostile: §R[irm_ui_sector.irm_armies_hostile]§!"
@@ -249,6 +249,8 @@ l_english:
   irm.ui.sector.space.sprawl.tt.empire.m: "    Modifiers: §G[irm_ui_sector.irm_sprawl_mod]%§!"
   irm.ui.sector.space.sprawl.tt.empire.u: "    Changes: §G[irm_ui_sector.irm_sprawl_upd]%§!"
   irm.ui.sector.space.sprawl.tt.desc: "$irm.ui.1$$EMPIRE_SIZE_DESC$"
+  irm.ui.sector.space.size: "[irm_ui_sector.irm_sector_size]"
+  irm.ui.sector.space.size.tt: "§HSector Size§!\nSize: §Y[irm_ui_sector.irm_sector_size]§!$irm.ui.1$Defines the actual size of the sector to which he could expand. Measured in hyperjumps around the sector capital."
   
   irm.ui.sector.auto: "Automation"
   irm.ui.sector.auto.fleets: "Fleet Operations"

@@ -697,6 +697,61 @@ irm_bt_sector_regionalism = {
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.society.regionalism.tt" } }	
 }
 
+# Military stats
+irm_bt_sector_claims = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		custom_tooltip = "irm.ui.sector.military.claims.tt"
+		event_target:irm_ui_sector = {
+			if = {
+				limit = { check_variable = { which = irm_claims value > 0 } }
+					custom_tooltip = "irm.ui.sector.military.claims.tt.list"
+					country_list_tooltip = {
+						limit = {
+							event_target:irm_ui_sector = {
+								any_system_within_border = {
+									prevprev = { has_claim = prev }
+								}
+							}
+						}
+
+					}
+			}
+		}
+		custom_tooltip = "irm.ui.sector.military.claims.tt.desc"
+	}
+}
+irm_bt_sector_fleets = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.military.fleets.tt" } }	
+}
+irm_bt_sector_armies_a = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.military.armies.assault.tt"
+				if = {
+					limit = { check_variable = { which = irm_armies_hostile value > 0 } }
+					custom_tooltip = "irm.ui.sector.military.armies.hostile.tt"
+				}
+				custom_tooltip = "irm.ui.sector.military.armies.tt"
+			}
+		}
+	}
+}
+irm_bt_sector_armies_d = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.military.armies.defense.tt"
+				custom_tooltip = "irm.ui.sector.military.armies.tt"
+			}
+		}
+	}
+}
+
 # Stats space values
 irm_bt_sector_systems = {
 	potential = { exists = event_target:irm_ui_sector }
@@ -754,58 +809,7 @@ irm_bt_sector_sprawl = {
 		}
 	}	
 }
-
-# Military stats
-irm_bt_sector_claims = {
+irm_bt_sector_size = {
 	potential = { exists = event_target:irm_ui_sector }
-	effect = {
-		custom_tooltip = "irm.ui.sector.military.claims.tt"
-		event_target:irm_ui_sector = {
-			if = {
-				limit = { check_variable = { which = irm_claims value > 0 } }
-					custom_tooltip = "irm.ui.sector.military.claims.tt.list"
-					country_list_tooltip = {
-						limit = {
-							event_target:irm_ui_sector = {
-								any_system_within_border = {
-									prevprev = { has_claim = prev }
-								}
-							}
-						}
-
-					}
-			}
-		}
-		custom_tooltip = "irm.ui.sector.military.claims.tt.desc"
-	}
-}
-irm_bt_sector_fleets = {
-	potential = { exists = event_target:irm_ui_sector }
-	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.military.fleets.tt" } }	
-}
-irm_bt_sector_armies_a = {
-	potential = { exists = event_target:irm_ui_sector }
-	effect = {
-		hidden_effect = {
-			event_target:irm_ui_sector = {
-				custom_tooltip = "irm.ui.sector.military.armies.assault.tt"
-				if = {
-					limit = { check_variable = { which = irm_armies_hostile value > 0 } }
-					custom_tooltip = "irm.ui.sector.military.armies.hostile.tt"
-				}
-				custom_tooltip = "irm.ui.sector.military.armies.tt"
-			}
-		}
-	}
-}
-irm_bt_sector_armies_d = {
-	potential = { exists = event_target:irm_ui_sector }
-	effect = {
-		hidden_effect = {
-			event_target:irm_ui_sector = {
-				custom_tooltip = "irm.ui.sector.military.armies.defense.tt"
-				custom_tooltip = "irm.ui.sector.military.armies.tt"
-			}
-		}
-	}
+	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.space.size.tt" } }	
 }
