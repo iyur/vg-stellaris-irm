@@ -58,7 +58,7 @@ guiTypes = {
 		size = { width = @scr_W height = @scr_H }
 		position = { x = @scr_O y = @scr_O }
 		moveable = yes
-		clipping = yes
+		clipping = no
 		click_to_front = yes
 
 		if_resolution = {
@@ -77,9 +77,20 @@ guiTypes = {
 		iconType = { name = "event_picture" spriteType = "GFX_leader_recruitment_bg_renowned" position = { x = 1 y = 1 } alwaysTransparent = yes }
 
 		iconType = { name = "hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = -50 y = -31 } alwaysTransparent = yes scale = 1.75 }
-		iconType = { name = "hex_bg2" spriteType = "GFX_tradition_hex_bg_blue" position = { x = 483 y = -35 } alwaysTransparent = yes scale = 1.75 mirror = yes }
+		iconType = { name = "hex_bg2" spriteType = @nobg position = { x = 483 y = -35 } alwaysTransparent = yes scale = 1.75 mirror = yes }
 		iconType = { name = "empire_header_line" quadTextureSprite = @nobg }
 		
+		# button hex bg
+		containerWindowType = {
+			name = "irm_header_bg"
+			orientation = upper_left
+			size = { width = @scr_W height = @scr_H }
+			position = { x = 0 y = 0 }
+			moveable = no
+			clipping = yes
+			iconType = { name = "irm_hex_bg" spriteType = "GFX_tradition_hex_bg_blue" position = { x = 483 y = -35 } alwaysTransparent = yes scale = 1.75 mirror = yes }
+		}
+
 		buttonType = {
 			name = "focus_button"
 			position = { x = -80 y = 12 }
@@ -114,6 +125,9 @@ guiTypes = {
 			iconType = { name = "stripes_1" spriteType = @nobg }
 			iconType = { name = "city_frame" spriteType = @nobg }
 		}
+
+
+
 
 		### HIDE ###
 
@@ -1242,7 +1256,7 @@ guiTypes = {
 							quadTextureSprite = @sResBackground
 							position = { x = 135 y = 0 }
 							size = { x = @wRes y = @hRes }
-							effect = irm_bt_sector_size
+							effect = irm_cb_sector_range
 						}
 						effectButtonType = {
 							name = "range_val"
@@ -1299,11 +1313,11 @@ guiTypes = {
 							font = "cg_16b"
 							format = left
 							text = "Sector Policies"
-							effect = irm_cb_sector_auto_fleet
+							effect = irm_bt_sector_policies
 						}
 
 						containerWindowType = {
-							name = "by11"
+							name = "irm_sector_policies"
 							position = { x = 0 y = 0 }
 							size = { width = 34 height = 34 }
 							clipping = yes
@@ -1312,12 +1326,18 @@ guiTypes = {
 								quadTextureSprite = "GFX_resolution_view_supporters_button"
 								position = { x = -3 y = -3 }
 								format = left
-								#scale = 0.75
-								#frame = 1
-								effect = irm_cb_sector_auto_fleet_on
-								#alwaysTransparent = yes
+								frame = 3
+								effect = irm_bt_sector_policies_on
 							}
-
+							effectButtonType = {
+								name = "auto_fleet_off"
+								quadTextureSprite = "GFX_resolution_view_supporters_button"
+								position = { x = -3 y = -3 }
+								format = left
+								frame = 1
+								effect = irm_bt_sector_policies_off
+							}
+						
 						}
 					}
 
@@ -1360,6 +1380,56 @@ guiTypes = {
 
 		}
 
+		# sidebar
+		@sb_W = 310
+		@sb_H = 661
+		containerWindowType = {
+			name = "sidebar"
+			size = { width = @sb_W height = @sb_H }
+			position = { x = 855 y = -1 }
+			clipping = no
+			orientation = upper_left
+
+			# back panel
+			effectButtonType = {
+				name = "irm_sidebar_panel"
+				quadTextureSprite = "GFX_plain_bg_tile"
+				position = { x = 0 y = 10 }
+				size = { x = @sb_W y = @sb_H }
+				font = "cg_16b"
+				format = left
+				text = "irm.ui.0"
+				effect = irm_bg_sector_sidebar
+			}
+
+			# header
+			effectButtonType = {
+				name = "irm_sidebar_header"
+				quadTextureSprite = @nobg
+				position = { x = 0 y = 5 }
+				size = { x = @sb_W y = 50 }
+				font = "malgun_goth_24"
+				format = center
+				text = "irm.ui.sector.side.header.policies"
+				effect = irm_bg_sector_sidebar
+			}
+
+			# close
+			effectButtonType = {
+				name = "irm_sidebar_close"
+				quadTextureSprite = "GFX_close"
+				position = { x = 270 y = 13 }
+				shortcut = "ESCAPE"
+				font = "malgun_goth_24"
+				format = right
+				clicksound = "back_click"
+				actionShortcut = "cancel"
+				text = "irm.ui.0"
+				effect = irm_bg_sector_sidebar_close
+			}
+
+		}
+
 
 		### EVENT DIPLO ###
 		
@@ -1384,4 +1454,5 @@ guiTypes = {
 		}
 
 	} # window
+
 }

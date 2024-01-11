@@ -256,3 +256,5 @@ l_english:
   irm.ui.sector.auto.fleets: "Fleet Operations"
   irm.ui.sector.auto.expanse: "Border Expansion"
   irm.ui.sector.auto.colony: "Colonization"
+
+  irm.ui.sector.side.header.policies: "§EPolicies§!"

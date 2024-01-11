@@ -813,3 +813,84 @@ irm_bt_sector_size = {
 	potential = { exists = event_target:irm_ui_sector }
 	effect = { hidden_effect = { custom_tooltip = "irm.ui.sector.space.size.tt" } }	
 }
+
+# management
+irm_bt_sector_policies = {
+	potential = { exists = event_target:irm_ui_sector }
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				if = {
+					limit = { has_sector_flag = irm_ui_sector_sidebar_policies }
+					remove_sector_flag = irm_ui_sector_sidebar_policies
+				}
+				else = {
+					set_sector_flag = irm_ui_sector_sidebar_policies
+				}
+				remove_sector_flag = remove_sector_flag = irm_ui_sector_sidebar_fleet
+			}
+		}
+	}
+}
+irm_bt_sector_policies_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_ui_sector_sidebar_policies
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				remove_sector_flag = irm_ui_sector_sidebar_policies
+			}
+		}
+	}
+}
+irm_bt_sector_policies_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_ui_sector_sidebar_policies }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				set_sector_flag = irm_ui_sector_sidebar_policies
+			}
+		}
+	}
+}
+
+# sidebar panel
+irm_bg_sector_sidebar = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			or = {
+				has_sector_flag = irm_ui_sector_sidebar_policies
+				has_sector_flag = irm_ui_sector_sidebar_fleet
+			}
+		}
+	}
+}
+irm_bg_sector_sidebar_close = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			or = {
+				has_sector_flag = irm_ui_sector_sidebar_policies
+				has_sector_flag = irm_ui_sector_sidebar_fleet
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				remove_sector_flag = irm_ui_sector_sidebar_policies
+				remove_sector_flag = irm_ui_sector_sidebar_fleet
+			}
+		}
+	}	
+}
