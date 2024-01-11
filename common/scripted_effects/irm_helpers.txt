@@ -34,3 +34,15 @@ irm_get_resource_breakdown = {
 		change_variable = { which = irm_$resource$_station_inc value = prev.value:irm_resource_amount_|RES|$resource$| }
 	]
 }
+
+# This = Any
+# SWitches scope flags
+irm_switch_flag = {
+	if = {
+		limit = { has_$scope$_flag = $flag$ }
+		remove_$scope$_flag = $flag$
+	}
+	else = {
+		set_$scope$_flag = $flag$
+	}
+}

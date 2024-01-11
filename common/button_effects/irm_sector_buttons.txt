@@ -820,14 +820,8 @@ irm_bt_sector_policies = {
 	effect = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
-				if = {
-					limit = { has_sector_flag = irm_ui_sector_sidebar_policies }
-					remove_sector_flag = irm_ui_sector_sidebar_policies
-				}
-				else = {
-					set_sector_flag = irm_ui_sector_sidebar_policies
-				}
-				remove_sector_flag = remove_sector_flag = irm_ui_sector_sidebar_fleet
+				irm_switch_flag = { scope = sector flag = irm_ui_sector_sidebar_policies }
+				remove_sector_flag = irm_ui_sector_sidebar_fleet
 			}
 		}
 	}

@@ -63,6 +63,12 @@ system_event = {
 			# scopes
 			irm_clear_target = { target = irm_ui_sector }
 
+			# flags
+			sector = {
+				remove_sector_flag = irm_ui_sector_sidebar_policies
+				remove_sector_flag = irm_ui_sector_sidebar_fleet
+			}
+
 			# variables
 			sector = {
 				irm_del_stats = yes
