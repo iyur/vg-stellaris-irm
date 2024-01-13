@@ -1304,17 +1304,18 @@ guiTypes = {
 					containerWindowType = {
 						name = "auto_fleet11"
 						position = { x = @xPosBC1 y = 43 }	
-						effectButtonType = {
-							name = "auto_fleet_name11"
-							quadTextureSprite = "GFX_button_light"
-							position = { x = 35 y = 0 }
-							size = { x = 220 y = 32 }
-							borderSize = { x = 10 y = 0 }
-							font = "cg_16b"
-							format = left
-							text = "Sector Policies"
-							effect = irm_bt_sector_policies
-						}
+						#effectButtonType = {
+						#	name = "auto_fleet_name11"
+						#	quadTextureSprite = "GFX_button_light"
+						#	position = { x = 0 y = 0 }
+						#	size = { x = 255 y = 32 }
+						#	borderSize = { x = 10 y = 0 }
+						#	font = "cg_16b"
+						#	format = left
+						#	text = "Sector Policies"
+						#	effect = irm_bt_sector_policies
+						#	borderSize = { x = 45 y = 0 }
+						#}
 
 						containerWindowType = {
 							name = "irm_sector_policies"
@@ -1326,16 +1327,8 @@ guiTypes = {
 								quadTextureSprite = "GFX_resolution_view_supporters_button"
 								position = { x = -3 y = -3 }
 								format = left
-								frame = 3
-								effect = irm_bt_sector_policies_on
-							}
-							effectButtonType = {
-								name = "auto_fleet_off"
-								quadTextureSprite = "GFX_resolution_view_supporters_button"
-								position = { x = -3 y = -3 }
-								format = left
-								frame = 1
-								effect = irm_bt_sector_policies_off
+								#frame = 1
+								effect = irm_bt_sector_policies_
 							}
 						
 						}
@@ -1380,56 +1373,256 @@ guiTypes = {
 
 		}
 
-		# sidebar
-		@sb_W = 310
-		@sb_H = 661
-		containerWindowType = {
-			name = "sidebar"
-			size = { width = @sb_W height = @sb_H }
-			position = { x = 855 y = -1 }
-			clipping = no
-			orientation = upper_left
-
-			# back panel
-			effectButtonType = {
-				name = "irm_sidebar_panel"
-				quadTextureSprite = "GFX_plain_bg_tile"
-				position = { x = 0 y = 10 }
-				size = { x = @sb_W y = @sb_H }
-				font = "cg_16b"
+		@dd_X = 570
+		@dd_Xe = 285
+		@dd_W = 310
+		@dd_H = 661
+		dropDownBoxType = {
+			name = "cool_dropdown"
+			position = { x = @dd_X y = 0 }
+			size = { width = 400 height = 30 }
+			background = {
+				name = "dropdown_bg"
+				spriteType = "GFX_invisible"
+			}
+			# alternative 1
+			expandButton = { # Arrow icon without any text
+				name = "irm_sector_policies"
+				#position = { x = 0 y = 425 }
+				#quadTextureSprite = "GFX_resolution_view_supporters_button"
+				position = { x = 0 y = 428 }
+				size = { x = 255 y = 32 }
+				quadTextureSprite = "GFX_button_light"
+				buttonFont = "cg_16b"
+				buttonText = "Sector Policies"
+				pdx_tooltip = "BUTTON_TOOLTIP"
+				borderSize = { x = 45 y = 0 }
 				format = left
-				text = "irm.ui.0"
-				effect = irm_bg_sector_sidebar
 			}
+			expandedWindow = {
+				name = "irm_sector_policies_sb"
+				hide_position = { x = @dd_Xe y = 9 }
+				show_position = { x = @dd_Xe y = 9 }
+				size = { width = @dd_W height = @dd_H }
+				show_animation_type = decelerated
+				hide_animation_type = accelerated
+				animation_time = 15
+				background = { name = "sb_back" spriteType = "GFX_plain_bg_tile" }
 
-			# header
-			effectButtonType = {
-				name = "irm_sidebar_header"
-				quadTextureSprite = @nobg
-				position = { x = 0 y = 5 }
-				size = { x = @sb_W y = 50 }
-				font = "malgun_goth_24"
-				format = center
-				text = "irm.ui.sector.side.header.policies"
-				effect = irm_bg_sector_sidebar
+				containerWindowType = {
+					name = "sb_panel"
+					position = { x=-300 y=0 }
+					orientation = upper_right
+
+					instantTextBoxType = {
+						name = "sb_header"
+						position = { x = 110 y = 12 }
+						maxWidth = 180
+						font = "malgun_goth_24"
+						format = left
+						text_color_code = "E"
+						text = "Policies"
+					}
+
+					# sector size
+					instantTextBoxType = {
+						name = "sb_sector_policies"
+						position = { x = 10 y = 65 }
+						maxWidth = 300
+						font = "cg_16b"
+						format = left
+						text_color_code = "E"
+						text = "Available policies and directives"
+					}
+
+					containerWindowType = {
+						name = "sb_sector_size_opt"
+						position = { x = 0 y = 106 }
+						size = { width = 290 height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+
+						instantTextBoxType = {
+							name = "sb_sector_size"
+							position = { x = 10 y = 10 }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text_color_code = "T"
+							text = "Sector Effective Size"
+						}
+
+						@sb_size_Y = 35
+						effectButtonType = {
+							name = "sector_size_1"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 35 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "1"
+						}
+						effectButtonType = {
+							name = "sector_size_5"
+							position = { x = 50 y = @sb_size_Y  }
+							size = { x = 35 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "5"
+						}
+						effectButtonType = {
+							name = "sector_size_10"
+							position = { x = 90 y = @sb_size_Y  }
+							size = { x = 35 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "10"
+						}
+						effectButtonType = {
+							name = "sector_size_15"
+							position = { x = 130 y = @sb_size_Y  }
+							size = { x = 35 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "15"
+						}
+
+					}
+
+					# expansion
+					containerWindowType = {
+						name = "sb_sector_expanse_opt"
+						position = { x = 0 y = 190 }
+						size = { width = 290 height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+
+						instantTextBoxType = {
+							name = "sb_sector_size"
+							position = { x = 10 y = 10 }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text_color_code = "T"
+							text = "Border Expansion"
+						}
+
+						effectButtonType = {
+							name = "sector_expanse_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Allowed"
+						}
+						effectButtonType = {
+							name = "sector_expanse_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Prohibited"
+						}
+
+					}
+
+					# colonisation
+					containerWindowType = {
+						name = "sb_sector_colony_opt"
+						position = { x = 0 y = 275 }
+						size = { width = 290 height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+
+						instantTextBoxType = {
+							name = "sb_sector_size"
+							position = { x = 10 y = 10 }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text_color_code = "T"
+							text = "Inner Colonisation"
+						}
+
+						effectButtonType = {
+							name = "sector_colony_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Allowed"
+						}
+						effectButtonType = {
+							name = "sector_colony_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Prohibited"
+						}
+
+					}
+
+					# migration
+					containerWindowType = {
+						name = "sb_sector_migration_opt"
+						position = { x = 0 y = 360 }
+						size = { width = 290 height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+
+						instantTextBoxType = {
+							name = "sb_sector_size"
+							position = { x = 10 y = 10 }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text_color_code = "T"
+							text = "Sector Migration"
+						}
+
+						effectButtonType = {
+							name = "sector_migration_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Allowed"
+						}
+						effectButtonType = {
+							name = "sector_migration_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Prohibited"
+						}
+
+					}
+
+				}
+
 			}
-
-			# close
-			effectButtonType = {
-				name = "irm_sidebar_close"
-				quadTextureSprite = "GFX_close"
-				position = { x = 270 y = 13 }
-				shortcut = "ESCAPE"
-				font = "malgun_goth_24"
-				format = right
-				clicksound = "back_click"
-				actionShortcut = "cancel"
-				text = "irm.ui.0"
-				effect = irm_bg_sector_sidebar_close
-			}
-
 		}
-
 
 		### EVENT DIPLO ###
 		
