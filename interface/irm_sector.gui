@@ -1373,14 +1373,13 @@ guiTypes = {
 
 		}
 
-		@dd_X = 570
-		@dd_Xe = 285
-		@dd_W = 310
 		@dd_H = 661
+		@sb_section_W = 300
+		@sb_section_Xo = 10
 		dropDownBoxType = {
 			name = "cool_dropdown"
-			position = { x = @dd_X y = 0 }
-			size = { width = 400 height = 30 }
+			position = { x = 570 y = 0 }
+			size = { width = 10 height = 30 }
 			background = {
 				name = "dropdown_bg"
 				spriteType = "GFX_invisible"
@@ -1401,18 +1400,20 @@ guiTypes = {
 			}
 			expandedWindow = {
 				name = "irm_sector_policies_sb"
-				hide_position = { x = @dd_Xe y = 9 }
-				show_position = { x = @dd_Xe y = 9 }
-				size = { width = @dd_W height = @dd_H }
+				hide_position = { x = 0 y = 9 }
+				show_position = { x = 275 y = 9 }
+				size = { width = 410 height = @dd_H }
 				show_animation_type = decelerated
 				hide_animation_type = accelerated
 				animation_time = 15
-				background = { name = "sb_back" spriteType = "GFX_plain_bg_tile" }
+
 
 				containerWindowType = {
 					name = "sb_panel"
-					position = { x=-300 y=0 }
-					orientation = upper_right
+					position = { x = 10 y = 0 }
+					orientation = upper_left
+					size = { width = 320 height = @dd_H }
+					background = { name = "sb_back" spriteType = "GFX_plain_bg_tile" }
 
 					instantTextBoxType = {
 						name = "sb_header"
@@ -1427,7 +1428,7 @@ guiTypes = {
 					# sector size
 					instantTextBoxType = {
 						name = "sb_sector_policies"
-						position = { x = 10 y = 65 }
+						position = { x = 15 y = 65 }
 						maxWidth = 300
 						font = "cg_16b"
 						format = left
@@ -1437,10 +1438,11 @@ guiTypes = {
 
 					containerWindowType = {
 						name = "sb_sector_size_opt"
-						position = { x = 0 y = 106 }
-						size = { width = 290 height = 75 }
+						position = { x = @sb_section_Xo y = 106 }
+						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
 						background = { name = "background" quadTextureSprite = @dark }
+						clipping = yes
 
 						instantTextBoxType = {
 							name = "sb_sector_size"
@@ -1496,11 +1498,62 @@ guiTypes = {
 
 					}
 
+					# migration
+					containerWindowType = {
+						name = "sb_sector_migration_opt"
+						position = { x = @sb_section_Xo y = 190 }
+						size = { width = @sb_section_W height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+
+						instantTextBoxType = {
+							name = "sb_sector_size"
+							position = { x = 10 y = 10 }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text_color_code = "T"
+							text = "Sector Migration"
+						}
+
+						effectButtonType = {
+							name = "m1"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Immigrate"
+						}
+						effectButtonType = {
+							name = "m2"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Emigrate"
+						}
+						effectButtonType = {
+							name = "m3"
+							position = { x = 200 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Prohibited"
+						}
+
+					}
+
 					# expansion
 					containerWindowType = {
 						name = "sb_sector_expanse_opt"
-						position = { x = 0 y = 190 }
-						size = { width = 290 height = 75 }
+						position = { x = @sb_section_Xo y = 275 }
+						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
 						background = { name = "background" quadTextureSprite = @dark }
 
@@ -1534,14 +1587,13 @@ guiTypes = {
 							font = "cg_16b"
 							text = "Prohibited"
 						}
-
 					}
 
 					# colonisation
 					containerWindowType = {
 						name = "sb_sector_colony_opt"
-						position = { x = 0 y = 275 }
-						size = { width = 290 height = 75 }
+						position = { x = @sb_section_Xo y = 360 }
+						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
 						background = { name = "background" quadTextureSprite = @dark }
 
@@ -1559,7 +1611,7 @@ guiTypes = {
 							name = "sector_colony_on"
 							position = { x = 10 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
-							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
@@ -1567,47 +1619,6 @@ guiTypes = {
 						}
 						effectButtonType = {
 							name = "sector_colony_off"
-							position = { x = 105 y = @sb_size_Y  }
-							size = { x = 90 y = 30 }
-							quadTextureSprite = "GFX_subjugation_btn_selection_off"
-							vertical_alignment = center
-							format = center
-							font = "cg_16b"
-							text = "Prohibited"
-						}
-
-					}
-
-					# migration
-					containerWindowType = {
-						name = "sb_sector_migration_opt"
-						position = { x = 0 y = 360 }
-						size = { width = 290 height = 75 }
-						orientation = upper_left
-						background = { name = "background" quadTextureSprite = @dark }
-
-						instantTextBoxType = {
-							name = "sb_sector_size"
-							position = { x = 10 y = 10 }
-							maxWidth = 180
-							font = "cg_16b"
-							format = left
-							text_color_code = "T"
-							text = "Sector Migration"
-						}
-
-						effectButtonType = {
-							name = "sector_migration_on"
-							position = { x = 10 y = @sb_size_Y  }
-							size = { x = 90 y = 30 }
-							quadTextureSprite = "GFX_subjugation_btn_selection_off"
-							vertical_alignment = center
-							format = center
-							font = "cg_16b"
-							text = "Allowed"
-						}
-						effectButtonType = {
-							name = "sector_migration_off"
 							position = { x = 105 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"

@@ -252,9 +252,7 @@ l_english:
   irm.ui.sector.space.size: "[irm_ui_sector.irm_sector_size]"
   irm.ui.sector.space.size.tt: "§HSector Size§!\nSize: §Y[irm_ui_sector.irm_sector_size]§!$irm.ui.1$Defines the actual size of the sector to which he could expand. Measured in hyperjumps around the sector capital."
   
-  irm.ui.sector.auto: "Automation"
+  irm.ui.sector.auto: "Governance"
   irm.ui.sector.auto.fleets: "Fleet Operations"
-  irm.ui.sector.auto.expanse: "Border Expansion"
-  irm.ui.sector.auto.colony: "Colonization"
 
   irm.ui.sector.side.header.policies: "§EPolicies§!"
