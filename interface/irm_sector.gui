@@ -1276,9 +1276,9 @@ guiTypes = {
 						}
 					}
 
-				# automation
+				# governance
 				containerWindowType = {
-					name = "directives"
+					name = "governance"
 					position = { x = 0 y = 75 }
 
 					iconType = {
@@ -1297,7 +1297,7 @@ guiTypes = {
 						font = "cg_16b"
 						position = { x = 44 y = 9 }
 						format = left
-						text = "irm.ui.sector.auto"
+						text = "irm.ui.sector.gov"
 					}
 					# GFX_hotjoin_requests_background
 					# auto fleet	
@@ -1393,8 +1393,8 @@ guiTypes = {
 				size = { x = 255 y = 32 }
 				quadTextureSprite = "GFX_button_light"
 				buttonFont = "cg_16b"
-				buttonText = "Sector Policies"
-				pdx_tooltip = "BUTTON_TOOLTIP"
+				buttonText = "irm.ui.sector.gov.policies"
+				pdx_tooltip = "irm.ui.sector.gov.policies.tt"
 				borderSize = { x = 45 y = 0 }
 				format = left
 			}
@@ -1417,27 +1417,27 @@ guiTypes = {
 
 					instantTextBoxType = {
 						name = "sb_header"
-						position = { x = 110 y = 12 }
+						position = { x = 125 y = 12 }
 						maxWidth = 180
 						font = "malgun_goth_24"
 						format = left
 						text_color_code = "E"
-						text = "Policies"
+						text = "irm.ui.sector.gov.policies.h"
 					}
 
 					# sector size
 					instantTextBoxType = {
 						name = "sb_sector_policies"
-						position = { x = 15 y = 65 }
+						position = { x = 20 y = 65 }
 						maxWidth = 300
 						font = "cg_16b"
 						format = left
 						text_color_code = "E"
-						text = "Available policies and directives"
+						text = "irm.ui.sector.gov.policies.desc"
 					}
 
 					containerWindowType = {
-						name = "sb_sector_size_opt"
+						name = "sb_sector_size"
 						position = { x = @sb_section_Xo y = 106 }
 						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
@@ -1445,106 +1445,208 @@ guiTypes = {
 						clipping = yes
 
 						instantTextBoxType = {
-							name = "sb_sector_size"
+							name = "sb_sector_size_desc"
 							position = { x = 10 y = 10 }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
-							text_color_code = "T"
-							text = "Sector Effective Size"
+							text = "irm.ui.sector.gov.policies.size"
 						}
 
 						@sb_size_Y = 35
 						effectButtonType = {
-							name = "sector_size_1"
+							name = "sector_size_1_on"
 							position = { x = 10 y = @sb_size_Y  }
-							size = { x = 35 y = 30 }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "1"
+							effect = irm_bt_sector_size_1_on
+						}
+						effectButtonType = {
+							name = "sector_size_1_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
 							text = "1"
+							effect = irm_bt_sector_size_1_off
 						}
 						effectButtonType = {
-							name = "sector_size_5"
-							position = { x = 50 y = @sb_size_Y  }
-							size = { x = 35 y = 30 }
+							name = "sector_size_5_off"
+							position = { x = 58 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "5"
+							effect = irm_bt_sector_size_5_off
+						}
+						effectButtonType = {
+							name = "sector_size_5_on"
+							position = { x = 58 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
 							text = "5"
+							effect = irm_bt_sector_size_5_on
 						}
 						effectButtonType = {
-							name = "sector_size_10"
-							position = { x = 90 y = @sb_size_Y  }
-							size = { x = 35 y = 30 }
+							name = "sector_size_10_off"
+							position = { x = 106 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
 							text = "10"
+							effect = irm_bt_sector_size_10_off
 						}
 						effectButtonType = {
-							name = "sector_size_15"
-							position = { x = 130 y = @sb_size_Y  }
-							size = { x = 35 y = 30 }
+							name = "sector_size_10_on"
+							position = { x = 106 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "10"
+							effect = irm_bt_sector_size_10_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sector_size_10_lock"
+								position = { x = 116 y = 19 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 1
+								effect = irm_bt_sector_size_10_lock
+								alwaysTransparent = yes
+							}
+						effectButtonType = {
+							name = "sector_size_15_off"
+							position = { x = 154 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
 							text = "15"
+							effect = irm_bt_sector_size_15_off
 						}
+						effectButtonType = {
+							name = "sector_size_15_on"
+							position = { x = 154 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "15"
+							effect = irm_bt_sector_size_15_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sector_size_15_lock"
+								position = { x = 164 y = 19 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 2
+								effect = irm_bt_sector_size_15_lock
+								alwaysTransparent = yes
+							}
 
 					}
 
 					# migration
 					containerWindowType = {
-						name = "sb_sector_migration_opt"
+						name = "sb_sector_migration"
 						position = { x = @sb_section_Xo y = 190 }
 						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
 						background = { name = "background" quadTextureSprite = @dark }
 
 						instantTextBoxType = {
-							name = "sb_sector_size"
+							name = "sb_sector_migration_desc"
 							position = { x = 10 y = 10 }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
-							text_color_code = "T"
-							text = "Sector Migration"
+							text = "irm.ui.sector.gov.policies.migration"
 						}
 
 						effectButtonType = {
-							name = "m1"
+							name = "sector_migration_prohibited_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.migration.prohibited"
+							effect = irm_bt_sector_migration_prohibited_off
+						}
+						effectButtonType = {
+							name = "sector_migration_prohibited_on"
 							position = { x = 10 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Immigrate"
+							text = "irm.ui.sector.gov.policies.migration.prohibited"
+							effect = irm_bt_sector_migration_prohibited_on
 						}
 						effectButtonType = {
-							name = "m2"
+							name = "sector_migration_immigration_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.migration.immigration"
+							effect = irm_bt_sector_migration_immigration_off
+						}
+						effectButtonType = {
+							name = "sector_migration_immigration_on"
 							position = { x = 105 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Emigrate"
+							text = "irm.ui.sector.gov.policies.migration.immigration"
+							effect = irm_bt_sector_migration_immigration_on
 						}
 						effectButtonType = {
-							name = "m3"
+							name = "sector_migration_emigration_off"
 							position = { x = 200 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Prohibited"
+							text = "irm.ui.sector.gov.policies.migration.emigration"
+							effect = irm_bt_sector_migration_emigration_off
+						}
+						effectButtonType = {
+							name = "sector_migration_emigration_on"
+							position = { x = 200 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.migration.emigration"
+							effect = irm_bt_sector_migration_emigration_on
 						}
 
 					}
@@ -1558,7 +1660,7 @@ guiTypes = {
 						background = { name = "background" quadTextureSprite = @dark }
 
 						instantTextBoxType = {
-							name = "sb_sector_size"
+							name = "sb_sector_size2"
 							position = { x = 10 y = 10 }
 							maxWidth = 180
 							font = "cg_16b"
@@ -1571,21 +1673,21 @@ guiTypes = {
 							name = "sector_expanse_on"
 							position = { x = 10 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
-							quadTextureSprite = "GFX_subjugation_btn_selection_off"
-							vertical_alignment = center
-							format = center
-							font = "cg_16b"
-							text = "Allowed"
-						}
-						effectButtonType = {
-							name = "sector_expanse_off"
-							position = { x = 105 y = @sb_size_Y  }
-							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
 							text = "Prohibited"
+						}
+						effectButtonType = {
+							name = "sector_expanse_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Allowed"
 						}
 					}
 
@@ -1598,7 +1700,7 @@ guiTypes = {
 						background = { name = "background" quadTextureSprite = @dark }
 
 						instantTextBoxType = {
-							name = "sb_sector_size"
+							name = "sb_sector_size3"
 							position = { x = 10 y = 10 }
 							maxWidth = 180
 							font = "cg_16b"
@@ -1611,21 +1713,21 @@ guiTypes = {
 							name = "sector_colony_on"
 							position = { x = 10 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
-							quadTextureSprite = "GFX_subjugation_btn_selection_off"
-							vertical_alignment = center
-							format = center
-							font = "cg_16b"
-							text = "Allowed"
-						}
-						effectButtonType = {
-							name = "sector_colony_off"
-							position = { x = 105 y = @sb_size_Y  }
-							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
 							text = "Prohibited"
+						}
+						effectButtonType = {
+							name = "sector_colony_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "Allowed"
 						}
 
 					}

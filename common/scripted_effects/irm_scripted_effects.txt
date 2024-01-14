@@ -559,10 +559,23 @@ irm_del_stats = {
 }
 
 # This = Sector
-# Defines range with all the expansions
-irm_sector_get_size = {
+irm_sector_get_settings = {
+	# size range
 	if = {
 		limit = { check_variable = { which = irm_sector_size value = 0 } }
 		set_variable = { which = irm_sector_size value = 5 }
+	}
+	# migration settings
+	if = {
+		limit = {
+			nor = {
+				has_sector_flag = irm_sector_migration_prohibited
+				has_sector_flag = irm_sector_migration_immigration
+				has_sector_flag = irm_sector_migration_emigration
+			}
+		}
+		# TODO: based on empire & civ
+		set_sector_flag = irm_sector_migration_immigration
+		set_sector_flag = irm_sector_migration_emigration
 	}
 }

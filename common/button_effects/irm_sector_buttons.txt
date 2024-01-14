@@ -888,3 +888,300 @@ irm_bg_sector_sidebar_close = {
 		}
 	}	
 }
+
+# sector ranges
+irm_bt_sector_size_1_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { check_variable = { which = irm_sector_size value = 1 } }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.ui.sector.gov.policies.size_0.req.num"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.gov.policies.size_1.off"
+				set_variable = { which = irm_sector_size value = 1 }
+			}
+		}
+	}
+}
+irm_bt_sector_size_1_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			check_variable = { which = irm_sector_size value = 1 }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_1.on"
+		}
+	}
+}
+irm_bt_sector_size_5_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { check_variable = { which = irm_sector_size value = 5 } }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_5.off"
+				set_variable = { which = irm_sector_size value = 5 }
+			}
+		}
+	}
+}
+irm_bt_sector_size_5_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			or = {
+				not = { is_variable_set = irm_sector_size }
+				check_variable = { which = irm_sector_size value = 5 }
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_5.on"
+		}
+	}
+}
+irm_bt_sector_size_10_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { check_variable = { which = irm_sector_size value = 10 } }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.ui.sector.gov.policies.size_0.req.t1"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_10.off"
+				set_variable = { which = irm_sector_size value = 10 }
+			}
+		}
+	}
+}
+irm_bt_sector_size_10_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			or = {
+				not = { is_variable_set = irm_sector_size }
+				check_variable = { which = irm_sector_size value = 10 }
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_10.on"
+		}
+	}
+}
+irm_bt_sector_size_10_lock = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { is_variable_set = irm_sector_tier }
+		}
+	}	
+}
+irm_bt_sector_size_15_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { check_variable = { which = irm_sector_size value = 15 } }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.ui.sector.gov.policies.size_0.req.t2"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_15.off"
+				set_variable = { which = irm_sector_size value = 15 }
+			}
+		}
+	}
+}
+irm_bt_sector_size_15_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			or = {
+				not = { is_variable_set = irm_sector_size }
+				check_variable = { which = irm_sector_size value = 15 }
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.size_15.on"
+		}
+	}
+}
+irm_bt_sector_size_15_lock = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			nor = {
+				is_variable_set = irm_sector_tier
+				check_variable = { which = irm_sector_tier value = 2 }
+			}
+		}
+	}	
+}
+
+# sector migration
+irm_bt_sector_migration_prohibited_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_migration_prohibited }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_migration_prohibited }
+				remove_sector_flag = irm_sector_migration_immigration
+				remove_sector_flag = irm_sector_migration_emigration
+			}
+		}
+	}
+}
+irm_bt_sector_migration_prohibited_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_migration_prohibited
+		}
+	}
+	effect = {
+		hidden_effect = {
+			#
+		}
+	}
+}
+irm_bt_sector_migration_immigration_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_migration_immigration }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_migration_immigration }
+				if = {
+					limit = {
+						or = {
+							has_sector_flag = irm_sector_migration_immigration
+							has_sector_flag = irm_sector_migration_emigration
+						}
+					}
+					remove_sector_flag = irm_sector_migration_prohibited
+				}
+			}
+		}
+	}
+}
+irm_bt_sector_migration_immigration_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_migration_immigration
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_migration_immigration }
+				if = {
+					limit = {
+						not = {
+							has_sector_flag = irm_sector_migration_immigration
+							has_sector_flag = irm_sector_migration_emigration
+						}
+					}
+					set_sector_flag = irm_sector_migration_prohibited
+				}
+			}
+		}
+	}
+}
+irm_bt_sector_migration_emigration_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_migration_emigration }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_migration_emigration }
+				if = {
+					limit = {
+						or = {
+							has_sector_flag = irm_sector_migration_immigration
+							has_sector_flag = irm_sector_migration_emigration
+						}
+					}
+					remove_sector_flag = irm_sector_migration_prohibited
+				}
+			}
+		}
+	}
+}
+irm_bt_sector_migration_emigration_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_migration_emigration
+		}
+	}
+	effect = {
+		hidden_effect = {
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_migration_emigration }
+				if = {
+					limit = {
+						not = {
+							has_sector_flag = irm_sector_migration_immigration
+							has_sector_flag = irm_sector_migration_emigration
+						}
+					}
+					set_sector_flag = irm_sector_migration_prohibited
+				}
+			}
+		}
+	}
+}
+
+irm_bt_disabled = {
+	potential = { exists = event_target:irm_ui_sector }
+	allow = { always = no }
+}

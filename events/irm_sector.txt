@@ -31,8 +31,8 @@ system_event = {
 			# sector dummy (for ui purposes)
 			save_global_event_target_as = irm_ui_sector
 
-			# define ragne
-			irm_sector_get_size = yes
+			# get settings
+			irm_sector_get_settings = yes
 
 			# collect statistics
 			irm_get_stats = yes
