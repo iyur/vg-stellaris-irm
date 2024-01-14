@@ -578,4 +578,24 @@ irm_sector_get_settings = {
 		set_sector_flag = irm_sector_migration_immigration
 		set_sector_flag = irm_sector_migration_emigration
 	}
+	# border expansion
+	if = {
+		limit = {
+			nor = {
+				has_sector_flag = irm_sector_expansion_prohibited
+				has_sector_flag = irm_sector_expansion_allowed
+			}
+		}
+		set_sector_flag = irm_sector_expansion_prohibited
+	}
+	# colonization
+	if = {
+		limit = {
+			nor = {
+				has_sector_flag = irm_sector_colonization_prohibited
+				has_sector_flag = irm_sector_colonization_allowed
+			}
+		}
+		set_sector_flag = irm_sector_colonization_prohibited
+	}
 }

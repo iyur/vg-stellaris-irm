@@ -1063,6 +1063,7 @@ irm_bt_sector_migration_prohibited_off = {
 	}
 	effect = {
 		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.migration.prohibited.tt"
 			event_target:irm_ui_sector = {
 				irm_switch_flag = { scope = sector flag = irm_sector_migration_prohibited }
 				remove_sector_flag = irm_sector_migration_immigration
@@ -1080,10 +1081,11 @@ irm_bt_sector_migration_prohibited_on = {
 	}
 	effect = {
 		hidden_effect = {
-			#
+			custom_tooltip = "irm.ui.sector.gov.policies.migration.prohibited.tt"
 		}
 	}
 }
+
 irm_bt_sector_migration_immigration_off = {
 	potential = {
 		exists = event_target:irm_ui_sector
@@ -1093,6 +1095,7 @@ irm_bt_sector_migration_immigration_off = {
 	}
 	effect = {
 		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.migration.immigration.tt"
 			event_target:irm_ui_sector = {
 				irm_switch_flag = { scope = sector flag = irm_sector_migration_immigration }
 				if = {
@@ -1118,6 +1121,7 @@ irm_bt_sector_migration_immigration_on = {
 	effect = {
 		hidden_effect = {
 			event_target:irm_ui_sector = {
+				custom_tooltip = "irm.ui.sector.gov.policies.migration.immigration.tt"
 				irm_switch_flag = { scope = sector flag = irm_sector_migration_immigration }
 				if = {
 					limit = {
@@ -1132,6 +1136,7 @@ irm_bt_sector_migration_immigration_on = {
 		}
 	}
 }
+
 irm_bt_sector_migration_emigration_off = {
 	potential = {
 		exists = event_target:irm_ui_sector
@@ -1141,6 +1146,7 @@ irm_bt_sector_migration_emigration_off = {
 	}
 	effect = {
 		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.migration.emigration.tt"
 			event_target:irm_ui_sector = {
 				irm_switch_flag = { scope = sector flag = irm_sector_migration_emigration }
 				if = {
@@ -1165,6 +1171,7 @@ irm_bt_sector_migration_emigration_on = {
 	}
 	effect = {
 		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.migration.emigration.tt"
 			event_target:irm_ui_sector = {
 				irm_switch_flag = { scope = sector flag = irm_sector_migration_emigration }
 				if = {
@@ -1180,6 +1187,141 @@ irm_bt_sector_migration_emigration_on = {
 		}
 	}
 }
+
+irm_bt_sector_expansion_prohibited_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_expansion_prohibited }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.expansion.prohibited.tt"
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_expansion_prohibited }
+				irm_switch_flag = { scope = sector flag = irm_sector_expansion_allowed }
+			}
+		}
+	}
+}
+irm_bt_sector_expansion_prohibited_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_expansion_prohibited
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.expansion.prohibited.tt"
+		}
+	}
+}
+irm_bt_sector_expansion_allowed_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_expansion_allowed }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.soon"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.expansion.allowed.tt"
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_expansion_allowed }
+				irm_switch_flag = { scope = sector flag = irm_sector_expansion_prohibited }
+			}
+		}
+	}
+}
+irm_bt_sector_expansion_allowed_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_expansion_allowed
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.expansion.allowed.tt"
+		}
+	}
+}
+
+irm_bt_sector_colonization_prohibited_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_colonization_prohibited }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.colonization.prohibited.tt"
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_colonization_prohibited }
+				irm_switch_flag = { scope = sector flag = irm_sector_colonization_allowed }
+			}
+		}
+	}
+}
+irm_bt_sector_colonization_prohibited_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_colonization_prohibited
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.colonization.prohibited.tt"
+		}
+	}
+}
+irm_bt_sector_colonization_allowed_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_colonization_allowed }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.soon"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.colonization.allowed.tt"
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_colonization_allowed }
+				irm_switch_flag = { scope = sector flag = irm_sector_colonization_prohibited }
+			}
+		}
+	}
+}
+irm_bt_sector_colonization_allowed_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_colonization_allowed
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.policies.colonization.allowed.tt"
+		}
+	}
+}
+
 
 irm_bt_disabled = {
 	potential = { exists = event_target:irm_ui_sector }

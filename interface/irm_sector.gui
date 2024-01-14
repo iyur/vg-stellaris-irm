@@ -1653,81 +1653,127 @@ guiTypes = {
 
 					# expansion
 					containerWindowType = {
-						name = "sb_sector_expanse_opt"
+						name = "sb_sector_expansion"
 						position = { x = @sb_section_Xo y = 275 }
 						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
 						background = { name = "background" quadTextureSprite = @dark }
 
 						instantTextBoxType = {
-							name = "sb_sector_size2"
+							name = "sb_sector_expansion_desc"
 							position = { x = 10 y = 10 }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
-							text_color_code = "T"
-							text = "Border Expansion"
+							text = "irm.ui.sector.gov.policies.expansion"
 						}
 
 						effectButtonType = {
-							name = "sector_expanse_on"
+							name = "sector_expansion_prohibited_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.expansion.prohibited"
+							effect = irm_bt_sector_expansion_prohibited_off
+						}
+						effectButtonType = {
+							name = "sector_expansion_prohibited_on"
 							position = { x = 10 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Prohibited"
+							text = "irm.ui.sector.gov.policies.expansion.prohibited"
+							effect = irm_bt_sector_expansion_prohibited_on
 						}
 						effectButtonType = {
-							name = "sector_expanse_off"
+							name = "sector_expansion_allowed_off"
 							position = { x = 105 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Allowed"
+							text = "irm.ui.sector.gov.policies.expansion.allowed"
+							effect = irm_bt_sector_expansion_allowed_off
+						}
+						effectButtonType = {
+							name = "sector_expansion_allowed_on"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.expansion.allowed"
+							effect = irm_bt_sector_expansion_allowed_on
 						}
 					}
 
 					# colonisation
 					containerWindowType = {
-						name = "sb_sector_colony_opt"
+						name = "sb_sector_colonization"
 						position = { x = @sb_section_Xo y = 360 }
 						size = { width = @sb_section_W height = 75 }
 						orientation = upper_left
 						background = { name = "background" quadTextureSprite = @dark }
 
 						instantTextBoxType = {
-							name = "sb_sector_size3"
+							name = "sb_sector_colonization_desc"
 							position = { x = 10 y = 10 }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
-							text_color_code = "T"
-							text = "Inner Colonisation"
+							text = "irm.ui.sector.gov.policies.colonization"
 						}
 
 						effectButtonType = {
-							name = "sector_colony_on"
+							name = "sector_colonization_prohibited_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.colonization.prohibited"
+							effect = irm_bt_sector_colonization_prohibited_off
+						}
+						effectButtonType = {
+							name = "sector_colonization_prohibited_on"
 							position = { x = 10 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_on"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Prohibited"
+							text = "irm.ui.sector.gov.policies.colonization.prohibited"
+							effect = irm_bt_sector_colonization_prohibited_on
 						}
 						effectButtonType = {
-							name = "sector_colony_off"
+							name = "sector_colonization_allowed_off"
 							position = { x = 105 y = @sb_size_Y  }
 							size = { x = 90 y = 30 }
 							quadTextureSprite = "GFX_subjugation_btn_selection_off"
 							vertical_alignment = center
 							format = center
 							font = "cg_16b"
-							text = "Allowed"
+							text = "irm.ui.sector.gov.policies.colonization.allowed"
+							effect = irm_bt_sector_colonization_allowed_off
+						}
+						effectButtonType = {
+							name = "sector_colonization_allowed_on"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.policies.colonization.allowed"
+							effect = irm_bt_sector_colonization_allowed_on
 						}
 
 					}
