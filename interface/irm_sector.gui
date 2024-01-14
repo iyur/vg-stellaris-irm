@@ -1299,23 +1299,11 @@ guiTypes = {
 						format = left
 						text = "irm.ui.sector.gov"
 					}
-					# GFX_hotjoin_requests_background
-					# auto fleet	
+
+					# settings
 					containerWindowType = {
-						name = "auto_fleet11"
+						name = "irm_policies"
 						position = { x = @xPosBC1 y = 43 }	
-						#effectButtonType = {
-						#	name = "auto_fleet_name11"
-						#	quadTextureSprite = "GFX_button_light"
-						#	position = { x = 0 y = 0 }
-						#	size = { x = 255 y = 32 }
-						#	borderSize = { x = 10 y = 0 }
-						#	font = "cg_16b"
-						#	format = left
-						#	text = "Sector Policies"
-						#	effect = irm_bt_sector_policies
-						#	borderSize = { x = 45 y = 0 }
-						#}
 
 						containerWindowType = {
 							name = "irm_sector_policies"
@@ -1323,11 +1311,10 @@ guiTypes = {
 							size = { width = 34 height = 34 }
 							clipping = yes
 							effectButtonType = {
-								name = "auto_fleet_on"
+								name = "irm_sector_policies_bt"
 								quadTextureSprite = "GFX_resolution_view_supporters_button"
 								position = { x = -3 y = -3 }
 								format = left
-								#frame = 1
 								effect = irm_bt_sector_policies_
 							}
 						
@@ -1335,34 +1322,20 @@ guiTypes = {
 					}
 
 					containerWindowType = {
-						name = "auto_fleet1122"
+						name = "irm_fleet"
 						position = { x = @xPosBC1 y = 83 }	
-						effectButtonType = {
-							name = "auto_fleet_name131"
-							quadTextureSprite = "GFX_button_light"
-							position = { x = 35 y = 0 }
-							size = { x = 220 y = 32 }
-							borderSize = { x = 10 y = 0 }
-							font = "cg_16b"
-							format = left
-							text = "Fleet Operations"
-							effect = irm_cb_sector_auto_fleet
-						}
 
 						containerWindowType = {
-							name = "by1122"
+							name = "irm_sector_fleet"
 							position = { x = 0 y = 0 }
 							size = { width = 34 height = 34 }
 							clipping = yes
 							effectButtonType = {
-								name = "auto_fleet_on"
+								name = "irm_sector_fleet_bt"
 								quadTextureSprite = "GFX_fleet_manager_button"
 								position = { x = -3 y = -3 }
 								format = left
-								#scale = 0.75
-								#frame = 1
-								effect = irm_cb_sector_auto_fleet_on
-								#alwaysTransparent = yes
+								effect = irm_bt_sector_policies_
 							}
 						}
 					}
@@ -1376,20 +1349,16 @@ guiTypes = {
 		@dd_H = 661
 		@sb_section_W = 300
 		@sb_section_Xo = 10
+		@sb_section_desc_Yo = 7
 		dropDownBoxType = {
-			name = "cool_dropdown"
-			position = { x = 570 y = 0 }
+			name = "irm_sector_policies_eb"
+			position = { x = 570 y = 428 }
 			size = { width = 10 height = 30 }
-			background = {
-				name = "dropdown_bg"
-				spriteType = "GFX_invisible"
-			}
-			# alternative 1
-			expandButton = { # Arrow icon without any text
+			background = { name = "dropdown_bg" spriteType = "GFX_invisible" }
+
+			expandButton = {
 				name = "irm_sector_policies"
-				#position = { x = 0 y = 425 }
-				#quadTextureSprite = "GFX_resolution_view_supporters_button"
-				position = { x = 0 y = 428 }
+				position = { x = 0 y = 0 }
 				size = { x = 255 y = 32 }
 				quadTextureSprite = "GFX_button_light"
 				buttonFont = "cg_16b"
@@ -1398,6 +1367,7 @@ guiTypes = {
 				borderSize = { x = 45 y = 0 }
 				format = left
 			}
+
 			expandedWindow = {
 				name = "irm_sector_policies_sb"
 				hide_position = { x = 0 y = 9 }
@@ -1410,7 +1380,7 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "sb_panel"
-					position = { x = 10 y = 0 }
+					position = { x = 10 y = -428 }
 					orientation = upper_left
 					size = { width = 320 height = @dd_H }
 					background = { name = "sb_back" spriteType = "GFX_plain_bg_tile" }
@@ -1446,7 +1416,7 @@ guiTypes = {
 
 						instantTextBoxType = {
 							name = "sb_sector_size_desc"
-							position = { x = 10 y = 10 }
+							position = { x = 10 y = @sb_section_desc_Yo }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
@@ -1523,7 +1493,7 @@ guiTypes = {
 							# locker
 							effectButtonType = {
 								name = "sector_size_10_lock"
-								position = { x = 116 y = 19 }
+								position = { x = 116 y = 21 }
 								quadTextureSprite = "GFX_law_locked"
 								format = left
 								frame = 1
@@ -1555,7 +1525,7 @@ guiTypes = {
 							# locker
 							effectButtonType = {
 								name = "sector_size_15_lock"
-								position = { x = 164 y = 19 }
+								position = { x = 164 y = 21 }
 								quadTextureSprite = "GFX_law_locked"
 								format = left
 								frame = 2
@@ -1575,7 +1545,7 @@ guiTypes = {
 
 						instantTextBoxType = {
 							name = "sb_sector_migration_desc"
-							position = { x = 10 y = 10 }
+							position = { x = 10 y = @sb_section_desc_Yo }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
@@ -1661,7 +1631,7 @@ guiTypes = {
 
 						instantTextBoxType = {
 							name = "sb_sector_expansion_desc"
-							position = { x = 10 y = 10 }
+							position = { x = 10 y = @sb_section_desc_Yo }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
@@ -1724,7 +1694,7 @@ guiTypes = {
 
 						instantTextBoxType = {
 							name = "sb_sector_colonization_desc"
-							position = { x = 10 y = 10 }
+							position = { x = 10 y = @sb_section_desc_Yo }
 							maxWidth = 180
 							font = "cg_16b"
 							format = left
@@ -1781,7 +1751,313 @@ guiTypes = {
 				}
 
 			}
-		}
+		} # policies
+
+		dropDownBoxType = {
+			name = "irm_sector_fleet"
+			position = { x = 570 y = 468 }
+			size = { width = 10 height = 30 }
+			background = { name = "dropdown_bg" spriteType = "GFX_invisible" }
+
+			expandButton = {
+				name = "irm_sector_fleet_eb"
+				position = { x = 0 y = 0 }
+				size = { x = 255 y = 32 }
+				quadTextureSprite = "GFX_button_light"
+				buttonFont = "cg_16b"
+				buttonText = "irm.ui.sector.gov.fleet"
+				#pdx_tooltip = "irm.ui.sector.gov.fleet.tt"
+				borderSize = { x = 45 y = 0 }
+				format = left
+			}
+
+			expandedWindow = {
+				name = "irm_sector_fleet_sb"
+				hide_position = { x = 0 y = 9 }
+				show_position = { x = 275 y = 9 }
+				size = { width = 410 height = @dd_H }
+				show_animation_type = decelerated
+				hide_animation_type = accelerated
+				animation_time = 15
+
+
+				containerWindowType = {
+					name = "sb_panel"
+					position = { x = 10 y = -468 }
+					orientation = upper_left
+					size = { width = 320 height = @dd_H }
+					background = { name = "sb_back" spriteType = "GFX_plain_bg_tile" }
+
+					instantTextBoxType = {
+						name = "sb_header"
+						position = { x = 125 y = 12 }
+						maxWidth = 180
+						font = "malgun_goth_24"
+						format = left
+						text_color_code = "E"
+						text = "irm.ui.sector.gov.fleet.h"
+					}
+
+					# sector size
+					instantTextBoxType = {
+						name = "sb_sector_policies"
+						position = { x = 20 y = 65 }
+						maxWidth = 300
+						font = "cg_16b"
+						format = left
+						text_color_code = "E"
+						text = "irm.ui.sector.gov.fleet.desc"
+					}
+
+					containerWindowType = {
+						name = "sb_sector_fleet"
+						position = { x = @sb_section_Xo y = 106 }
+						size = { width = @sb_section_W height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+						clipping = yes
+
+						instantTextBoxType = {
+							name = "sb_sector_fleet_desc"
+							position = { x = 10 y = @sb_section_desc_Yo }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.gov.fleet.sector"
+						}
+
+						effectButtonType = {
+							name = "sb_sector_fleet_prohibited_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.sector.prohibited"
+							effect = irm_bt_sector_fleet_prohibited_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_prohibited_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.sector.prohibited"
+							effect = irm_bt_sector_fleet_prohibited_on
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_allowed_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.sector.allowed"
+							effect = irm_bt_sector_fleet_allowed_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_allowed_on"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.sector.allowed"
+							effect = irm_bt_sector_fleet_allowed_on
+						}
+
+					}
+
+					# capacity
+					containerWindowType = {
+						name = "sb_sector_fleet_cap"
+						position = { x = @sb_section_Xo y = 190 }
+						size = { width = @sb_section_W height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+						clipping = yes
+
+						instantTextBoxType = {
+							name = "sb_sector_fleet_cap_desc"
+							position = { x = 10 y = @sb_section_desc_Yo }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.gov.fleet.cap"
+						}
+
+						effectButtonType = {
+							name = "sb_sector_fleet_cap_low_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.cap.low"
+							effect = irm_bt_sector_fleet_cap_low_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_cap_low_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.cap.low"
+							effect = irm_bt_sector_fleet_cap_low_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sb_sector_fleet_cap_low_lock"
+								position = { x = 44 y = 21 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 1
+								effect = irm_bt_sector_fleet_cap_low_lock
+								alwaysTransparent = yes
+							}
+						effectButtonType = {
+							name = "sb_sector_fleet_cap_medium_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.cap.medium"
+							effect = irm_bt_sector_fleet_cap_medium_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_cap_medium_on"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.cap.medium"
+							effect = irm_bt_sector_fleet_cap_medium_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sb_sector_fleet_cap_medium_lock"
+								position = { x = 139 y = 21 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 2
+								effect = irm_bt_sector_fleet_cap_medium_lock
+								alwaysTransparent = yes
+							}
+						effectButtonType = {
+							name = "sb_sector_fleet_cap_high_off"
+							position = { x = 200 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.cap.high"
+							effect = irm_bt_sector_fleet_cap_high_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_cap_high_on"
+							position = { x = 200 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.cap.high"
+							effect = irm_bt_sector_fleet_cap_high_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sb_sector_fleet_cap_high_lock"
+								position = { x = 234 y = 21 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 3
+								effect = irm_bt_sector_fleet_cap_high_lock
+								alwaysTransparent = yes
+							}
+					}
+
+					# expansion
+					containerWindowType = {
+						name = "sb_sector_fleet_stance"
+						position = { x = @sb_section_Xo y = 275 }
+						size = { width = @sb_section_W height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+
+						instantTextBoxType = {
+							name = "sb_sector_expansion_desc"
+							position = { x = 10 y = @sb_section_desc_Yo }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.gov.fleet.stance"
+						}
+
+						effectButtonType = {
+							name = "sb_sector_fleet_stance_passive_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.stance.passive"
+							effect = irm_bt_sector_fleet_stance_passive_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_stance_passive_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.stance.passive"
+							effect = irm_bt_sector_fleet_stance_passive_on
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_stance_aggressive_off"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.stance.aggressive"
+							effect = irm_bt_sector_fleet_stance_aggressive_off
+						}
+						effectButtonType = {
+							name = "sb_sector_fleet_stance_aggressive_on"
+							position = { x = 105 y = @sb_size_Y  }
+							size = { x = 90 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.gov.fleet.stance.aggressive"
+							effect = irm_bt_sector_fleet_stance_aggressive_on
+						}
+
+					}
+
+				}
+
+			}
+		} # fleetcom
+
 
 		### EVENT DIPLO ###
 		

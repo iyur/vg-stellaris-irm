@@ -598,4 +598,14 @@ irm_sector_get_settings = {
 		}
 		set_sector_flag = irm_sector_colonization_prohibited
 	}
+	# fleet right
+	if = {
+		limit = {
+			nor = {
+				has_sector_flag = irm_sector_fleet_prohibited
+				has_sector_flag = irm_sector_fleet_allowed
+			}
+		}
+		set_sector_flag = irm_sector_fleet_prohibited
+	}	
 }

@@ -253,8 +253,10 @@ l_english:
   irm.ui.sector.space.size.tt: "§HSector Size§!\nSize: §Y[irm_ui_sector.irm_sector_size]§!$irm.ui.1$Defines the actual size of the sector to which he could expand. Measured in hyperjumps around the sector capital."
   
   irm.ui.sector.gov: "Governance"
+
+  # policies
   irm.ui.sector.gov.policies: "Sector Policies"
-  irm.ui.sector.gov.policies.tt: "§H$irm.ui.sector.gov.policies$§!\nOpens policies sidebar.\nThese policies and settings define the sector political behavior and activity."
+  irm.ui.sector.gov.policies.tt: "§H$irm.ui.sector.gov.policies$§!\n\nOpens policies sidebar.\nThese policies and settings define the sector political behavior and activity."
   irm.ui.sector.gov.policies.h: "Policies"
   irm.ui.sector.gov.policies.desc: "Sector inner policies and rights"
 
@@ -291,8 +293,34 @@ l_english:
   irm.ui.sector.gov.policies.colonization.allowed: "Allowed"
   irm.ui.sector.gov.policies.colonization.allowed.tt: "§H$irm.ui.sector.gov.policies.colonization.allowed$§!\n\nIf allowed, sector will automatically colonize worlds within the borders."
 
-  irm.ui.sector.auto.fleets: "Fleet Operations"
+  # fleet
+  irm.ui.sector.gov.fleet: "Fleet Command"
+  irm.ui.sector.gov.fleet.tt: "§H$irm.ui.sector.gov.fleet$§!\n\nOpens fleetcom sidebar.\nYou control the sector fleet and appoint special orders."
+  irm.ui.sector.gov.fleet.h: "Fleetcom"
+  irm.ui.sector.gov.fleet.desc: "Coreworlds Sector Fleet"
 
-  irm.ui.sector.side.header.policies: "§EPolicies§!"
+  irm.ui.sector.gov.fleet.sector: "Sector FLeet"
+  irm.ui.sector.gov.fleet.sector.prohibited: "Prohibited"
+  irm.ui.sector.gov.fleet.sector.prohibited.tt: "§H$irm.ui.sector.gov.fleet.sector.prohibited$§!\n\nWhen allowed, the sector could have some own naval forces to protect itself."
+  irm.ui.sector.gov.fleet.sector.allowed: "Allowed"
+  irm.ui.sector.gov.fleet.sector.allowed.tt: "§H$irm.ui.sector.gov.fleet.sector.allowed$§!\n\nWhen allowed, the sector could have some own naval forces to protect itself."
+
+  irm.ui.sector.gov.fleet.cap: "Fleet Capacity"
+  irm.ui.sector.gov.fleet.cap.req.t1: "§H$irm.ui.sector.gov.fleet.cap.low$§!\n\n§RRequires §YSector Tier 1§! to unblock.§!"
+  irm.ui.sector.gov.fleet.cap.req.t2: "§H$irm.ui.sector.gov.fleet.cap.medium$§!\n\n§RRequires §YSector Tier 2§! to unblock.§!"
+  irm.ui.sector.gov.fleet.cap.req.t3: "§H$irm.ui.sector.gov.fleet.cap.high$§!\n\n§RRequires §YSector Tier 3§! to unblock.§!"
+  irm.ui.sector.gov.fleet.cap.low: "Low"
+  irm.ui.sector.gov.fleet.cap.low.tt: "Low tt"
+  irm.ui.sector.gov.fleet.cap.medium: "Medium"
+  irm.ui.sector.gov.fleet.cap.medium.tt: "Medium tt"
+  irm.ui.sector.gov.fleet.cap.high: "High"
+  irm.ui.sector.gov.fleet.cap.high.tt: "High tt"
+
+  irm.ui.sector.gov.fleet.stance: "Fleet Stance"
+  irm.ui.sector.gov.fleet.stance.passive: "Passive"
+  irm.ui.sector.gov.fleet.stance.passive.tt: "Passive tt"
+  irm.ui.sector.gov.fleet.stance.aggressive: "Aggressive"
+  irm.ui.sector.gov.fleet.stance.aggressive.tt: "Aggressive tt"
+
 
   irm.soon: "soon..."

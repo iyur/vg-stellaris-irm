@@ -1322,6 +1322,290 @@ irm_bt_sector_colonization_allowed_on = {
 	}
 }
 
+# fleet com
+irm_bt_sector_fleet_prohibited_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_prohibited }
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.sector.prohibited.tt"
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_fleet_prohibited }
+				irm_switch_flag = { scope = sector flag = irm_sector_fleet_allowed }
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_prohibited_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_prohibited
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.sector.prohibited.tt"
+		}
+	}
+}
+irm_bt_sector_fleet_allowed_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_allowed }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.soon"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.sector.allowed.tt"
+			event_target:irm_ui_sector = {
+				irm_switch_flag = { scope = sector flag = irm_sector_fleet_allowed }
+				irm_switch_flag = { scope = sector flag = irm_sector_fleet_prohibited }
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_allowed_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_allowed
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.sector.allowed.tt"
+		}
+	}
+}
+
+# fleet cap
+irm_bt_sector_fleet_cap_low_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_cap_low }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.ui.sector.gov.fleet.cap.req.t1"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.cap.low.tt"
+			event_target:irm_ui_sector = {
+				set_sector_flag = irm_sector_fleet_cap_low
+				remove_sector_flag = irm_sector_fleet_cap_medium
+				remove_sector_flag = irm_sector_fleet_cap_high
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_cap_low_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_cap_low
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.cap.low.tt"
+		}
+	}
+}
+irm_bt_sector_fleet_cap_low_lock = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			nor = {
+				is_variable_set = irm_sector_tier
+				check_variable = { which = irm_sector_tier value = 1 }
+			}
+		}
+	}	
+}
+irm_bt_sector_fleet_cap_medium_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_cap_medium }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.ui.sector.gov.fleet.cap.req.t2"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.cap.medium.tt"
+			event_target:irm_ui_sector = {
+				set_sector_flag = irm_sector_fleet_cap_medium
+				remove_sector_flag = irm_sector_fleet_cap_low
+				remove_sector_flag = irm_sector_fleet_cap_high
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_cap_medium_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_cap_medium
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.cap.medium.tt"
+		}
+	}
+}
+irm_bt_sector_fleet_cap_medium_lock = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			nor = {
+				is_variable_set = irm_sector_tier
+				check_variable = { which = irm_sector_tier value = 2 }
+			}
+		}
+	}	
+}
+irm_bt_sector_fleet_cap_high_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_cap_high }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.ui.sector.gov.fleet.cap.req.t3"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.cap.high.tt"
+			event_target:irm_ui_sector = {
+				set_sector_flag = irm_sector_fleet_cap_high
+				remove_sector_flag = irm_sector_fleet_cap_medium
+				remove_sector_flag = irm_sector_fleet_cap_low
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_cap_high_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_cap_high
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.cap.high.tt"
+		}
+	}
+}
+irm_bt_sector_fleet_cap_high_lock = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			nor = {
+				is_variable_set = irm_sector_tier
+				check_variable = { which = irm_sector_tier value = 3 }
+			}
+		}
+	}	
+}
+
+irm_bt_sector_fleet_stance_passive_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_stance_aggressive
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.stance.passive.tt"
+			event_target:irm_ui_sector = {
+				remove_sector_flag = irm_sector_fleet_stance_aggressive
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_stance_passive_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_stance_aggressive }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.soon"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.stance.passive.tt"
+		}
+	}
+}
+irm_bt_sector_fleet_stance_aggressive_off = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			not = { has_sector_flag = irm_sector_fleet_stance_aggressive }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "irm.soon"
+			always = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.stance.aggressive.tt"
+			event_target:irm_ui_sector = {
+				set_sector_flag = irm_sector_fleet_stance_aggressive
+			}
+		}
+	}
+}
+irm_bt_sector_fleet_stance_aggressive_on = {
+	potential = {
+		exists = event_target:irm_ui_sector
+		event_target:irm_ui_sector = {
+			has_sector_flag = irm_sector_fleet_stance_aggressive
+		}
+	}
+	effect = {
+		hidden_effect = {
+			custom_tooltip = "irm.ui.sector.gov.fleet.stance.aggressive.tt"
+		}
+	}
+}
 
 irm_bt_disabled = {
 	potential = { exists = event_target:irm_ui_sector }
