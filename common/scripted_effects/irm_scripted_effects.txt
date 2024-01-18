@@ -562,8 +562,20 @@ irm_del_stats = {
 irm_sector_get_settings = {
 	# size range
 	if = {
-		limit = { check_variable = { which = irm_sector_size value = 0 } }
+		limit = { 
+			or = {
+				not = { is_variable_set = irm_sector_size }
+				check_variable = { which = irm_sector_size value = 0 }
+			}
+		}
 		set_variable = { which = irm_sector_size value = 5 }
+	}
+	# tier level
+	if = {
+		limit = {
+			not = { is_variable_set = irm_sector_tier }
+		}
+		set_variable = { which = irm_sector_tier value = 0 }
 	}
 	# migration settings
 	if = {

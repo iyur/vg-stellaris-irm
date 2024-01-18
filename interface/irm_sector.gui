@@ -1249,19 +1249,19 @@ guiTypes = {
 					# range control
 					containerWindowType = {
 						name = "range"
-						position = { x = 0 y = 0 }
+						position = { x = 135 y = 0 }
 						size = { width = @wRes height = @hRes }
 						effectButtonType = {
 							name = "range_tt"
 							quadTextureSprite = @sResBackground
-							position = { x = 135 y = 0 }
+							position = { x = 0 y = 0 }
 							size = { x = @wRes y = @hRes }
 							effect = irm_cb_sector_range
 						}
 						effectButtonType = {
 							name = "range_val"
 							quadTextureSprite = "GFX_invisible"
-							position = { x = 137 y = 22 }
+							position = { x = 2 y = 22 }
 							size = { x = 35 y = 32 }
 							format = center
 							font = "cg_16b"
@@ -1271,8 +1271,47 @@ guiTypes = {
 						iconType = {
 							name = "range_ico"
 							spriteType = "GFX_sector_cap_icon"
-							position = { x = 141 y = 5 }
+							position = { x = 6 y = 5 }
 							alwaysTransparent = yes
+						}
+					}
+
+					# tier lvl
+					containerWindowType = {
+						name = "tier"
+						position = { x = 220 y = 0 }
+						size = { width = @wRes height = @hRes }
+						effectButtonType = {
+							name = "tier_tt"
+							quadTextureSprite = "GFX_tiles_light_area_cut_8"
+							position = { x = 0 y = 0 }
+							size = { x = @wRes y = @hRes }
+							effect = irm_bt_sector_tier
+						}
+						iconType = {
+							name = "tier_ico"
+							quadTextureSprite = "GFX_leader_skill_bg"
+							position = { x = 8 y = 3 }
+							scale = 0.61
+							rotation = 1.57
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "tier_val"
+							quadTextureSprite = "GFX_invisible"
+							position = { x = 2 y = 22 }
+							size = { x = 36 y = 32 }
+							format = center
+							font = "cg_16b"
+							text = "irm.ui.sector.space.tier"
+							alwaysTransparent = yes
+						}
+						effectButtonType = {
+							name = "tier_up"
+							quadTextureSprite = "GFX_button_council_position_unlockable"
+							position = { x = 10 y = 6 }
+							scale = 0.66
+							effect = irm_bt_sector_tier
 						}
 					}
 
@@ -1302,43 +1341,33 @@ guiTypes = {
 
 					# settings
 					containerWindowType = {
-						name = "irm_policies"
-						position = { x = @xPosBC1 y = 43 }	
-
-						containerWindowType = {
-							name = "irm_sector_policies"
-							position = { x = 0 y = 0 }
-							size = { width = 34 height = 34 }
-							clipping = yes
-							effectButtonType = {
-								name = "irm_sector_policies_bt"
-								quadTextureSprite = "GFX_resolution_view_supporters_button"
-								position = { x = -3 y = -3 }
-								format = left
-								effect = irm_bt_sector_policies_
-							}
-						
+						name = "irm_sector_policies"
+						position = { x = @xPosBC1 y = 43 }
+						size = { width = 34 height = 34 }
+						clipping = yes
+						effectButtonType = {
+							name = "irm_sector_policies_bt"
+							quadTextureSprite = "GFX_resolution_view_supporters_button"
+							position = { x = -3 y = -3 }
+							format = left
+							effect = irm_bt_
 						}
+					
 					}
-
 					containerWindowType = {
-						name = "irm_fleet"
+						name = "irm_sector_fleet"
 						position = { x = @xPosBC1 y = 83 }	
-
-						containerWindowType = {
-							name = "irm_sector_fleet"
-							position = { x = 0 y = 0 }
-							size = { width = 34 height = 34 }
-							clipping = yes
-							effectButtonType = {
-								name = "irm_sector_fleet_bt"
-								quadTextureSprite = "GFX_fleet_manager_button"
-								position = { x = -3 y = -3 }
-								format = left
-								effect = irm_bt_sector_policies_
-							}
+						size = { width = 34 height = 34 }
+						clipping = yes
+						effectButtonType = {
+							name = "irm_sector_fleet_bt"
+							quadTextureSprite = "GFX_fleet_manager_button"
+							position = { x = -3 y = -3 }
+							format = left
+							effect = irm_bt_
 						}
 					}
+					
 
 				}
 
@@ -1359,7 +1388,7 @@ guiTypes = {
 			expandButton = {
 				name = "irm_sector_policies"
 				position = { x = 0 y = 0 }
-				size = { x = 255 y = 32 }
+				size = { x = 260 y = 32 }
 				quadTextureSprite = "GFX_button_light"
 				buttonFont = "cg_16b"
 				buttonText = "irm.ui.sector.gov.policies"
@@ -1406,6 +1435,137 @@ guiTypes = {
 						text = "irm.ui.sector.gov.policies.desc"
 					}
 
+					# size
+					containerWindowType = {
+						name = "sb_sector_size"
+						position = { x = @sb_section_Xo y = 106 }
+						size = { width = @sb_section_W height = 75 }
+						orientation = upper_left
+						background = { name = "background" quadTextureSprite = @dark }
+						clipping = yes
+
+						instantTextBoxType = {
+							name = "sb_sector_size_desc"
+							position = { x = 10 y = @sb_section_desc_Yo }
+							maxWidth = 180
+							font = "cg_16b"
+							format = left
+							text = "irm.ui.sector.gov.policies.size"
+						}
+
+						@sb_size_Y = 35
+						effectButtonType = {
+							name = "sector_size_1_on"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "1"
+							effect = irm_bt_sector_size_1_on
+						}
+						effectButtonType = {
+							name = "sector_size_1_off"
+							position = { x = 10 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "1"
+							effect = irm_bt_sector_size_1_off
+						}
+						effectButtonType = {
+							name = "sector_size_5_off"
+							position = { x = 58 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "5"
+							effect = irm_bt_sector_size_5_off
+						}
+						effectButtonType = {
+							name = "sector_size_5_on"
+							position = { x = 58 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "5"
+							effect = irm_bt_sector_size_5_on
+						}
+						effectButtonType = {
+							name = "sector_size_10_off"
+							position = { x = 106 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "10"
+							effect = irm_bt_sector_size_10_off
+						}
+						effectButtonType = {
+							name = "sector_size_10_on"
+							position = { x = 106 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "10"
+							effect = irm_bt_sector_size_10_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sector_size_10_lock"
+								position = { x = 116 y = 21 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 1
+								effect = irm_bt_sector_size_10_lock
+								alwaysTransparent = yes
+							}
+						effectButtonType = {
+							name = "sector_size_15_off"
+							position = { x = 154 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_off"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "15"
+							effect = irm_bt_sector_size_15_off
+						}
+						effectButtonType = {
+							name = "sector_size_15_on"
+							position = { x = 154 y = @sb_size_Y  }
+							size = { x = 43 y = 30 }
+							quadTextureSprite = "GFX_subjugation_btn_selection_on"
+							vertical_alignment = center
+							format = center
+							font = "cg_16b"
+							text = "15"
+							effect = irm_bt_sector_size_15_on
+						}
+							# locker
+							effectButtonType = {
+								name = "sector_size_15_lock"
+								position = { x = 164 y = 21 }
+								quadTextureSprite = "GFX_law_locked"
+								format = left
+								frame = 2
+								effect = irm_bt_sector_size_15_lock
+								alwaysTransparent = yes
+							}
+
+					}
+
+					# size
 					containerWindowType = {
 						name = "sb_sector_size"
 						position = { x = @sb_section_Xo y = 106 }
@@ -1762,7 +1922,7 @@ guiTypes = {
 			expandButton = {
 				name = "irm_sector_fleet_eb"
 				position = { x = 0 y = 0 }
-				size = { x = 255 y = 32 }
+				size = { x = 260 y = 32 }
 				quadTextureSprite = "GFX_button_light"
 				buttonFont = "cg_16b"
 				buttonText = "irm.ui.sector.gov.fleet"

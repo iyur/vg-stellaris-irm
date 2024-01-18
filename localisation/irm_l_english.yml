@@ -251,6 +251,8 @@ l_english:
   irm.ui.sector.space.sprawl.tt.desc: "$irm.ui.1$$EMPIRE_SIZE_DESC$"
   irm.ui.sector.space.size: "[irm_ui_sector.irm_sector_size]"
   irm.ui.sector.space.size.tt: "§HSector Size§!\nSize: §Y[irm_ui_sector.irm_sector_size]§!$irm.ui.1$Defines the actual size of the sector to which he could expand. Measured in hyperjumps around the sector capital."
+  irm.ui.sector.space.tier: "[irm_ui_sector.irm_sector_tier]"
+  irm.ui.sector.space.tier.tt: "§HSector Tier§!\nTier Level: §Y[irm_ui_sector.irm_sector_tier]§!§!$irm.ui.1$Tier level represents how well sector is developed and enables additional policy options."
   
   irm.ui.sector.gov: "Governance"
 
