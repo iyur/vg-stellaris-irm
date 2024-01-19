@@ -1010,7 +1010,10 @@ irm_bt_sector_size_10_lock = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			not = { is_variable_set = irm_sector_tier }
+			or = {
+				not = { is_variable_set = irm_sector_tier }
+				check_variable = { which = irm_sector_tier value < 1 }
+			}
 		}
 	}	
 }
@@ -1056,9 +1059,9 @@ irm_bt_sector_size_15_lock = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			nor = {
-				is_variable_set = irm_sector_tier
-				check_variable = { which = irm_sector_tier value = 2 }
+			or = {
+				not = { is_variable_set = irm_sector_tier }
+				check_variable = { which = irm_sector_tier value < 2 }
 			}
 		}
 	}	
@@ -1443,9 +1446,9 @@ irm_bt_sector_fleet_cap_low_lock = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			nor = {
-				is_variable_set = irm_sector_tier
-				check_variable = { which = irm_sector_tier value = 1 }
+			or = {
+				not = { is_variable_set = irm_sector_tier }
+				check_variable = { which = irm_sector_tier value < 1 }
 			}
 		}
 	}	
@@ -1491,9 +1494,9 @@ irm_bt_sector_fleet_cap_medium_lock = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			nor = {
-				is_variable_set = irm_sector_tier
-				check_variable = { which = irm_sector_tier value = 2 }
+			or = {
+				not = { is_variable_set = irm_sector_tier }
+				check_variable = { which = irm_sector_tier value < 2 }
 			}
 		}
 	}	
@@ -1539,9 +1542,9 @@ irm_bt_sector_fleet_cap_high_lock = {
 	potential = {
 		exists = event_target:irm_ui_sector
 		event_target:irm_ui_sector = {
-			nor = {
-				is_variable_set = irm_sector_tier
-				check_variable = { which = irm_sector_tier value = 3 }
+			or = {
+				not = { is_variable_set = irm_sector_tier }
+				check_variable = { which = irm_sector_tier value < 3 }
 			}
 		}
 	}	

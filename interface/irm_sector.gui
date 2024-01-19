@@ -1523,7 +1523,7 @@ guiTypes = {
 							# locker
 							effectButtonType = {
 								name = "sector_size_10_lock"
-								position = { x = 116 y = 21 }
+								position = { x = 116 y = 20 }
 								quadTextureSprite = "GFX_law_locked"
 								format = left
 								frame = 1
@@ -1555,7 +1555,7 @@ guiTypes = {
 							# locker
 							effectButtonType = {
 								name = "sector_size_15_lock"
-								position = { x = 164 y = 21 }
+								position = { x = 164 y = 20 }
 								quadTextureSprite = "GFX_law_locked"
 								format = left
 								frame = 2
