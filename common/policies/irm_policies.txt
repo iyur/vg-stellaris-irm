@@ -11,8 +11,6 @@ irm_sector_size_1 = {
 
 	}
 
-
-
 	option = {
 		name = irm_sector_size_single
 
@@ -21,7 +19,24 @@ irm_sector_size_1 = {
 		}
 
 		potential = {
-			always = no
+
+		}
+
+		valid = {
+			if = {
+				limit = {
+					has_country_flag = irm_sector_size_cd_opt
+				}
+				has_policy_flag = irm_sector_size_single
+			}
+			else = {
+				or = {
+	                has_policy_flag = irm_sector_size_single
+	                has_policy_flag = irm_sector_size_normal
+	                has_policy_flag = irm_sector_size_large
+	                has_policy_flag = irm_sector_size_huge
+				}
+			}
 		}
 
 		on_enabled = {
@@ -110,7 +125,24 @@ irm_sector_size_1 = {
 		}
 
 		potential = {
-			always = no
+
+		}
+
+		valid = {
+			if = {
+				limit = {
+					has_country_flag = irm_sector_size_cd_opt
+				}
+				has_policy_flag = irm_sector_size_huge
+			}
+			else = {
+				or = {
+	                has_policy_flag = irm_sector_size_single
+	                has_policy_flag = irm_sector_size_normal
+	                has_policy_flag = irm_sector_size_large
+	                has_policy_flag = irm_sector_size_huge
+				}
+			}
 		}
 
 		on_enabled = {
@@ -140,11 +172,16 @@ irm_sector_size_2 = {
 		}
 
 		potential = {
-			always = no
+
+		}
+
+		valid = {
+			has_policy_flag = irm_sector_size_single
 		}
 
 		on_enabled = {
-
+			remove_country_flag = irm_sector_size_cd
+			set_timed_country_flag = { flag = irm_sector_size_cd_opt days = 2 }
 		}
 
 	}
@@ -157,8 +194,13 @@ irm_sector_size_2 = {
 		}
 
 		potential = {
+
+		}
+
+		valid = {
 			has_policy_flag = irm_sector_size_normal
 		}
+
 
 		on_enabled = {
 			remove_country_flag = irm_sector_size_cd
@@ -175,6 +217,10 @@ irm_sector_size_2 = {
 		}
 
 		potential = {
+			
+		}
+
+		valid = {
 			has_policy_flag = irm_sector_size_large
 		}
 
@@ -193,11 +239,16 @@ irm_sector_size_2 = {
 		}
 
 		potential = {
-			always = no
+
+		}
+
+		valid = {
+			has_policy_flag = irm_sector_size_huge
 		}
 
 		on_enabled = {
-
+			remove_country_flag = irm_sector_size_cd
+			set_timed_country_flag = { flag = irm_sector_size_cd_opt days = 2 }
 		}
 
 	}
