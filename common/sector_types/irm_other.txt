@@ -1,0 +1,23 @@
+irm_normal_sector_10 = {
+
+	system_scores = {
+		base = 10
+	}
+
+	local_capital_scores = {
+		base = 10
+
+		modifier = {
+			add = -10000
+			owner = { is_ai = yes }
+		}
+
+	}
+
+	resource_conversion_table = {
+		energy = 1
+		minerals = 1
+	}
+
+	max_jumps = 9
+}

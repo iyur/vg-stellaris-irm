@@ -1,0 +1,43 @@
+irm_core_sector_10 = {
+
+	system_scores = {
+		base = 250
+	}
+
+	local_capital_scores = {
+		base = 250
+
+		modifier = {
+			add = -10000
+			owner = { is_ai = yes }
+		}
+
+		modifier = {
+			add = -10000
+			is_capital = yes
+		}
+
+		modifier = {
+			add = -10000
+			owner = {
+				is_ai = no
+				or = {
+					any_owned_sector = { has_sector_type = core_sector }
+					any_owned_sector = { has_sector_type = irm_core_sector_10 }
+				}
+			}
+		}
+	}
+
+	resource_conversion_table = {
+		energy = 1
+		minerals = 1
+	}
+
+	resources = {
+		category = sector
+	}
+
+	max_jumps = 9
+}
+

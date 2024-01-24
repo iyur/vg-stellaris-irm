@@ -98,3 +98,145 @@ irm_armies_ = {
    		mult = 1
 	}
 }
+
+# This = Planet (sector_capital)
+# Checks jumps from sector capital to target system.
+# Short distances only.
+irm_distance_jumps_ = {
+	base = 0
+
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 0
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 1
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 2
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 3
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 4
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 5
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 6
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 7
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 8
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 9
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 10
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 11
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 12
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 13
+		}
+	}
+	modifier = {
+		add = 1
+		distance = {
+			source = $source$
+			type = hyperlane
+			min_jumps > 14
+		}
+	}
+}
+
+
+#effect = { set_variable = { which = irm_test value =  value:irm_distance_ } }
+
+effect = {
+	export_trigger_value_to_variable = {
+		trigger = distance
+		parameters = {
+   			source = root.sector.sector_capital
+   			type = hyperlane		
+		}
+		variable = irm_test2
+	}
+}

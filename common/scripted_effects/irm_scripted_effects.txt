@@ -621,3 +621,11 @@ irm_sector_get_settings = {
 		set_sector_flag = irm_sector_fleet_prohibited
 	}	
 }
+
+irm_set_sector_size_flag = {
+	remove_country_flag = irm_sector_size_single
+	remove_country_flag = irm_sector_size_normal
+	remove_country_flag = irm_sector_size_large
+	remove_country_flag = irm_sector_size_huge
+	set_country_flag = $flag$
+}

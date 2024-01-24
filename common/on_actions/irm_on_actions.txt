@@ -1,0 +1,8 @@
+# Executes after a policy has been changed
+# use last_changed_policy to identify which policy it was
+# This = Country
+on_policy_changed = {
+	events = {
+		irm_sector.2
+	}
+}

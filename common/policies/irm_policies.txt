@@ -1,0 +1,205 @@
+irm_sector_size_1 = {
+
+	potential = {
+		# todo: check mod
+		is_regular_empire = yes
+		is_ai = no
+
+		not = {
+			has_country_flag = irm_sector_size_cd
+		}
+
+	}
+
+
+
+	option = {
+		name = irm_sector_size_single
+
+		policy_flags = {
+			irm_sector_size_single
+		}
+
+		potential = {
+			always = no
+		}
+
+		on_enabled = {
+
+		}
+
+	}
+
+	option = {
+		name = irm_sector_size_normal
+
+		policy_flags = {
+			irm_sector_size_normal
+		}
+
+		valid = {
+			if = {
+				limit = {
+					has_country_flag = irm_sector_size_cd_opt
+				}
+				has_policy_flag = irm_sector_size_normal
+			}
+			else = {
+				or = {
+					not = {
+		                has_policy_flag = irm_sector_size_single
+		                has_policy_flag = irm_sector_size_normal
+		                has_policy_flag = irm_sector_size_large
+		                has_policy_flag = irm_sector_size_huge
+					}
+	                has_policy_flag = irm_sector_size_single
+	                has_policy_flag = irm_sector_size_normal
+	                has_policy_flag = irm_sector_size_large
+	                has_policy_flag = irm_sector_size_huge
+				}
+			}
+		}
+
+		potential = {
+			
+		}
+
+		on_enabled = {
+		}
+
+	}
+
+	option = {
+		name = irm_sector_size_large
+
+		policy_flags = {
+			irm_sector_size_large
+		}
+
+		valid = {
+			if = {
+				limit = {
+					has_country_flag = irm_sector_size_cd_opt
+				}
+				has_policy_flag = irm_sector_size_large
+			}
+			else = {
+				or = {
+	                has_policy_flag = irm_sector_size_single
+	                has_policy_flag = irm_sector_size_normal
+	                has_policy_flag = irm_sector_size_large
+	                has_policy_flag = irm_sector_size_huge
+				}
+			}
+		}
+
+		potential = {
+			
+		}
+
+		on_enabled = {
+		}
+
+	}
+
+	option = {
+		name = irm_sector_size_huge
+
+		policy_flags = {
+			irm_sector_size_huge
+		}
+
+		potential = {
+			always = no
+		}
+
+		on_enabled = {
+
+		}
+
+	}
+
+}
+
+irm_sector_size_2 = {
+
+	potential = {
+		# todo: check mod
+		is_regular_empire = yes
+		is_ai = no
+
+		has_country_flag = irm_sector_size_cd
+
+	}
+
+	option = {
+		name = irm_sector_size_single
+
+		policy_flags = {
+			irm_sector_size_single
+		}
+
+		potential = {
+			always = no
+		}
+
+		on_enabled = {
+
+		}
+
+	}
+
+	option = {
+		name = irm_sector_size_normal
+
+		policy_flags = {
+			irm_sector_size_normal
+		}
+
+		potential = {
+			has_policy_flag = irm_sector_size_normal
+		}
+
+		on_enabled = {
+			remove_country_flag = irm_sector_size_cd
+			set_timed_country_flag = { flag = irm_sector_size_cd_opt days = 2 }
+		}
+
+	}
+
+	option = {
+		name = irm_sector_size_large
+
+		policy_flags = {
+			irm_sector_size_large
+		}
+
+		potential = {
+			has_policy_flag = irm_sector_size_large
+		}
+
+		on_enabled = {
+			remove_country_flag = irm_sector_size_cd
+			set_timed_country_flag = { flag = irm_sector_size_cd_opt days = 2 }
+		}
+
+	}
+
+	option = {
+		name = irm_sector_size_huge
+
+		policy_flags = {
+			irm_sector_size_huge
+		}
+
+		potential = {
+			always = no
+		}
+
+		on_enabled = {
+
+		}
+
+	}
+
+}

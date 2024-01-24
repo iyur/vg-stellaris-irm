@@ -78,3 +78,28 @@ system_event = {
 	}
 
 }
+
+
+country_event = {
+	id = irm_sector.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				last_changed_policy = irm_sector_size_1
+				not = { has_country_flag = irm_sector_size_cd }
+			}
+			set_country_flag = irm_sector_size_cd
+		}
+		#if = {
+		#	limit = {
+		#		last_changed_policy = irm_sector_size_2
+		#		has_country_flag = irm_sector_size_cd
+		#	}
+		#	remove_country_flag = irm_sector_size_cd
+		#}
+	}
+}

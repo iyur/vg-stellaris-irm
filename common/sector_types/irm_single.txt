@@ -1,11 +1,17 @@
-normal_sector = {
+irm_single_1 = {
 
 	system_scores = {
-		base = -1
+		base = 1
 	}
 
 	local_capital_scores = {
-		base = -1
+		base = 1
+
+		modifier = {
+			add = -10000
+			owner = { is_ai = yes }
+		}
+
 	}
 
 	resource_conversion_table = {
