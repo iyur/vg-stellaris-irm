@@ -19,11 +19,6 @@ l_english:
   irm_col_sector_capital_desc: "Capital of sector"
 
 
-# DESIGNATIONS # ----------------------------------------------------------------------------------
-
-
-
-
 # UI # --------------------------------------------------------------------------------------------
 
 # Base
@@ -55,7 +50,7 @@ l_english:
   # demography
   irm.ui.sector.demo.pops: "[irm_ui_sector.irm_pops]"
   irm.ui.sector.demo.pops.tt: "§H$CURRENT_POPULATION_AMOUNT$§!$irm.ui.1$§EPopulation, also known as £pops£ §YPops§!, is the center of productivity and political action within an empire. They provide resources by working in £job£ §YJobs§! created by §Y£district£§! §YDistricts§! and £building£ §YBuildings§!, and also produce £unity£ §YUnity§! if they are part of a specific pop faction."
-  irm.ui.sector.demo.stability: "[irm_ui_sector.irm_GetStabilityState][irm_ui_sector.irm_stability]%"
+  irm.ui.sector.demo.stability: "[§Girm_ui_sector.irm_GetStabilityState][irm_ui_sector.irm_stability]%"
   irm.ui.sector.demo.stability.tt: "§H$PLANET_STABILITY_TITLE$§!\nAverage: §Y[irm_ui_sector.irm_stability]%§!$irm.ui.1$$PLANET_STABILITY_DESC$"
   irm.ui.sector.demo.crime: "[irm_ui_sector.irm_GetCrimeState][irm_ui_sector.irm_crime]%"
   irm.ui.sector.demo.crime.tt: "§H$PLANET_CRIME_TITLE$§!\nAverage: §Y[irm_ui_sector.irm_crime]%§!$irm.ui.1$$PLANET_CRIME_DESC$"

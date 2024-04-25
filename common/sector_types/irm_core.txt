@@ -19,6 +19,11 @@ irm_core_sector_10 = {
 
 		modifier = {
 			add = -10000
+			exists = event_target:irm_situation_reform_capital
+		}
+
+		modifier = {
+			add = -10000
 			owner = {
 				is_ai = no
 				or = {

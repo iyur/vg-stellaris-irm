@@ -79,27 +79,47 @@ system_event = {
 
 }
 
-
-country_event = {
-	id = irm_sector.2
+planet_event = {
+	id = irm_sector.11
 	hide_window = yes
-
 	is_triggered_only = yes
 
 	immediate = {
-		if = {
-			limit = {
-				last_changed_policy = irm_sector_size_1
-				not = { has_country_flag = irm_sector_size_cd }
+		# to remove existing sector by the code effect, we have to simulate
+		# the loss of sector capital, so to fake it we need to transfer
+		# sector capital to the dummy planet body and destroy later 
+		space_owner = {
+			random_planet_within_border = {
+				limit = {
+					#exists = sector
+					#sector = { is_same_value = root.sector }
+					#not = { is_same_value = root }
+					is_same_value = root 
+					#is_colony = no
+					#is_colonizable = no
+				}
+				solar_system = {
+					# use the dummy, not the real ones
+					spawn_planet = {
+						class = "pc_asteroid"
+						location = root
+						orbit_location = yes
+						orbit_angle_offset = 45
+						#orbit_distance_offset = 5
+						size = 1
+
+						init_effect = {
+							change_pc = { class = pc_gaia inherit_entity = yes } # to enable colony
+							set_owner = space_owner
+							set_sector_capital = yes
+							destroy_colony = yes
+							change_pc = { class = pc_asteroid inherit_entity = yes }
+							remove_planet = yes
+						}
+
+					}
+				}
 			}
-			set_country_flag = irm_sector_size_cd
 		}
-		#if = {
-		#	limit = {
-		#		last_changed_policy = irm_sector_size_2
-		#		has_country_flag = irm_sector_size_cd
-		#	}
-		#	remove_country_flag = irm_sector_size_cd
-		#}
 	}
 }
